@@ -1,0 +1,8 @@
+{
+  "decay_modifier": 1.69,
+  "grain": 1.0,
+  "fruit": 1.0,
+  "ingredient": {
+    "item": "farm_and_charm:oatmeal_with_strawberries"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "decay_modifier": 2.0,
+  "hunger": 3,
+  "protein": 3.5,
+  "dairy": 0.6,
+  "ingredient": {
+    "item": "farm_and_charm:bacon_with_eggs"
+  }
+}

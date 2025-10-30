@@ -1,0 +1,8 @@
+{
+  "decay_modifier": 1.83,
+  "hunger": 3,
+  "protein": 2.5,
+  "ingredient": {
+    "item": "tfc_farm_charm:fried_chicken"
+  }
+}

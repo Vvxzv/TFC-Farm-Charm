@@ -1,0 +1,8 @@
+{
+  "decay_modifier": 1.38,
+  "hunger": 1.6,
+  "vegetables": 3.5,
+  "ingredient": {
+    "item": "farm_and_charm:farmer_salad"
+  }
+}

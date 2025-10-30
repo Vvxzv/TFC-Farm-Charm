@@ -1,0 +1,8 @@
+{
+  "decay_modifier": 1.16,
+  "hunger": 0.4,
+  "grain": 0.5,
+  "ingredient": {
+    "item": "farm_and_charm:dough"
+  }
+}

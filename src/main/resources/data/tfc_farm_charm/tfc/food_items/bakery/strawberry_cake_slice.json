@@ -1,0 +1,10 @@
+{
+  "decay_modifier": 2.0,
+  "hunger": 2,
+  "grain": 1.5,
+  "fruit": 1.0,
+  "dairy": 1.0,
+  "ingredient": {
+    "item": "bakery:strawberry_cake_slice"
+  }
+}

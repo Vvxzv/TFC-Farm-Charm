@@ -1,0 +1,8 @@
+{
+  "decay_modifier": 2.2,
+  "hunger": 1,
+  "protein": 0.5,
+  "ingredient": {
+    "item": "farm_and_charm:bacon"
+  }
+}

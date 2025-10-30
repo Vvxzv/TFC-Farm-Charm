@@ -1,0 +1,8 @@
+{
+  "decay_modifier": 0.88,
+  "hunger": 7,
+  "grain": 0.5,
+  "ingredient": {
+    "item": "tfc_farm_charm:farmers_bread"
+  }
+}

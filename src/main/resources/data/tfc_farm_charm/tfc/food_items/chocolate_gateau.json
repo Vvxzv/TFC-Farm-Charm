@@ -1,0 +1,9 @@
+{
+  "decay_modifier": 2.0,
+  "hunger": 9.6,
+  "grain": 6.8,
+  "dairy": 10.0,
+  "ingredient": {
+    "item": "tfc_farm_charm:chocolate_gateau"
+  }
+}

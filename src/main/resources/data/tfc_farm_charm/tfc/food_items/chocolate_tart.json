@@ -1,0 +1,9 @@
+{
+  "decay_modifier": 2.0,
+  "hunger": 8,
+  "grain": 6.0,
+  "dairy": 8.0,
+  "ingredient": {
+    "item": "tfc_farm_charm:chocolate_tart"
+  }
+}

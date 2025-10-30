@@ -1,0 +1,30 @@
+{
+  "required" : true,
+  "minVersion" : "0.8",
+  "package" : "net.vvxzv.tfc_farm_charm.mixin",
+  "compatibilityLevel" : "JAVA_8",
+  "refmap" : "tfc_farm_charm.refmap.json",
+  "mixins" : [
+    "AbstractTowableEntityAccessor",
+    "BlankCakeBlockMixin",
+    "CatFoodItemMixin",
+    "CookingPotBlockEntityMixin",
+    "DogMixin",
+    "FarmlandBlockEntityMixin",
+    "FertilizedSoilBlockMixin",
+    "FertilizerItemMixin",
+    "PetBowlBlockMixin",
+    "PlowCartEntityMixin",
+    "RoasterBlockEntityMixin",
+    "SmallCookingPotBlockEntityMixin",
+    "TFCCatMixin"
+  ],
+  "client" : [
+  ],
+  "injectors" : {
+    "defaultRequire" : 1
+  },
+  "overwrites" : {
+    "requireAnnotations" : true
+  }
+}

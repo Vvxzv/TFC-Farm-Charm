@@ -1,0 +1,9 @@
+{
+  "decay_modifier": 1.69,
+  "hunger": 2,
+  "grain": 1.5,
+  "vegetables": 1.5,
+  "ingredient": {
+    "item": "bakery:vegetable_sandwich"
+  }
+}

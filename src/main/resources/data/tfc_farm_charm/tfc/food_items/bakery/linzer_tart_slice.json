@@ -1,0 +1,9 @@
+{
+  "decay_modifier": 1.57,
+  "hunger": 2,
+  "grain": 1.5,
+  "fruit": 1.0,
+  "ingredient": {
+    "item": "bakery:linzer_tart_slice"
+  }
+}

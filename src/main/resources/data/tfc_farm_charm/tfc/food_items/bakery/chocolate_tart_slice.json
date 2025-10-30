@@ -1,0 +1,9 @@
+{
+  "decay_modifier": 1.69,
+  "hunger": 2,
+  "grain": 1.5,
+  "dairy": 2.0,
+  "ingredient": {
+    "item": "bakery:chocolate_tart_slice"
+  }
+}

@@ -1,0 +1,31 @@
+{
+	"type": "farm_and_charm:roaster",
+	"ingredients": [
+		{
+			"tag": "farm_and_charm:oat"
+		},
+		{
+			"tag": "farm_and_charm:oat"
+		},
+		{
+			"tag": "farm_and_charm:oat"
+		},
+		{
+			"tag": "farm_and_charm:dough"
+		},
+		{
+			"tag": "farm_and_charm:butter"
+		},
+		{
+			"tag": "farm_and_charm:strawberry"
+		}
+	],
+	"container": {
+		"item": "minecraft:bowl"
+	},
+	"result": {
+		"item": "tfc_farm_charm:oat_pancake",
+		"count": 3
+	},
+	"requiresLearning": false
+}

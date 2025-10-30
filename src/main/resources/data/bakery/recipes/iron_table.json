@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"a",
+		"b"
+	],
+	"key": {
+		"a": {
+			"item": "tfc:metal/sheet/wrought_iron"
+		},
+		"b": {
+			"item": "tfc:metal/rod/wrought_iron"
+		}
+	},
+	"result": {
+		"item": "bakery:iron_table",
+		"count": 1
+	}
+}

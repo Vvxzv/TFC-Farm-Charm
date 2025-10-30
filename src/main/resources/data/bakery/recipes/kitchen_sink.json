@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"a a",
+		"bab",
+		"bbb"
+	],
+	"key": {
+		"a": {
+			"item": "tfc:metal/ingot/wrought_iron"
+		},
+		"b": {
+			"item": "minecraft:bricks"
+		}
+	},
+	"result": {
+		"item": "bakery:kitchen_sink",
+		"count": 1
+	}
+}

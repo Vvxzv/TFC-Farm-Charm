@@ -1,0 +1,8 @@
+{
+  "decay_modifier": 1.47,
+  "hunger": 4,
+  "vegetables": 2.5,
+  "ingredient": {
+    "item": "tfc_farm_charm:mashed_potatoes"
+  }
+}

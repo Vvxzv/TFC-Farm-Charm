@@ -1,0 +1,7 @@
+{
+  "decay_modifier": 0,
+  "water": 0.2,
+  "ingredient": {
+    "item": "brewery:beer_nettle"
+  }
+}

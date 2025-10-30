@@ -1,0 +1,9 @@
+{
+  "decay_modifier": 3.14,
+  "hunger": 1,
+  "grain": 1.3,
+  "fruit": 1.5,
+  "ingredient": {
+    "item": "bakery:sweetberry_glazed_cookie"
+  }
+}

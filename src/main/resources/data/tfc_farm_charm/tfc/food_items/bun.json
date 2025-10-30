@@ -1,0 +1,8 @@
+{
+  "decay_modifier": 2.0,
+  "hunger": 1.4,
+  "grain": 1.7,
+  "ingredient": {
+    "item": "tfc_farm_charm:bun"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "hunger": 2,
+  "saturation": 2,
+  "decay_modifier": 0.2,
+  "dairy": 2.0,
+  "ingredient": {
+    "item": "tfc_farm_charm:chocolate_jam"
+  }
+}

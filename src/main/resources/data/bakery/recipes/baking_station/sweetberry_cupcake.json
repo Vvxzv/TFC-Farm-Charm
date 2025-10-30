@@ -1,0 +1,14 @@
+{
+  "type": "bakery:baking_station",
+  "ingredients": [
+    {
+      "item": "bakery:cake_dough"
+    },
+    {
+      "item": "tfc_farm_charm:sweetberry_jam"
+    }
+  ],
+  "result": {
+    "item": "bakery:sweetberry_cupcake"
+  }
+}

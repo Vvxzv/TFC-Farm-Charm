@@ -1,0 +1,9 @@
+{
+  "decay_modifier": 3.14,
+  "hunger": 1,
+  "dairy": 2.0,
+  "fruit": 1.5,
+  "ingredient": {
+    "item": "bakery:pudding_slice"
+  }
+}

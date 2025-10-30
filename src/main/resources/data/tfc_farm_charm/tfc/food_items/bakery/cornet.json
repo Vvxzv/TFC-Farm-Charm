@@ -1,0 +1,9 @@
+{
+  "decay_modifier": 2.0,
+  "hunger": 1,
+  "grain": 1.3,
+  "fruit": 1.5,
+  "ingredient": {
+    "item": "bakery:cornet"
+  }
+}

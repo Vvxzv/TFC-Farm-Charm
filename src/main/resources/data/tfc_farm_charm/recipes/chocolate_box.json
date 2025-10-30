@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"WWW",
+		"WWW",
+		" # "
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:paper"
+		},
+		"W": {
+			"item": "bakery:chocolate_truffle"
+		}
+	},
+	"result": {
+		"item": "tfc_farm_charm:chocolate_box",
+		"count": 1
+	}
+}

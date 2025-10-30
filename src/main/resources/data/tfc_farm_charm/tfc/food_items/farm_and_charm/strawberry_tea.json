@@ -1,0 +1,8 @@
+{
+  "decay_modifier": 1.83,
+  "water": 0.2,
+  "fruit": 3.0,
+  "ingredient": {
+    "item": "farm_and_charm:strawberry_tea"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "decay_modifier": 1.69,
+  "hunger": 2.4,
+  "grain": 1.5,
+  "protein": 1.8,
+  "ingredient": {
+    "item": "bakery:grilled_bacon_sandwich"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "decay_modifier": 1.83,
+  "hunger": 1.8,
+  "grain": 1.8,
+  "protein": 0.5,
+  "ingredient": {
+    "item": "farm_and_charm:barley_soup"
+  }
+}

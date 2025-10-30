@@ -1,0 +1,7 @@
+{
+  "decay_modifier" : 2.5,
+  "hunger" : 1,
+  "ingredient" : {
+    "item" : "tfc_farm_charm:unfinished_pretzel"
+  }
+}

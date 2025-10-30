@@ -1,0 +1,9 @@
+{
+  "decay_modifier": 2.75,
+  "hunger": 1,
+  "grain": 1.2,
+  "fruit": 1.0,
+  "ingredient": {
+    "item": "bakery:strawberry_cupcake"
+  }
+}

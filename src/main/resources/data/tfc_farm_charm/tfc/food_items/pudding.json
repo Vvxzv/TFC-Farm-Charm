@@ -1,0 +1,9 @@
+{
+  "decay_modifier": 2.75,
+  "hunger": 4,
+  "dairy": 8.0,
+  "fruit": 6.0,
+  "ingredient": {
+    "item": "tfc_farm_charm:pudding"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "hunger": 2,
+  "saturation": 2,
+  "decay_modifier": 0.2,
+  "fruit": 1,
+  "ingredient": {
+    "item": "tfc_farm_charm:glowberry_jam"
+  }
+}

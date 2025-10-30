@@ -1,0 +1,11 @@
+{
+  "decay_modifier": 2.44,
+  "hunger": 3,
+  "protein": 0.8,
+  "vegetables": 0.7,
+  "grain": 0.5,
+  "dairy": 0.3,
+  "ingredient": {
+    "item": "farm_and_charm:lamb_with_corn"
+  }
+}

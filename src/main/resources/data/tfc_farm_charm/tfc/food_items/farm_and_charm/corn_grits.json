@@ -1,0 +1,8 @@
+{
+  "decay_modifier": 1.83,
+  "hunger": 1.6,
+  "grain": 1.5,
+  "ingredient": {
+    "item": "farm_and_charm:corn_grits"
+  }
+}

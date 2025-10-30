@@ -1,0 +1,8 @@
+{
+  "ingredient" : {
+    "item" : "farm_and_charm:fertilizer"
+  },
+  "nitrogen" : 0.1,
+  "potassium" : 0.05,
+  "phosphorus" : 0.05
+}

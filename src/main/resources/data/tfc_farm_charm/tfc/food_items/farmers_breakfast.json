@@ -1,0 +1,10 @@
+{
+  "decay_modifier": 2.2,
+  "hunger": 7,
+  "grain": 3.5,
+  "protein": 3.6,
+  "dairy": 1.0,
+  "ingredient": {
+    "item": "tfc_farm_charm:farmers_breakfast"
+  }
+}

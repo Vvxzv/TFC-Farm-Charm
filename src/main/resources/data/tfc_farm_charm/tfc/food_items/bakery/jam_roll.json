@@ -1,0 +1,10 @@
+{
+  "decay_modifier": 3.14,
+  "hunger": 1,
+  "grain": 1.2,
+  "fruit": 0.5,
+  "dairy": 0.5,
+  "ingredient": {
+    "item": "bakery:jam_roll"
+  }
+}

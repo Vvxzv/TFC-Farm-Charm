@@ -1,0 +1,8 @@
+{
+  "decay_modifier": 1.69,
+  "hunger": 3.6,
+  "protein": 3.3,
+  "ingredient": {
+    "item": "tfc_farm_charm:half_chicken"
+  }
+}

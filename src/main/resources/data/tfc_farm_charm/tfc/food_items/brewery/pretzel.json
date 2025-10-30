@@ -1,0 +1,8 @@
+{
+  "decay_modifier": 1.0,
+  "hunger": 3,
+  "grain": 1.7,
+  "ingredient": {
+    "item": "brewery:pretzel"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "decay_modifier": 44,
+  "vegetables": 1.0,
+  "ingredient": {
+    "item": "farm_and_charm:rotten_tomato"
+  }
+}
