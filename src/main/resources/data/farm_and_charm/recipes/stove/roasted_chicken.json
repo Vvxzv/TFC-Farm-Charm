@@ -1,20 +1,29 @@
 {
-  "type": "farm_and_charm:stove",
-  "ingredients": [
-    {
-      "tag": "farm_and_charm:pasta"
-    },
-    {
-      "item": "farm_and_charm:chicken_parts"
-    },
-    {
-      "item": "minecraft:carrot"
-    }
-  ],
-  "result": {
-    "item": "farm_and_charm:roasted_chicken",
-    "count": 3
-  },
-  "experience": 0.3,
-  "requiresLearning": false
+	"type": "farm_and_charm:stove",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "farm_and_charm:pasta"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:chicken_parts"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/carrot"
+			}
+		}
+	],
+	"result": {
+		"item": "farm_and_charm:roasted_chicken",
+		"count": 1
+	},
+	"experience": 0.3,
+	"requiresLearning": false
 }

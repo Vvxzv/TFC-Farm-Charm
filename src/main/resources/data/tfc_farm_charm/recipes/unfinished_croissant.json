@@ -1,0 +1,27 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "bakery:sweet_dough"
+			}
+		},
+		{
+			"item": "minecraft:sugar"
+		},
+		{
+			"type": "tfc:fluid_item",
+			"fluid_ingredient": {
+				"ingredient": {
+					"tag": "tfc:milks"
+				},
+				"amount": 100
+			}
+		}
+	],
+	"result": {
+		"item": "tfc_farm_charm:unfinished_croissant",
+		"count": 1
+	}
+}

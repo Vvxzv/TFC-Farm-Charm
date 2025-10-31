@@ -1,31 +1,49 @@
 {
-  "type": "farm_and_charm:roaster",
-  "ingredients": [
-    {
-      "item": "minecraft:beef"
-    },
-    {
-      "item": "minecraft:carrot"
-    },
-    {
-      "tag": "farm_and_charm:butter"
-    },
-    {
-      "item": "minecraft:potato"
-    },
-    {
-      "item": "minecraft:beetroot"
-    },
-    {
-      "tag": "farm_and_charm:cabbage"
-    }
-  ],
-  "container": {
-    "item": "minecraft:bowl"
-  },
-  "result": {
-    "item": "farm_and_charm:beef_patty_with_vegetables",
-    "count": 2
-  },
-  "requiresLearning": false
+	"type": "farm_and_charm:roaster",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/beef"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/carrot"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "farm_and_charm:butter"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/potato"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/beet"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/cabbage"
+			}
+		}
+	],
+	"container": {
+		"item": "minecraft:bowl"
+	},
+	"result": {
+		"item": "farm_and_charm:beef_patty_with_vegetables",
+		"count": 1
+	},
+	"requiresLearning": false
 }

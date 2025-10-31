@@ -63,9 +63,9 @@ ordering = "NONE"
 side = "BOTH"
 
 [[dependencies."${mod_id}"]]
-modId="tfc"
+modId="firmalife"
 mandatory=true
-versionRange="[3.2.16,)"
+versionRange="[2.1,)"
 ordering="AFTER"
 side="BOTH"
 

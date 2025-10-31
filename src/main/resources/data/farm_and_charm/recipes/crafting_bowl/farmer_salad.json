@@ -1,21 +1,33 @@
 {
-  "type": "farm_and_charm:crafting_bowl",
-  "ingredients": [
-    {
-      "tag": "farm_and_charm:tomato"
-    },
-    {
-      "tag": "farm_and_charm:onion"
-    },
-    {
-      "tag": "farm_and_charm:cabbage"
-    },
-    {
-      "tag": "farm_and_charm:strawberry"
-    }
-  ],
-  "result": {
-    "item": "farm_and_charm:farmer_salad",
-    "count": 2
-  }
+	"type": "farm_and_charm:crafting_bowl",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/tomato"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/onion"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/cabbage"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/strawberry"
+			}
+		}
+	],
+	"result": {
+		"item": "farm_and_charm:farmer_salad",
+		"count": 1
+	}
 }

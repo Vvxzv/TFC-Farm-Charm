@@ -1,25 +1,34 @@
 {
-  "type": "farm_and_charm:roaster",
-  "ingredients": [
-    {
-      "item": "minecraft:carrot"
-    },
-    {
-      "tag": "farm_and_charm:corn"
-    },
-    {
-      "item": "farm_and_charm:lamb_ham"
-    },
-    {
-      "tag": "farm_and_charm:butter"
-    }
-  ],
-  "container": {
-    "item": "minecraft:bowl"
-  },
-  "result": {
-    "item": "farm_and_charm:lamb_with_corn",
-    "count": 1
-  },
-  "requiresLearning": false
+	"type": "farm_and_charm:roaster",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/carrot"
+			}
+		},
+		{
+			"tag": "farm_and_charm:corn"
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:lamb_ham"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "farm_and_charm:butter"
+			}
+		}
+	],
+	"container": {
+		"item": "minecraft:bowl"
+	},
+	"result": {
+		"item": "farm_and_charm:lamb_with_corn",
+		"count": 1
+	},
+	"requiresLearning": false
 }

@@ -1,0 +1,16 @@
+{
+	"type": "firmalife:oven",
+	"ingredient": {
+		"type": "tfc:not_rotten",
+		"ingredient": {
+			"item": "tfc_farm_charm:unfinished_linzer_tart"
+		}
+	},
+	"result_item": {
+		"stack": {
+			"item": "tfc_farm_charm:linzer_tart"
+		}
+	},
+	"temperature": 200,
+	"duration": 1000
+}

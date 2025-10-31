@@ -10,16 +10,19 @@
 			"item": "bakery:tray"
 		},
 		"_": {
-			"item": "bakery:baguette"
+			"item": "tfc_farm_charm:baguette"
 		},
 		"B": {
-			"item": "bakery:bun"
+			"item": "tfc_farm_charm:bun"
 		},
 		"V": {
-			"item": "bakery:braided_bread"
+			"item": "tfc_farm_charm:braided_bread"
 		},
 		"U": {
-			"tag": "bakery:bread"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc:foods/breads"
+			}
 		}
 	},
 	"result": {

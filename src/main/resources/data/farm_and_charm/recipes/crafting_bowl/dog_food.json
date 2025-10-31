@@ -1,18 +1,15 @@
 {
-  "type": "farm_and_charm:crafting_bowl",
-  "ingredients": [
-    {
-      "tag": "farm_and_charm:cooked_beef"
-    },
-    {
-      "tag": "farm_and_charm:raw_beef"
-    },
-    {
-      "tag": "farm_and_charm:bones"
-    }
-  ],
-  "result": {
-    "item": "farm_and_charm:dog_food",
-    "count": 4
-  }
+	"type": "farm_and_charm:crafting_bowl",
+	"ingredients": [
+		{
+			"tag": "tfc:dog_food"
+		},
+		{
+			"tag": "farm_and_charm:bones"
+		}
+	],
+	"result": {
+		"item": "farm_and_charm:dog_food",
+		"count": 1
+	}
 }

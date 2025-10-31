@@ -1,0 +1,24 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc_farm_charm:glowberry"
+			}
+		},
+		{
+			"item": "minecraft:sugar"
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "bakery:sweet_dough"
+			}
+		}
+	],
+	"result": {
+		"item": "tfc_farm_charm:unfinished_glowberry_tart",
+		"count": 1
+	}
+}

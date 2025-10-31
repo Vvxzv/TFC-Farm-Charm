@@ -1,18 +1,30 @@
 {
-  "type": "farm_and_charm:crafting_bowl",
-  "ingredients": [
-    {
-      "tag": "farm_and_charm:milk"
-    },
-    {
-      "tag": "farm_and_charm:oat"
-    },
-    {
-      "tag": "farm_and_charm:strawberries"
-    }
-  ],
-  "result": {
-    "item": "farm_and_charm:oatmeal_with_strawberries",
-    "count": 2
-  }
+	"type": "farm_and_charm:crafting_bowl",
+	"ingredients": [
+		{
+			"type": "tfc:fluid_item",
+			"fluid_ingredient": {
+				"ingredient": {
+					"tag": "tfc:milks"
+				},
+				"amount": 100
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/oat_grain"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/strawberry"
+			}
+		}
+	],
+	"result": {
+		"item": "farm_and_charm:oatmeal_with_strawberries",
+		"count": 1
+	}
 }

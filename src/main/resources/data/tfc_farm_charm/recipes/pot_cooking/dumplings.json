@@ -2,10 +2,16 @@
 	"type": "farm_and_charm:pot_cooking",
 	"ingredients": [
 		{
-			"item": "brewery:mashed_potatoes"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc_farm_charm:mashed_potatoes"
+			}
 		},
 		{
-			"tag": "farm_and_charm:cabbage"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/cabbage"
+			}
 		}
 	],
 	"container": {

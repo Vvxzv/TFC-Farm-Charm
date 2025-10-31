@@ -2,7 +2,10 @@
 	"type": "farm_and_charm:pot_cooking",
 	"ingredients": [
 		{
-			"item": "minecraft:sweet_berries"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc_farm_charm:sweetberry"
+			}
 		},
 		{
 			"item": "minecraft:sugar"

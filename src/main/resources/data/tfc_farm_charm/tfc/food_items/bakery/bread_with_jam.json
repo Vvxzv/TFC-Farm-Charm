@@ -1,7 +1,5 @@
 {
-  "decay_modifier": 0.79,
-  "grain": 1.7,
-  "fruit": 1.0,
+  "type":"dynamic",
   "ingredient": {
     "item": "bakery:bread_with_jam"
   }

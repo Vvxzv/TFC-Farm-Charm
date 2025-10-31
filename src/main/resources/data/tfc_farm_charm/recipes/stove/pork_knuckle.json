@@ -5,7 +5,10 @@
 			"tag": "brewery:beer"
 		},
 		{
-			"item": "minecraft:porkchop"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/pork"
+			}
 		}
 	],
 	"result": {

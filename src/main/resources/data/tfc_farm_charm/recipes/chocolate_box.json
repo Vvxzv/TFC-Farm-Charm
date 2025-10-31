@@ -10,7 +10,10 @@
 			"item": "minecraft:paper"
 		},
 		"W": {
-			"item": "bakery:chocolate_truffle"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "bakery:chocolate_truffle"
+			}
 		}
 	},
 	"result": {

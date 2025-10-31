@@ -2,13 +2,19 @@
 	"type": "farm_and_charm:stove",
 	"ingredients": [
 		{
-			"item": "minecraft:potato"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/potato"
+			}
 		},
 		{
-			"item": "minecraft:beef"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/beef"
+			}
 		},
 		{
-			"item": "minecraft:honey_bottle"
+			"item": "firmalife:raw_honey"
 		}
 	],
 	"result": {

@@ -1,20 +1,29 @@
 {
-  "type": "farm_and_charm:stove",
-  "ingredients": [
-    {
-      "tag": "farm_and_charm:corn"
-    },
-    {
-      "tag": "farm_and_charm:corn"
-    },
-    {
-      "tag": "farm_and_charm:butter"
-    }
-  ],
-  "result": {
-    "item": "tfc_farm_charm:roasted_corn",
-    "count": 1
-  },
-  "experience": 0.2,
-  "requiresLearning": false
+	"type": "farm_and_charm:stove",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/maize"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/maize"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "farm_and_charm:butter"
+			}
+		}
+	],
+	"result": {
+		"item": "tfc_farm_charm:roasted_corn",
+		"count": 1
+	},
+	"experience": 0.2,
+	"requiresLearning": false
 }

@@ -1,26 +1,26 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "IAI",
-    "UUU",
-    "# #"
-  ],
-  "key": {
-    "#": {
-      "tag": "minecraft:planks"
-    },
-    "U": {
-      "tag": "minecraft:wooden_slabs"
-    },
-    "I": {
-      "item": "minecraft:iron_ingot"
-    },
-    "A": {
-      "item": "minecraft:chest"
-    }
-  },
-  "result": {
-    "item": "farm_and_charm:supply_cart",
-    "count": 1
-  }
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"IAI",
+		"UUU",
+		"# #"
+	],
+	"key": {
+		"#": {
+			"tag": "minecraft:planks"
+		},
+		"U": {
+			"tag": "minecraft:wooden_slabs"
+		},
+		"I": {
+			"item": "tfc:metal/ingot/wrought_iron"
+		},
+		"A": {
+			"tag": "forge:chests/wooden"
+		}
+	},
+	"result": {
+		"item": "farm_and_charm:supply_cart",
+		"count": 1
+	}
 }

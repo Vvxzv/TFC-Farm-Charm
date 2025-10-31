@@ -20,9 +20,10 @@ public class TAB {
     static {
         TFC_FARM_CHARM = CREATIVE_MODE_TAB.register(TFCFarmCharm.MODID, () -> CreativeModeTab.builder()
                 .title(Component.translatable("tfc_farm_charm.tab.name"))
-                .icon(() -> new ItemStack(TFCFCItem.UNFINISHED_APPLE_PIE.get()))
+                .icon(() -> new ItemStack(TFCFCItem.CUP.get()))
                 .displayItems((parm, output) -> {
                     List<RegistryObject<Item>> modItems = List.of(
+                            TFCFCItem.CUP,
                             TFCFCItem.UNFINISHED_APPLE_PIE,
                             TFCFCItem.UNFINISHED_BAGUETTE,
                             TFCFCItem.UNFINISHED_BRAIDED_BREAD,

@@ -6,6 +6,10 @@
 package net.vvxzv.tfc_farm_charm.common.registry;
 
 import java.util.function.Supplier;
+
+import net.dries007.tfc.common.TFCTags;
+import net.dries007.tfc.common.items.JugItem;
+import net.dries007.tfc.config.TFCConfig;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
@@ -20,6 +24,7 @@ import net.satisfy.farm_and_charm.core.registry.MobEffectRegistry;
 
 public class TFCFCItem {
     public static final DeferredRegister<Item> ITEMS;
+    public static final RegistryObject<Item> CUP;
     public static final RegistryObject<Item> UNFINISHED_APPLE_PIE;
     public static final RegistryObject<Item> UNFINISHED_BAGUETTE;
     public static final RegistryObject<Item> UNFINISHED_BRAIDED_BREAD;
@@ -78,6 +83,7 @@ public class TFCFCItem {
 
     static {
         ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "tfc_farm_charm");
+        CUP = registerItem("cup", () -> new JugItem((new Item.Properties()).stacksTo(1), TFCConfig.SERVER.jugCapacity, TFCTags.Fluids.USABLE_IN_JUG));
         UNFINISHED_APPLE_PIE = registerFoodItem("unfinished_apple_pie");
         UNFINISHED_BAGUETTE = registerFoodItem("unfinished_baguette");
         UNFINISHED_BRAIDED_BREAD = registerFoodItem("unfinished_braided_bread");

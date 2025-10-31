@@ -1,7 +1,34 @@
 {
-	"conditions": [
+	"type": "farm_and_charm:pot_cooking",
+	"ingredients": [
 		{
-			"type": "forge:false"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:minced_beef"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:minced_beef"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/cabbage"
+			}
 		}
-	]
+	],
+	"container": {
+		"required": true,
+		"item": {
+			"item": "minecraft:bowl"
+		}
+	},
+	"result": {
+		"item": "brewery:sausage",
+		"count": 1
+	},
+	"requiresLearning": false
 }

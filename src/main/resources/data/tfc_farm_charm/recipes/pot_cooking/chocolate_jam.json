@@ -2,10 +2,19 @@
 	"type": "farm_and_charm:pot_cooking",
 	"ingredients": [
 		{
-			"tag": "bakery:milk"
+			"type": "tfc:fluid_item",
+			"fluid_ingredient": {
+				"ingredient": {
+					"tag": "tfc:milks"
+				},
+				"amount": 100
+			}
 		},
 		{
-			"tag": "bakery:chocolate"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "bakery:chocolate"
+			}
 		},
 		{
 			"item": "minecraft:sugar"

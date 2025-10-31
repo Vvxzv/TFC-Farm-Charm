@@ -1,21 +1,33 @@
 {
-  "type": "farm_and_charm:crafting_bowl",
-  "ingredients": [
-    {
-      "tag": "bakery:wheat"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "tag": "bakery:eggs"
-    },
-    {
-      "tag": "bakery:water_bottles"
-    }
-  ],
-  "result": {
-    "item": "bakery:sweet_dough",
-    "count": 12
-  }
+	"type": "farm_and_charm:crafting_bowl",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc:foods/dough"
+			}
+		},
+		{
+			"item": "minecraft:sugar"
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "forge:eggs"
+			}
+		},
+		{
+			"type": "tfc:fluid_item",
+			"fluid_ingredient": {
+				"ingredient": {
+					"fluid": "water"
+				},
+				"amount": 100
+			}
+		}
+	],
+	"result": {
+		"item": "bakery:sweet_dough",
+		"count": 2
+	}
 }

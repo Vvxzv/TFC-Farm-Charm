@@ -1,11 +1,14 @@
 {
-  "type": "farm_and_charm:mincer",
-  "ingredient": {
-    "item": "minecraft:beef"
-  },
-  "recipe_type": "MEAT",
-  "result": {
-    "item": "farm_and_charm:minced_beef",
-    "count": 1
-  }
+	"type": "farm_and_charm:mincer",
+	"ingredient": {
+		"type": "tfc:not_rotten",
+		"ingredient": {
+			"item": "tfc:food/beef"
+		}
+	},
+	"recipe_type": "MEAT",
+	"result": {
+		"item": "farm_and_charm:minced_beef",
+		"count": 1
+	}
 }

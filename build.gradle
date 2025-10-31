@@ -185,7 +185,7 @@ dependencies {
     //tfc
     implementation fg.deobf("curse.maven:terrafirmacraft-302973:6739107")
     //firmalife
-    runtimeOnly fg.deobf("curse.maven:firmalife-453394:6817407")
+    implementation fg.deobf("curse.maven:firmalife-453394:6817407")
 
     // JEI
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jeiVersion}"))

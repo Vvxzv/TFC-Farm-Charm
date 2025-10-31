@@ -1,18 +1,52 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "tag": "bakery:bread"
-    },
-    {
-      "tag": "bakery:cooked_beef"
-    },
-    {
-      "tag": "farm_and_charm:cabbage"
-    }
-  ],
-  "result": {
-    "item": "bakery:sandwich",
-    "count": 2
-  }
+	"type": "tfc:damage_inputs_shapeless_crafting",
+	"recipe": {
+		"type": "tfc:advanced_shapeless_crafting",
+		"ingredients": [
+			{
+				"type": "tfc:not_rotten",
+				"ingredient": {
+					"tag": "tfc_farm_charm:sandwich_bread"
+				}
+			},
+			{
+				"type": "tfc:not_rotten",
+				"ingredient": {
+					"tag": "tfc:foods/cooked_meats"
+				}
+			},
+			{
+				"type": "tfc:not_rotten",
+				"ingredient": {
+					"tag": "tfc:foods/vegetables"
+				}
+			},
+			{
+				"tag": "tfc:knives"
+			}
+		],
+		"result": {
+			"stack": {
+				"item": "bakery:sandwich",
+				"count": 1
+			},
+			"modifiers": [
+				{
+					"type": "tfc:meal",
+					"food": {
+						"hunger": 4,
+						"saturation": 2,
+						"decay_modifier": 4.5
+					},
+					"portions": [
+						{
+							"nutrient_modifier": 1,
+							"water_modifier": 1,
+							"saturation_modifier": 1
+						}
+					]
+				}
+			]
+		}
+	}
 }

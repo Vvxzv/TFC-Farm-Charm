@@ -2,20 +2,32 @@
 	"type": "farm_and_charm:crafting_bowl",
 	"ingredients": [
 		{
-			"item": "minecraft:beetroot"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/beet"
+			}
 		},
 		{
-			"item": "minecraft:baked_potato"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/baked_potato"
+			}
 		},
 		{
-			"tag": "farm_and_charm:cabbage"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/cabbage"
+			}
 		},
 		{
-			"tag": "farm_and_charm:tomato"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/tomato"
+			}
 		}
 	],
 	"result": {
 		"item": "tfc_farm_charm:potato_salad",
-		"count": 2
+		"count": 1
 	}
 }

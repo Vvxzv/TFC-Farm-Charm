@@ -2,10 +2,16 @@
 	"type": "farm_and_charm:stove",
 	"ingredients": [
 		{
-			"tag": "farm_and_charm:cabbage"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/cabbage"
+			}
 		},
 		{
-			"item": "farm_and_charm:lamb_ham"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:lamb_ham"
+			}
 		}
 	],
 	"result": {

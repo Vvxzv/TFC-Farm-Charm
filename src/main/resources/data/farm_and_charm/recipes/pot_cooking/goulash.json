@@ -1,31 +1,46 @@
 {
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "farm_and_charm:onion"
-    },
-    {
-      "tag": "farm_and_charm:cooked_beef"
-    },
-    {
-      "item": "farm_and_charm:simple_tomato_soup"
-    },
-    {
-      "item": "minecraft:carrot"
-    },
-    {
-      "item": "minecraft:potato"
-    }
-  ],
-  "container": {
-    "required": false,
-    "item": {
-      "item": "minecraft:bowl"
-    }
-  },
-  "result": {
-    "item": "farm_and_charm:goulash",
-    "count": 1
-  },
-  "requiresLearning": false
+	"type": "farm_and_charm:pot_cooking",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/onion"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/cooked_beef"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:simple_tomato_soup"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/carrot"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/potato"
+			}
+		}
+	],
+	"container": {
+		"required": false,
+		"item": {
+			"item": "minecraft:bowl"
+		}
+	},
+	"result": {
+		"item": "farm_and_charm:goulash",
+		"count": 1
+	},
+	"requiresLearning": false
 }

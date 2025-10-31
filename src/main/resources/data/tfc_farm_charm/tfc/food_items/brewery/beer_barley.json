@@ -1,6 +1,6 @@
 {
   "decay_modifier": 0,
-  "water": 0.2,
+  "water": 20,
   "ingredient": {
     "item": "brewery:beer_barley"
   }

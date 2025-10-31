@@ -1,25 +1,37 @@
 {
-  "type": "farm_and_charm:roaster",
-  "ingredients": [
-    {
-      "item": "farm_and_charm:bacon"
-    },
-    {
-      "item": "farm_and_charm:chicken_parts"
-    },
-    {
-      "tag": "farm_and_charm:pasta"
-    },
-    {
-      "tag": "farm_and_charm:butter"
-    }
-  ],
-  "container": {
-    "item": "minecraft:bowl"
-  },
-  "result": {
-    "item": "farm_and_charm:chicken_wrapped_in_bacon",
-    "count": 1
-  },
-  "requiresLearning": false
+	"type": "farm_and_charm:roaster",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:bacon"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:chicken_parts"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "farm_and_charm:pasta"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "farm_and_charm:butter"
+			}
+		}
+	],
+	"container": {
+		"item": "minecraft:bowl"
+	},
+	"result": {
+		"item": "farm_and_charm:chicken_wrapped_in_bacon",
+		"count": 1
+	},
+	"requiresLearning": false
 }

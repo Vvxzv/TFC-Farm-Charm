@@ -1,0 +1,8 @@
+{
+  "loader" : "tfc:contained_fluid",
+  "parent" : "forge:item/default",
+  "textures" : {
+    "base" : "tfc_farm_charm:item/cup",
+    "fluid" : "tfc_farm_charm:item/cup_overlay"
+  }
+}

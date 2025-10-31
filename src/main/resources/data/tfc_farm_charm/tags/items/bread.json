@@ -1,0 +1,10 @@
+{
+    "values":[
+        "tfc_farm_charm:bread",
+        "tfc_farm_charm:baguette",
+        "tfc_farm_charm:toast",
+        "tfc_farm_charm:braided_bread",
+        "tfc_farm_charm:bun",
+        "bakery:croissant"
+    ]
+}

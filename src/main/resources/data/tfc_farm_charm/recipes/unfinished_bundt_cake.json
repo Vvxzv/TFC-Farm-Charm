@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "forge:eggs"
+			}
+		},
+		{
+			"item": "minecraft:sugar"
+		},
+		{
+			"item": "farm_and_charm:yeast"
+		}
+	],
+	"result": {
+		"item": "tfc_farm_charm:unfinished_bundt_cake",
+		"count": 1
+	}
+}

@@ -2,7 +2,10 @@
 	"type": "farm_and_charm:pot_cooking",
 	"ingredients": [
 		{
-			"item": "minecraft:apple"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc:foods/apples"
+			}
 		},
 		{
 			"item": "minecraft:sugar"

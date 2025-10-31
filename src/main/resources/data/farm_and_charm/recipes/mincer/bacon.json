@@ -1,11 +1,14 @@
 {
-  "type": "farm_and_charm:mincer",
-  "ingredient": {
-    "item": "minecraft:porkchop"
-  },
-  "recipe_type": "MEAT",
-  "result": {
-    "item": "farm_and_charm:bacon",
-    "count": 2
-  }
+	"type": "farm_and_charm:mincer",
+	"ingredient": {
+		"type": "tfc:not_rotten",
+		"ingredient": {
+			"item": "tfc:food/pork"
+		}
+	},
+	"recipe_type": "MEAT",
+	"result": {
+		"item": "farm_and_charm:bacon",
+		"count": 2
+	}
 }

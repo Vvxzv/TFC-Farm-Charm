@@ -1,31 +1,49 @@
 {
-  "type": "farm_and_charm:roaster",
-  "ingredients": [
-    {
-      "tag": "farm_and_charm:barley"
-    },
-    {
-      "tag": "farm_and_charm:barley"
-    },
-    {
-      "item": "minecraft:potato"
-    },
-    {
-      "tag": "farm_and_charm:butter"
-    },
-    {
-      "item": "minecraft:egg"
-    },
-    {
-      "tag": "farm_and_charm:cabbage"
-    }
-  ],
-  "container": {
-    "item": "minecraft:bowl"
-  },
-  "result": {
-    "item": "farm_and_charm:barley_patties_with_potatoes",
-    "count": 2
-  },
-  "requiresLearning": false
+	"type": "farm_and_charm:roaster",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/barley_grain"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/barley_grain"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/potato"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "farm_and_charm:butter"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "forge:eggs"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/cabbage"
+			}
+		}
+	],
+	"container": {
+		"item": "minecraft:bowl"
+	},
+	"result": {
+		"item": "farm_and_charm:barley_patties_with_potatoes",
+		"count": 1
+	},
+	"requiresLearning": false
 }

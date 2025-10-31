@@ -1,0 +1,27 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:dough"
+			}
+		},
+		{
+			"item": "farm_and_charm:yeast"
+		},
+		{
+			"type": "tfc:fluid_item",
+			"fluid_ingredient": {
+				"ingredient": {
+					"fluid": "water"
+				},
+				"amount": 100
+			}
+		}
+	],
+	"result": {
+		"item": "tfc_farm_charm:unfinished_crusty_bread",
+		"count": 1
+	}
+}

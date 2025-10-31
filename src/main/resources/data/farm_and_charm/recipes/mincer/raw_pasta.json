@@ -1,11 +1,14 @@
 {
-  "type": "farm_and_charm:mincer",
-  "ingredient": {
-    "tag": "farm_and_charm:dough"
-  },
-  "recipe_type": "STONE",
-  "result": {
-    "item": "farm_and_charm:raw_pasta",
-    "count": 2
-  }
+	"type": "farm_and_charm:mincer",
+	"ingredient": {
+		"type": "tfc:not_rotten",
+		"ingredient": {
+			"tag": "forge:dough"
+		}
+	},
+	"recipe_type": "STONE",
+	"result": {
+		"item": "farm_and_charm:raw_pasta",
+		"count": 1
+	}
 }

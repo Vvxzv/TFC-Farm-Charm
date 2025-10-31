@@ -1,27 +1,18 @@
 {
-  "type": "crafting_shapeless",
-  "ingredients": [
-    {
-      "tag": "farm_and_charm:wheat"
-    },
-    {
-      "tag": "farm_and_charm:wheat"
-    },
-    {
-      "item": "minecraft:carrot"
-    },
-    {
-      "item": "minecraft:carrot"
-    },
-    {
-      "item": "minecraft:wheat_seeds"
-    },
-    {
-      "item": "minecraft:wheat_seeds"
-    }
-  ],
-  "result": {
-    "item": "farm_and_charm:chicken_feed",
-    "count": 3
-  }
+	"type": "crafting_shapeless",
+	"ingredients": [
+		{
+			"tag": "tfc:foods/grains"
+		},
+		{
+			"tag": "tfc:chicken_food"
+		},
+		{
+			"tag": "forge:seeds"
+		}
+	],
+	"result": {
+		"item": "farm_and_charm:chicken_feed",
+		"count": 1
+	}
 }

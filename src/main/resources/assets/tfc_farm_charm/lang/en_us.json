@@ -1,5 +1,7 @@
 {
   "tfc_farm_charm.tab.name": "[Let's Do] TFC Farm Charm",
+  "item.tfc_farm_charm.cup": "Cup",
+  "item.tfc_farm_charm.cup.filled": "Cup",
   "item.tfc_farm_charm.unfinished_apple_pie":"Unfinished Apple Pie",
   "item.tfc_farm_charm.unfinished_baguette":"Unfinished Baguette",
   "item.tfc_farm_charm.unfinished_braided_bread":"Unfinished Braided Bread",

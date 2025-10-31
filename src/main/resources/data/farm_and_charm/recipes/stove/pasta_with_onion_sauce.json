@@ -1,20 +1,29 @@
 {
-  "type": "farm_and_charm:stove",
-  "ingredients": [
-    {
-      "tag": "farm_and_charm:onion"
-    },
-    {
-      "tag": "farm_and_charm:onion"
-    },
-    {
-      "tag": "farm_and_charm:pasta"
-    }
-  ],
-  "result": {
-    "item": "farm_and_charm:pasta_with_onion_sauce",
-    "count": 4
-  },
-  "experience": 0.4,
-  "requiresLearning": false
+	"type": "farm_and_charm:stove",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/onion"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/onion"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "farm_and_charm:pasta"
+			}
+		}
+	],
+	"result": {
+		"item": "farm_and_charm:pasta_with_onion_sauce",
+		"count": 1
+	},
+	"experience": 0.4,
+	"requiresLearning": false
 }

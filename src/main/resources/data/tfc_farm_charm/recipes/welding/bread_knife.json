@@ -1,0 +1,14 @@
+{
+	"type": "tfc:welding",
+	"first_input": {
+		"item": "tfc:metal/knife_blade/wrought_iron"
+	},
+	"second_input": {
+		"tag": "forge:rods/wooden"
+	},
+	"tier": 2,
+	"result": {
+		"item": "bakery:bread_knife"
+	},
+	"combine_forging_bonus": true
+}

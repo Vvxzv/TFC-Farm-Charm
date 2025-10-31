@@ -1,25 +1,34 @@
 {
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "tag": "farm_and_charm:water_bottles"
-    },
-    {
-      "item": "minecraft:wheat"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bowl"
-    }
-  },
-  "result": {
-    "item": "farm_and_charm:yeast",
-    "count": 12
-  },
-  "requiresLearning": false
+	"type": "farm_and_charm:pot_cooking",
+	"ingredients": [
+		{
+			"item": "minecraft:sugar"
+		},
+		{
+			"type": "tfc:fluid_item",
+			"fluid_ingredient": {
+				"ingredient": {
+					"fluid": "water"
+				},
+				"amount": 1000
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc:foods/flour"
+			}
+		}
+	],
+	"container": {
+		"required": true,
+		"item": {
+			"item": "minecraft:bowl"
+		}
+	},
+	"result": {
+		"item": "farm_and_charm:yeast",
+		"count": 10
+	},
+	"requiresLearning": false
 }

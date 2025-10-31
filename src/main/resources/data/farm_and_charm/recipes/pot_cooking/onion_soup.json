@@ -1,25 +1,43 @@
 {
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "farm_and_charm:bread"
-    },
-    {
-      "tag": "farm_and_charm:onion"
-    },
-    {
-      "tag": "farm_and_charm:onion"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bowl"
-    }
-  },
-  "result": {
-    "item": "farm_and_charm:onion_soup",
-    "count": 1
-  },
-  "requiresLearning": false
+	"type": "farm_and_charm:pot_cooking",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc_farm_charm:bread"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/onion"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/onion"
+			}
+		},
+		{
+			"type": "tfc:fluid_item",
+			"fluid_ingredient": {
+				"ingredient": {
+					"fluid": "water"
+				},
+				"amount": 100
+			}
+		}
+	],
+	"container": {
+		"required": true,
+		"item": {
+			"item": "minecraft:bowl"
+		}
+	},
+	"result": {
+		"item": "farm_and_charm:onion_soup",
+		"count": 1
+	},
+	"requiresLearning": false
 }

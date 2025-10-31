@@ -1,23 +1,23 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "III",
-    "###",
-    "#B#"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:bricks"
-    },
-    "B": {
-      "item": "minecraft:campfire"
-    },
-    "I": {
-      "item": "minecraft:iron_ingot"
-    }
-  },
-  "result": {
-    "item": "farm_and_charm:stove",
-    "count": 1
-  }
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"III",
+		"###",
+		"#B#"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:bricks"
+		},
+		"B": {
+			"item": "tfc:thatch"
+		},
+		"I": {
+			"item": "tfc:metal/ingot/cast_iron"
+		}
+	},
+	"result": {
+		"item": "farm_and_charm:stove",
+		"count": 1
+	}
 }

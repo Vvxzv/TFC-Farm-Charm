@@ -1,25 +1,37 @@
 {
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "farm_and_charm:water_bottles"
-    },
-    {
-      "tag": "farm_and_charm:strawberry"
-    },
-    {
-      "tag": "farm_and_charm:strawberry"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:glass_bottle"
-    }
-  },
-  "result": {
-    "item": "farm_and_charm:strawberry_tea",
-    "count": 1
-  },
-  "requiresLearning": false
+	"type": "farm_and_charm:pot_cooking",
+	"ingredients": [
+		{
+			"type": "tfc:fluid_item",
+			"fluid_ingredient": {
+				"ingredient": {
+					"fluid": "water"
+				},
+				"amount": 100
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/strawberry"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/strawberry"
+			}
+		}
+	],
+	"container": {
+		"required": true,
+		"item": {
+			"item": "minecraft:glass_bottle"
+		}
+	},
+	"result": {
+		"item": "farm_and_charm:strawberry_tea",
+		"count": 1
+	},
+	"requiresLearning": false
 }

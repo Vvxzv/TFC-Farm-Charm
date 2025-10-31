@@ -2,13 +2,22 @@
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
 		{
-			"tag": "farm_and_charm:bread"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc_farm_charm:bread"
+			}
 		},
 		{
-			"item": "farm_and_charm:bacon_with_eggs"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:bacon_with_eggs"
+			}
 		},
 		{
-			"item": "farm_and_charm:roasted_corn"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc_farm_charm:roasted_corn"
+			}
 		}
 	],
 	"result": {

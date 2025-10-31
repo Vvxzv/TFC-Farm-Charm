@@ -1,0 +1,17 @@
+{
+	"type": "farm_and_charm:stove",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "farm_and_charm:cooked_chicken"
+			}
+		}
+	],
+	"result": {
+		"item": "tfc_farm_charm:half_chicken",
+		"count": 2
+	},
+	"experience": 0.2,
+	"requiresLearning": false
+}

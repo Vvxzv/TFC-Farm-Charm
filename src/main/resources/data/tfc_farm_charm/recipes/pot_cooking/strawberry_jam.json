@@ -2,7 +2,10 @@
 	"type": "farm_and_charm:pot_cooking",
 	"ingredients": [
 		{
-			"item": "farm_and_charm:strawberry"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/strawberry"
+			}
 		},
 		{
 			"item": "minecraft:sugar"

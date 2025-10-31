@@ -1,31 +1,49 @@
 {
-  "type": "farm_and_charm:roaster",
-  "ingredients": [
-    {
-      "tag": "farm_and_charm:oat"
-    },
-    {
-      "tag": "farm_and_charm:butter"
-    },
-    {
-      "item": "minecraft:potato"
-    },
-    {
-      "item": "minecraft:carrot"
-    },
-    {
-      "item": "farm_and_charm:minced_beef"
-    },
-    {
-      "item": "farm_and_charm:minced_beef"
-    }
-  ],
-  "container": {
-    "item": "minecraft:bowl"
-  },
-  "result": {
-    "item": "farm_and_charm:sausage_with_oat_patty",
-    "count": 2
-  },
-  "requiresLearning": false
+	"type": "farm_and_charm:roaster",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/oat_grain"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "farm_and_charm:butter"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/potato"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/carrot"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:minced_beef"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:minced_beef"
+			}
+		}
+	],
+	"container": {
+		"item": "minecraft:bowl"
+	},
+	"result": {
+		"item": "farm_and_charm:sausage_with_oat_patty",
+		"count": 1
+	},
+	"requiresLearning": false
 }

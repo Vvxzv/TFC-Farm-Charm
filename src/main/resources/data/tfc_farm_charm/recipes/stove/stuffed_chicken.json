@@ -2,13 +2,22 @@
 	"type": "farm_and_charm:stove",
 	"ingredients": [
 		{
-			"tag": "farm_and_charm:onion"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/onion"
+			}
 		},
 		{
-			"item": "minecraft:chicken"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc_farm_charm:chicken"
+			}
 		},
 		{
-			"item": "minecraft:carrot"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/carrot"
+			}
 		}
 	],
 	"result": {

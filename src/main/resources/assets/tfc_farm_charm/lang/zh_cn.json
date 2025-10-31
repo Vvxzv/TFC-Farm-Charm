@@ -1,5 +1,7 @@
 {
   "tfc_farm_charm.tab.name": "[Let's do]群峦农艺",
+  "item.tfc_farm_charm.cup": "杯",
+  "item.tfc_farm_charm.cup.filled": "杯",
   "item.tfc_farm_charm.unfinished_apple_pie":"生苹果派胚",
   "item.tfc_farm_charm.unfinished_baguette":"法棍面团",
   "item.tfc_farm_charm.unfinished_braided_bread":"辫子面团",

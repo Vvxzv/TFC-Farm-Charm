@@ -2,22 +2,40 @@
 	"type": "farm_and_charm:roaster",
 	"ingredients": [
 		{
-			"tag": "farm_and_charm:oat"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/oat_grain"
+			}
 		},
 		{
-			"tag": "farm_and_charm:oat"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/oat_grain"
+			}
 		},
 		{
-			"tag": "farm_and_charm:oat"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/oat_grain"
+			}
 		},
 		{
-			"tag": "farm_and_charm:dough"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "forge:dough"
+			}
 		},
 		{
-			"tag": "farm_and_charm:butter"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "farm_and_charm:butter"
+			}
 		},
 		{
-			"tag": "farm_and_charm:strawberry"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/strawberry"
+			}
 		}
 	],
 	"container": {

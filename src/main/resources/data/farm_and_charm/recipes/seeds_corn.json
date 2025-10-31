@@ -1,12 +1,7 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "farm_and_charm:corn"
-    }
-  ],
-  "result": {
-    "item": "farm_and_charm:kernels",
-    "count": 3
-  }
+	"conditions": [
+		{
+			"type": "forge:false"
+		}
+	]
 }

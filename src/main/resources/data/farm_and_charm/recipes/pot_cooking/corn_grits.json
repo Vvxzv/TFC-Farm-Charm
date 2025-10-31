@@ -1,25 +1,34 @@
 {
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "tag": "farm_and_charm:corn"
-    },
-    {
-      "tag": "farm_and_charm:corn"
-    },
-    {
-      "tag": "farm_and_charm:flour"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bowl"
-    }
-  },
-  "result": {
-    "item": "farm_and_charm:corn_grits",
-    "count": 1
-  },
-  "requiresLearning": false
+	"type": "farm_and_charm:pot_cooking",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/maize_grain"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/maize_grain"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc:foods/flour"
+			}
+		}
+	],
+	"container": {
+		"required": true,
+		"item": {
+			"item": "minecraft:bowl"
+		}
+	},
+	"result": {
+		"item": "farm_and_charm:corn_grits",
+		"count": 1
+	},
+	"requiresLearning": false
 }

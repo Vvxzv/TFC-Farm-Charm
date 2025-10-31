@@ -1,15 +1,48 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "tag": "bakery:bread"
-    },
-    {
-      "tag": "bakery:jam"
-    }
-  ],
-  "result": {
-    "item": "bakery:bread_with_jam",
-    "count": 5
-  }
+	"type": "tfc:extra_products_shapeless_crafting",
+	"extra_products": [
+		{
+			"item": "bakery:jar"
+		}
+	],
+	"recipe": {
+		"type": "tfc:advanced_shapeless_crafting",
+		"ingredients": [
+			{
+				"type": "tfc:not_rotten",
+				"ingredient": {
+					"tag": "tfc_farm_charm:bread"
+				}
+			},
+			{
+				"type": "tfc:not_rotten",
+				"ingredient": {
+					"tag": "tfc_farm_charm:jams"
+				}
+			}
+		],
+		"result": {
+			"stack": {
+				"item": "bakery:bread_with_jam",
+				"count": 2
+			},
+			"modifiers": [
+				{
+					"type": "tfc:meal",
+					"food": {
+						"hunger": 4,
+						"saturation": 2,
+						"decay_modifier": 1
+					},
+					"portions": [
+						{
+							"nutrient_modifier": 0.8,
+							"water_modifier": 0.8,
+							"saturation_modifier": 0.8
+						}
+					]
+				}
+			]
+		}
+	}
 }

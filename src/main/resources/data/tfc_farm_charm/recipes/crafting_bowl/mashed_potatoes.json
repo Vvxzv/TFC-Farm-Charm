@@ -1,0 +1,27 @@
+{
+	"type": "farm_and_charm:crafting_bowl",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/baked_potato"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/baked_potato"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/baked_potato"
+			}
+		}
+	],
+	"result": {
+		"item": "tfc_farm_charm:mashed_potatoes",
+		"count": 2
+	}
+}

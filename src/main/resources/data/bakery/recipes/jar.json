@@ -1,21 +1,20 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "group": "chocolate_jar",
-  "pattern": [
-    "S",
-    "G",
-    "G"
-  ],
-  "key": {
-    "S": {
-      "tag": "minecraft:wooden_slabs"
-    },
-    "G": {
-      "item": "minecraft:glass_pane"
-    }
-  },
-  "result": {
-    "item": "bakery:jar",
-    "count": 2
-  }
+	"type": "minecraft:crafting_shaped",
+	"group": "chocolate_jar",
+	"pattern": [
+		"S",
+		"G"
+	],
+	"key": {
+		"S": {
+			"tag": "minecraft:wooden_slabs"
+		},
+		"G": {
+			"item": "tfc:empty_jar"
+		}
+	},
+	"result": {
+		"item": "bakery:jar",
+		"count": 1
+	}
 }
