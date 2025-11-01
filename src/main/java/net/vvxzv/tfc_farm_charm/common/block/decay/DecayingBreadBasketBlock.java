@@ -41,7 +41,7 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 public class DecayingBreadBasketBlock extends DecayingEatableBoxBlock{
-    public static final FoodData BREAD_EAT = new FoodData(3, 0.0F, 2.0F, 1.7F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+    public static final FoodData BREAD_EAT = new FoodData(3, 0.0F, 2.0F, 2.0F, 0.0F, 0.0F, 0.0F, 0.1F, 0.0F);
 
     public static final IntegerProperty BITES = IntegerProperty.create("bites", 0, 4);
     private static final Supplier<VoxelShape> voxelShapeSupplier = () -> {

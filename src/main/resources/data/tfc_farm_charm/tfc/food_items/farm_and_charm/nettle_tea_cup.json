@@ -1,6 +1,6 @@
 {
   "decay_modifier": 1.83,
-  "water": 0.1,
+  "water": 10,
   "vegetables": 0.1,
   "ingredient": {
     "item": "farm_and_charm:nettle_tea_cup"

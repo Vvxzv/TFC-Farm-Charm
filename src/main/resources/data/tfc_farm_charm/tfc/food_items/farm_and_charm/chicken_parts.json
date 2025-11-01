@@ -1,6 +1,7 @@
 {
   "decay_modifier": 2.44,
-  "hunger": 1,
+  "hunger": 2,
+  "saturation": 1,
   "protein": 0.5,
   "ingredient": {
     "item": "farm_and_charm:chicken_parts"

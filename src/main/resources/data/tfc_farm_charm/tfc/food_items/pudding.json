@@ -1,6 +1,7 @@
 {
   "decay_modifier": 2.75,
   "hunger": 4,
+  "saturation": 2,
   "dairy": 8.0,
   "fruit": 6.0,
   "ingredient": {

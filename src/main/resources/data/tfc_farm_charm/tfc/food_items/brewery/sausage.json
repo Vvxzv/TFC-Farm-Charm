@@ -1,8 +1,10 @@
 {
   "decay_modifier": 2.44,
-  "hunger": 1,
-  "protein": 2.7,
-  "dairy": 0.3,
+  "hunger": 3,
+  "saturation": 1,
+  "protein": 2.5,
+  "vegetables": 1,
+  "dairy": 0.5,
   "ingredient": {
     "item": "brewery:sausage"
   }

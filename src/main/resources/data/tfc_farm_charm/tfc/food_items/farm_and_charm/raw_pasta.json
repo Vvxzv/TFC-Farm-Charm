@@ -1,6 +1,6 @@
 {
   "decay_modifier": 1.0,
-  "hunger": 0.4,
+  "hunger": 1,
   "grain": 0.5,
   "ingredient": {
     "item": "farm_and_charm:raw_pasta"

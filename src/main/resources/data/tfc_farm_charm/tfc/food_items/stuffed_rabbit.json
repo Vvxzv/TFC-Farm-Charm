@@ -1,6 +1,7 @@
 {
   "decay_modifier": 2.0,
-  "hunger": 3.6,
+  "hunger": 6,
+  "saturation": 3,
   "protein": 3.0,
   "vegetables": 2.0,
   "ingredient": {

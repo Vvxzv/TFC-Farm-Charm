@@ -1,7 +1,8 @@
 {
   "decay_modifier": 2.0,
-  "hunger": 1,
-  "protein": 0.5,
+  "hunger": 2,
+  "saturation": 1,
+  "protein": 1,
   "ingredient": {
     "item": "farm_and_charm:lamb_ham"
   }

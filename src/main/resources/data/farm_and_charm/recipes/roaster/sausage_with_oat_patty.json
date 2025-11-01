@@ -10,7 +10,7 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "farm_and_charm:butter"
+				"item": "brewery:sausage"
 			}
 		},
 		{

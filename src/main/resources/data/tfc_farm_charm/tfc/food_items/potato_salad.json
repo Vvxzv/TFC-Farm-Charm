@@ -1,6 +1,7 @@
 {
   "decay_modifier": 1.69,
-  "hunger": 1.6,
+  "hunger": 3,
+  "saturation": 1,
   "vegetables": 3.0,
   "ingredient": {
     "item": "tfc_farm_charm:potato_salad"

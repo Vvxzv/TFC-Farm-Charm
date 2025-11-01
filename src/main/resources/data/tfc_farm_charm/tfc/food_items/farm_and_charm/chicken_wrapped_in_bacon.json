@@ -1,8 +1,9 @@
 {
   "decay_modifier": 1.57,
-  "hunger": 2.4,
-  "protein": 2.0,
-  "grain": 2.0,
+  "hunger": 6,
+  "saturation": 4,
+  "protein": 2,
+  "grain": 1.0,
   "dairy": 0.5,
   "ingredient": {
     "item": "farm_and_charm:chicken_wrapped_in_bacon"

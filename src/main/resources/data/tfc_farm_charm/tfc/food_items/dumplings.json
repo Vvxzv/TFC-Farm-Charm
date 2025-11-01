@@ -1,6 +1,7 @@
 {
   "decay_modifier": 1.57,
   "hunger": 4,
+  "saturation": 2,
   "vegetables": 4.5,
   "ingredient": {
     "item": "tfc_farm_charm:dumplings"

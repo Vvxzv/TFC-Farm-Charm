@@ -1,6 +1,7 @@
 {
   "decay_modifier": 0.88,
   "hunger": 3,
+  "saturation": 2,
   "grain": 1.7,
   "ingredient": {
     "item": "tfc_farm_charm:baguette"

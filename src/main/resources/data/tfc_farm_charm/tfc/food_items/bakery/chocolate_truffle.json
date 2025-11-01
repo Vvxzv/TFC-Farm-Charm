@@ -1,6 +1,7 @@
 {
   "decay_modifier": 2.75,
   "hunger": 2,
+  "saturation":1,
   "dairy": 1.5,
   "ingredient": {
     "item": "bakery:chocolate_truffle"

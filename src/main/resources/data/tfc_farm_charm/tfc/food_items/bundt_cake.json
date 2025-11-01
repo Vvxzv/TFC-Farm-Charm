@@ -1,6 +1,7 @@
 {
   "decay_modifier": 1.69,
-  "hunger": 8.8,
+  "hunger": 8,
+  "saturation": 4,
   "grain": 6.0,
   "ingredient": {
     "item": "tfc_farm_charm:bundt_cake"

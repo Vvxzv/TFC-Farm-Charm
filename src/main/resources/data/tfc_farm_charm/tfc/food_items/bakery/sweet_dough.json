@@ -1,7 +1,7 @@
 {
   "decay_modifier": 0.73,
-  "hunger": 0.4,
-  "grain": 0.5,
+  "hunger": 1,
+  "grain": 0.4,
   "ingredient": {
     "item": "bakery:sweet_dough"
   }

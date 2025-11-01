@@ -1,26 +1,7 @@
 {
-	"type": "farm_and_charm:stove",
-	"ingredients": [
+	"conditions": [
 		{
-			"type": "tfc:not_rotten",
-			"ingredient": {
-				"item": "farm_and_charm:dough"
-			}
-		},
-		{
-			"item": "farm_and_charm:yeast"
-		},
-		{
-			"type": "tfc:not_rotten",
-			"ingredient": {
-				"tag": "farm_and_charm:butter"
-			}
+			"type": "forge:false"
 		}
-	],
-	"result": {
-		"item": "brewery:pretzel",
-		"count": 1
-	},
-	"experience": 0.5,
-	"requiresLearning": false
+	]
 }

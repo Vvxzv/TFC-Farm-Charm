@@ -1,5 +1,6 @@
 {
   "decay_modifier": 1.47,
+  "hunger": 2,
   "grain": 1.0,
   "ingredient": {
     "item": "farm_and_charm:corn"

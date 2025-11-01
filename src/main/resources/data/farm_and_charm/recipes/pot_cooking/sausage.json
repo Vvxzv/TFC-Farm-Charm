@@ -18,6 +18,12 @@
 			"ingredient": {
 				"item": "tfc:food/cabbage"
 			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "farm_and_charm:butter"
+			}
 		}
 	],
 	"container": {

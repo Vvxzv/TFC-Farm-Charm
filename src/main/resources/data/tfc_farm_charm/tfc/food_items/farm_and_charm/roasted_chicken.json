@@ -1,9 +1,10 @@
 {
   "decay_modifier": 2.2,
-  "hunger": 2.6,
-  "protein": 0.8,
+  "hunger": 4,
+  "saturation": 2,
   "grain": 0.8,
   "vegetables": 0.8,
+  "protein": 0.8,
   "ingredient": {
     "item": "farm_and_charm:roasted_chicken"
   }

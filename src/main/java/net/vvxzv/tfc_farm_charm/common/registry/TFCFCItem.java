@@ -35,7 +35,6 @@ public class TFCFCItem {
     public static final RegistryObject<Item> UNFINISHED_CROISSANT;
     public static final RegistryObject<Item> UNFINISHED_CRUSTY_BREAD;
     public static final RegistryObject<Item> UNFINISHED_FARMERS_BREAD;
-    public static final RegistryObject<Item> UNFINISHED_GINGERBREAD;
     public static final RegistryObject<Item> UNFINISHED_GLOWBERRY_TART;
     public static final RegistryObject<Item> UNFINISHED_GRANDMOTHERS_STRAWBERRY_CAKE;
     public static final RegistryObject<Item> UNFINISHED_LINZER_TART;
@@ -94,7 +93,6 @@ public class TFCFCItem {
         UNFINISHED_CROISSANT = registerFoodItem("unfinished_croissant");
         UNFINISHED_CRUSTY_BREAD = registerFoodItem("unfinished_crusty_bread");
         UNFINISHED_FARMERS_BREAD = registerFoodItem("unfinished_farmers_bread");
-        UNFINISHED_GINGERBREAD = registerFoodItem("unfinished_gingerbread");
         UNFINISHED_GLOWBERRY_TART = registerFoodItem("unfinished_glowberry_tart");
         UNFINISHED_GRANDMOTHERS_STRAWBERRY_CAKE = registerFoodItem("unfinished_grandmothers_strawberry_cake");
         UNFINISHED_LINZER_TART = registerFoodItem("unfinished_linzer_tart");

@@ -1,6 +1,7 @@
 {
   "decay_modifier": 1.38,
   "hunger": 4,
+  "saturation": 3,
   "grain": 1.5,
   "protein": 0.2,
   "dairy": 1.0,

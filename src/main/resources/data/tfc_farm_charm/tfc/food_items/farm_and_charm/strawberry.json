@@ -1,5 +1,6 @@
 {
   "decay_modifier": 2.44,
+  "hunger": 2,
   "fruit": 1.0,
   "ingredient": {
     "item": "farm_and_charm:strawberry"

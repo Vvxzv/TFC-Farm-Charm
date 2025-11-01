@@ -1,6 +1,7 @@
 {
   "decay_modifier": 1.47,
-  "hunger": 1.6,
+  "hunger": 3,
+  "saturation": 1,
   "vegetables": 3.5,
   "ingredient": {
     "item": "farm_and_charm:simple_tomato_soup"

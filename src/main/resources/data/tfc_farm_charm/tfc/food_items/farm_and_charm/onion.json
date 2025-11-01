@@ -1,5 +1,6 @@
 {
   "decay_modifier": 1.38,
+  "hunger": 2,
   "vegetables": 1.0,
   "ingredient": {
     "item": "farm_and_charm:onion"

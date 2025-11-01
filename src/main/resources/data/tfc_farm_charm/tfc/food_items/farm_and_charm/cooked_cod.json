@@ -1,9 +1,10 @@
 {
-  "decay_modifier": 1.83,
-  "hunger": 2.4,
-  "protein": 2.5,
-  "vegetables": 1.2,
-  "ingredient": {
-    "item": "farm_and_charm:cooked_cod"
-  }
+	"ingredient": {
+		"item": "farm_and_charm:cooked_cod"
+	},
+	"decay_modifier": 1.8,
+	"hunger": 4,
+	"saturation": 2,
+	"vegetables": 2,
+	"protein": 1.5
 }

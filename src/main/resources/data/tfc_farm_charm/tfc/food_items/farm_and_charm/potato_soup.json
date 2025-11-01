@@ -1,7 +1,8 @@
 {
   "decay_modifier": 1.69,
-  "hunger": 1.6,
-  "vegetables": 3.5,
+  "hunger": 3,
+  "saturation": 1,
+  "vegetables": 2.5,
   "ingredient": {
     "item": "farm_and_charm:potato_soup"
   }

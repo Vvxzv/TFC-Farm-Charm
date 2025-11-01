@@ -1,8 +1,9 @@
 {
   "decay_modifier": 1.83,
-  "hunger": 2.6,
+  "hunger": 10,
+  "saturation": 8,
   "protein": 2.5,
-  "vegetables": 7.0,
+  "vegetables": 6.5,
   "ingredient": {
     "item": "farm_and_charm:goulash"
   }
