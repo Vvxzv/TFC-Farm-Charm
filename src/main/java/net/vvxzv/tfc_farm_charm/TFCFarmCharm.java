@@ -17,6 +17,7 @@ import org.slf4j.Logger;
 public class TFCFarmCharm {
     public static final String MODID = "tfc_farm_charm";
     private static final Logger LOGGER = LogUtils.getLogger();
+    @SuppressWarnings("removal")
     public TFCFarmCharm() {
         LOGGER.info("Hello! TFC Farm Charm");
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();

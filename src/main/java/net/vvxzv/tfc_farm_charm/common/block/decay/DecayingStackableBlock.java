@@ -27,7 +27,6 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -37,52 +36,60 @@ import java.util.function.Supplier;
 
 public class DecayingStackableBlock extends DecayingBlock {
     public static final IntegerProperty STACK_PROPERTY = IntegerProperty.create("stack", 1, 8);
-    public static final DirectionProperty FACING;
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+    private static final VoxelShape SHAPE = Block.box(2.0F, 0.0F, 2.0F, 14.0F, 10.0F, 14.0F);
     private final int maxStack;
-    private static final VoxelShape SHAPE;
+
     public DecayingStackableBlock(ExtendedProperties properties, int maxStack, Supplier<? extends Block> rotted) {
         super(properties, rotted);
         this.maxStack = maxStack;
-        this.registerDefaultState((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(STACK_PROPERTY, 1)).setValue(FACING, Direction.NORTH));
+        this.registerDefaultState(this.stateDefinition.any().setValue(STACK_PROPERTY, 1).setValue(FACING, Direction.NORTH));
     }
+
+    @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return SHAPE;
     }
 
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(new Property[]{STACK_PROPERTY, FACING});
+        builder.add(STACK_PROPERTY, FACING);
     }
 
+    @Override
     public @NotNull BlockState rotate(BlockState state, Rotation rot) {
-        return (BlockState)state.setValue(FACING, rot.rotate((Direction)state.getValue(FACING)));
+        return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
     }
 
+    @Override
     public @NotNull BlockState getStateForPlacement(BlockPlaceContext context) {
-        return (BlockState)this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
+    @Override
     public @NotNull InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         BlockEntity entity = world.getBlockEntity(pos);
         ItemStack stack = player.getItemInHand(hand);
         if(entity instanceof DecayingBlockEntity decaying) {
             if (stack.getItem() == this.asItem()) {
-                IFood handFood = (IFood) Helpers.getCapability(stack, FoodCapability.CAPABILITY);
-                IFood blockFood = (IFood) Helpers.getCapability(decaying.getStack(), FoodCapability.CAPABILITY);
-                if ((Integer) state.getValue(STACK_PROPERTY) < this.maxStack && !handFood.isRotten() && !decaying.isRotten()) {
+                IFood handFood = Helpers.getCapability(stack, FoodCapability.CAPABILITY);
+                IFood blockFood = Helpers.getCapability(decaying.getStack(), FoodCapability.CAPABILITY);
+                if (state.getValue(STACK_PROPERTY) < this.maxStack && !handFood.isRotten() && !decaying.isRotten()) {
                     ItemStack setItem = handFood.getCreationDate() < blockFood.getCreationDate()? stack: decaying.getStack();
                     decaying.setStack(setItem);
-                    world.setBlock(pos, (BlockState) state.setValue(STACK_PROPERTY, (Integer) state.getValue(STACK_PROPERTY) + 1), 3);
+                    world.setBlock(pos, state.setValue(STACK_PROPERTY, state.getValue(STACK_PROPERTY) + 1), 3);
                     if (!player.isCreative()) {
                         stack.shrink(1);
                     }
                     return InteractionResult.SUCCESS;
                 }
             } else if (stack.isEmpty()) {
-                if ((Integer) state.getValue(STACK_PROPERTY) > 1) {
-                    world.setBlock(pos, (BlockState) state.setValue(STACK_PROPERTY, (Integer) state.getValue(STACK_PROPERTY) - 1), 3);
+                if (state.getValue(STACK_PROPERTY) > 1) {
+                    world.setBlock(pos, state.setValue(STACK_PROPERTY, state.getValue(STACK_PROPERTY) - 1), 3);
                     ItemStack dropItem = decaying.getStack().copy();
                     Helpers.spawnItem(world, pos, dropItem);
-                } else if ((Integer) state.getValue(STACK_PROPERTY) == 1) {
+                } 
+                else if (state.getValue(STACK_PROPERTY) == 1) {
                     world.destroyBlock(pos, false);
                 }
 
@@ -93,12 +100,14 @@ public class DecayingStackableBlock extends DecayingBlock {
         return super.use(state, world, pos, player, hand, hit);
     }
 
+    @Override
     public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
         VoxelShape shape = world.getBlockState(pos.below()).getShape(world, pos.below());
         Direction direction = Direction.UP;
         return Block.isFaceFull(shape, direction);
     }
 
+    @Override
     public void tick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
         if (!state.canSurvive(world, pos)) {
             world.destroyBlock(pos, true);
@@ -106,6 +115,7 @@ public class DecayingStackableBlock extends DecayingBlock {
 
     }
 
+    @Override
     public @NotNull BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor world, BlockPos pos, BlockPos neighborPos) {
         if (!state.canSurvive(world, pos)) {
             world.scheduleTick(pos, this, 1);
@@ -114,16 +124,12 @@ public class DecayingStackableBlock extends DecayingBlock {
         return super.updateShape(state, direction, neighborState, world, pos, neighborPos);
     }
 
-    static {
-        FACING = BlockStateProperties.HORIZONTAL_FACING;
-        SHAPE = Block.box((double)2.0F, (double)0.0F, (double)2.0F, (double)14.0F, (double)10.0F, (double)14.0F);
-    }
-
+    @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
         BlockEntity entity = level.getBlockEntity(pos);
         if (entity instanceof DecayingBlockEntity decaying) {
             if (!Helpers.isBlock(state, newState.getBlock())) {
-                int count = (Integer)state.getValue(STACK_PROPERTY);
+                int count = state.getValue(STACK_PROPERTY);
                 ItemStack stack = decaying.getStack();
                 stack.setCount(count);
                 Helpers.spawnItem(level, pos, stack);

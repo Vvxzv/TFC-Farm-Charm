@@ -15,8 +15,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -30,43 +28,47 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3d;
 
 import java.util.function.Supplier;
 
 public class DecayingStackableEatableBlock extends DecayingBlock {
     public static final IntegerProperty STACK_PROPERTY = IntegerProperty.create("stack", 1, 8);
-    public static final DirectionProperty FACING;
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+    private static final VoxelShape SHAPE = Block.box(2.0F, 0.0F, 2.0F, 14.0F, 10.0F, 14.0F);
     private final int maxStack;
-    private static final VoxelShape SHAPE;
+
     public DecayingStackableEatableBlock(ExtendedProperties properties, int maxStack, Supplier<? extends Block> rotted) {
         super(properties, rotted);
         this.maxStack = maxStack;
-        this.registerDefaultState((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(STACK_PROPERTY, 1)).setValue(FACING, Direction.NORTH));
+        this.registerDefaultState(this.stateDefinition.any().setValue(STACK_PROPERTY, 1).setValue(FACING, Direction.NORTH));
     }
 
+    @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return SHAPE;
     }
 
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(new Property[]{STACK_PROPERTY, FACING});
+        builder.add(STACK_PROPERTY, FACING);
     }
 
+    @Override
     public @NotNull BlockState rotate(BlockState state, Rotation rot) {
-        return (BlockState)state.setValue(FACING, rot.rotate((Direction)state.getValue(FACING)));
+        return state.setValue(FACING, rot.rotate((Direction)state.getValue(FACING)));
     }
 
+    @Override
     public @NotNull BlockState getStateForPlacement(BlockPlaceContext context) {
-        return (BlockState)this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
+    @Override
     public @NotNull InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack stack = player.getItemInHand(hand);
         BlockEntity entity = world.getBlockEntity(pos);
@@ -75,14 +77,14 @@ public class DecayingStackableEatableBlock extends DecayingBlock {
             ItemStack eatItem = foodItem.copy();
             if (player.isShiftKeyDown() && stack.isEmpty() && !decaying.isRotten()) {
                 if (!world.isClientSide) {
-                    if ((Integer) state.getValue(STACK_PROPERTY) > 1) {
-                        world.setBlock(pos, (BlockState) state.setValue(STACK_PROPERTY, (Integer) state.getValue(STACK_PROPERTY) - 1), 3);
+                    if (state.getValue(STACK_PROPERTY) > 1) {
+                        world.setBlock(pos, state.setValue(STACK_PROPERTY, state.getValue(STACK_PROPERTY) - 1), 3);
                     } else {
                         decaying.setStack(ItemStack.EMPTY);
                         world.removeBlock(pos, false);
                     }
                     player.eat(world, eatItem);
-                    world.playSound((Player) null, pos, SoundEvents.GENERIC_EAT, SoundSource.PLAYERS, 1.0F, 1.0F);
+                    world.playSound(null, pos, SoundEvents.GENERIC_EAT, SoundSource.PLAYERS, 1.0F, 1.0F);
                 }
 
                 if (world.isClientSide) {
@@ -98,12 +100,12 @@ public class DecayingStackableEatableBlock extends DecayingBlock {
                 return InteractionResult.sidedSuccess(world.isClientSide);
             } else {
                 if (stack.getItem() == this.asItem()) {
-                    IFood handFood = (IFood) Helpers.getCapability(stack, FoodCapability.CAPABILITY);
-                    IFood blockFood = (IFood) Helpers.getCapability(decaying.getStack(), FoodCapability.CAPABILITY);
-                    if ((Integer)state.getValue(STACK_PROPERTY) < this.maxStack && !handFood.isRotten() && !decaying.isRotten()) {
+                    IFood handFood = Helpers.getCapability(stack, FoodCapability.CAPABILITY);
+                    IFood blockFood = Helpers.getCapability(decaying.getStack(), FoodCapability.CAPABILITY);
+                    if (state.getValue(STACK_PROPERTY) < this.maxStack && !handFood.isRotten() && !decaying.isRotten()) {
                         ItemStack setItem = handFood.getCreationDate() < blockFood.getCreationDate()? stack: decaying.getStack();
                         decaying.setStack(setItem);
-                        world.setBlock(pos, (BlockState)state.setValue(STACK_PROPERTY, (Integer)state.getValue(STACK_PROPERTY) + 1), 3);
+                        world.setBlock(pos, state.setValue(STACK_PROPERTY, state.getValue(STACK_PROPERTY) + 1), 3);
                         if (!player.isCreative()) {
                             stack.shrink(1);
                         }
@@ -120,11 +122,11 @@ public class DecayingStackableEatableBlock extends DecayingBlock {
                         return InteractionResult.SUCCESS;
                     }
                 } else if (stack.isEmpty()) {
-                    if ((Integer)state.getValue(STACK_PROPERTY) > 1) {
-                        world.setBlock(pos, (BlockState)state.setValue(STACK_PROPERTY, (Integer)state.getValue(STACK_PROPERTY) - 1), 3);
+                    if (state.getValue(STACK_PROPERTY) > 1) {
+                        world.setBlock(pos, state.setValue(STACK_PROPERTY, state.getValue(STACK_PROPERTY) - 1), 3);
                         ItemStack dropItem = decaying.getStack().copy();
                         Helpers.spawnItem(world, pos, dropItem);
-                    } else if ((Integer)state.getValue(STACK_PROPERTY) == 1) {
+                    } else if (state.getValue(STACK_PROPERTY) == 1) {
                         world.destroyBlock(pos, false);
                     }
                     return InteractionResult.SUCCESS;
@@ -134,16 +136,12 @@ public class DecayingStackableEatableBlock extends DecayingBlock {
         return super.use(state, world, pos, player, hand, hit);
     }
 
-    static {
-        FACING = BlockStateProperties.HORIZONTAL_FACING;
-        SHAPE = Block.box((double)2.0F, (double)0.0F, (double)2.0F, (double)14.0F, (double)10.0F, (double)14.0F);
-    }
-
+    @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
         BlockEntity entity = level.getBlockEntity(pos);
         if (entity instanceof DecayingBlockEntity decaying) {
             if (!Helpers.isBlock(state, newState.getBlock())) {
-                int count = (Integer)state.getValue(STACK_PROPERTY);
+                int count = state.getValue(STACK_PROPERTY);
                 ItemStack stack = decaying.getStack();
                 stack.setCount(count);
                 Helpers.spawnItem(level, pos, stack);

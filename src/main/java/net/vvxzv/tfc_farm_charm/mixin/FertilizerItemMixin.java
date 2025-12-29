@@ -51,7 +51,8 @@ public class FertilizerItemMixin extends BoneMealItem {
             Player player = context.getPlayer();
             if (player == null) {
                 return InteractionResult.PASS;
-            } else {
+            }
+            else {
                 ItemStack stack = context.getItemInHand();
                 boolean applied = false;
                 if (!world.isClientSide && world instanceof ServerLevel) {
@@ -85,9 +86,9 @@ public class FertilizerItemMixin extends BoneMealItem {
                         double x = (double)pos.getX() + (double)0.5F + offsetX;
                         double y = (double)pos.getY() + (double)1.0F + offsetY;
                         double z = (double)pos.getZ() + (double)0.5F + offsetZ;
-                        world.addParticle(ParticleTypes.HAPPY_VILLAGER, x, y, z, (double)0.0F, 0.1, (double)0.0F);
-                        ItemParticleOption sowingParticle = new ItemParticleOption(ParticleTypes.ITEM, new ItemStack((ItemLike)ObjectRegistry.FERTILIZER.get()));
-                        world.addParticle(sowingParticle, x, y, z, (double)0.0F, 0.1, (double)0.0F);
+                        world.addParticle(ParticleTypes.HAPPY_VILLAGER, x, y, z, 0.0F, 0.1, 0.0F);
+                        ItemParticleOption sowingParticle = new ItemParticleOption(ParticleTypes.ITEM, new ItemStack(ObjectRegistry.FERTILIZER.get()));
+                        world.addParticle(sowingParticle, x, y, z, 0.0F, 0.1F, 0.0F);
                     }
                 }
 

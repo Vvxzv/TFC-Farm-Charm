@@ -212,7 +212,7 @@ dependencies {
     implementation fg.deobf("curse.maven:lets-do-bakery-farm-charm-compat-1038130:6847992")
 
     // jech
-    runtimeOnly fg.deobf("curse.maven:just-enough-characters-250702:6680042")
+    //implementation fg.deobf("curse.maven:just-enough-characters-250702:6680042")
 
 }
 

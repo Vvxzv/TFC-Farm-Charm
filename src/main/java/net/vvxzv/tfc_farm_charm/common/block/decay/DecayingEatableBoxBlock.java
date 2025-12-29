@@ -21,7 +21,6 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.BooleanOp;
@@ -40,25 +39,25 @@ public class DecayingEatableBoxBlock extends DecayingFacingBlock{
     public static final IntegerProperty CUTS = IntegerProperty.create("cuts", 0, 5);
     private static final Supplier<VoxelShape> voxelShapeSupplier = () -> {
         VoxelShape shape = Shapes.empty();
-        shape = Shapes.joinUnoptimized(shape, Shapes.box((double)0.1875F, (double)0.0F, (double)0.25F, (double)0.8125F, (double)0.125F, 0.74375), BooleanOp.OR);
-        shape = Shapes.joinUnoptimized(shape, Shapes.box((double)0.75F, (double)0.125F, (double)0.25F, (double)0.8125F, (double)0.1875F, 0.74375), BooleanOp.OR);
-        shape = Shapes.joinUnoptimized(shape, Shapes.box((double)0.1875F, (double)0.125F, (double)0.25F, (double)0.25F, (double)0.1875F, 0.74375), BooleanOp.OR);
-        shape = Shapes.joinUnoptimized(shape, Shapes.box((double)0.25F, (double)0.125F, (double)0.25F, (double)0.75F, (double)0.1875F, 0.30625), BooleanOp.OR);
-        shape = Shapes.joinUnoptimized(shape, Shapes.box((double)0.25F, (double)0.125F, 0.68125, (double)0.75F, (double)0.1875F, 0.74375), BooleanOp.OR);
+        shape = Shapes.joinUnoptimized(shape, Shapes.box(0.1875F, 0.0F, 0.25F, 0.8125F, 0.125F, 0.74375), BooleanOp.OR);
+        shape = Shapes.joinUnoptimized(shape, Shapes.box(0.75F, 0.125F, 0.25F, 0.8125F, 0.1875F, 0.74375), BooleanOp.OR);
+        shape = Shapes.joinUnoptimized(shape, Shapes.box(0.1875F, 0.125F, 0.25F, 0.25F, 0.1875F, 0.74375), BooleanOp.OR);
+        shape = Shapes.joinUnoptimized(shape, Shapes.box(0.25F, 0.125F, 0.25F, 0.75F, 0.1875F, 0.30625), BooleanOp.OR);
+        shape = Shapes.joinUnoptimized(shape, Shapes.box(0.25F, 0.125F, 0.68125, 0.75F, 0.1875F, 0.74375), BooleanOp.OR);
         return shape;
     };
-
     public static final Map<Direction, VoxelShape> SHAPE = (Map)Util.make(new HashMap(), (map) -> {
         for(Direction direction : Direction.Plane.HORIZONTAL.stream().toList()) {
-            map.put(direction, GeneralUtil.rotateShape(Direction.NORTH, direction, (VoxelShape)voxelShapeSupplier.get()));
+            map.put(direction, GeneralUtil.rotateShape(Direction.NORTH, direction, voxelShapeSupplier.get()));
         }
     });
 
     public DecayingEatableBoxBlock(ExtendedProperties properties, Supplier<? extends Block> rotted) {
         super(properties, rotted);
-        this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(CUTS, 0));
+        this.registerDefaultState(this.stateDefinition.any().setValue(CUTS, 0));
     }
 
+    @Override
     public @NotNull InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack itemStack = player.getItemInHand(hand);
         if (world.isClientSide) {
@@ -75,13 +74,13 @@ public class DecayingEatableBoxBlock extends DecayingFacingBlock{
     }
 
     private InteractionResult tryEat(Level world, BlockPos pos, BlockState state, Player player) {
-        int cuts = (Integer)state.getValue(CUTS);
-        world.playSound((Player)null, pos, SoundEvents.FOX_EAT, SoundSource.PLAYERS, 0.5F, world.getRandom().nextFloat() * 0.1F + 0.9F);
+        int cuts = state.getValue(CUTS);
+        world.playSound(null, pos, SoundEvents.FOX_EAT, SoundSource.PLAYERS, 0.5F, world.getRandom().nextFloat() * 0.1F + 0.9F);
         ItemStack chocolate = new ItemStack(ObjectRegistry.CHOCOLATE_TRUFFLE.get());
         player.eat(world, chocolate);
         world.gameEvent(player, GameEvent.EAT, pos);
         if (cuts < 5) {
-            world.setBlock(pos, (BlockState)state.setValue(CUTS, cuts + 1), 3);
+            world.setBlock(pos, state.setValue(CUTS, cuts + 1), 3);
         } else {
             world.destroyBlock(pos, false);
             ItemStack bowlStack = new ItemStack(Items.PAPER);
@@ -92,23 +91,28 @@ public class DecayingEatableBoxBlock extends DecayingFacingBlock{
         return InteractionResult.SUCCESS;
     }
 
+    @Override
     public @NotNull BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor world, BlockPos pos, BlockPos neighborPos) {
         return direction == Direction.DOWN && !state.canSurvive(world, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, neighborState, world, pos, neighborPos);
     }
 
+    @Override
     public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
         return world.getBlockState(pos.below()).isSolid();
     }
 
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(new Property[]{CUTS});
+        builder.add(CUTS);
     }
 
+    @Override
     public @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return (VoxelShape)SHAPE.get(state.getValue(FACING));
+        return SHAPE.get(state.getValue(FACING));
     }
 
+    @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
         BlockEntity entity = level.getBlockEntity(pos);
         if (entity instanceof DecayingBlockEntity decaying) {

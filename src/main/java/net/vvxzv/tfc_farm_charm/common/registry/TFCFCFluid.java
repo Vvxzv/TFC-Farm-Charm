@@ -14,6 +14,7 @@ public class TFCFCFluid {
     public static BeerInstance BEER_BARLEY;
     public static BeerInstance BEER_HALEY;
 
+    @SuppressWarnings("removal")
     public static void generateFeatures(){
         BEER_BARLEY = new BeerInstance(TFCFarmCharm.MODID, "beer_barley", FluidType.Properties.create().density(1000), new ClientFluidTypeExtensions(new ResourceLocation(TFCFarmCharm.MODID, "block/fluid/beer_barley"), new ResourceLocation(TFCFarmCharm.MODID, "block/fluid/beer_barley")));
         BEER_HALEY = new BeerInstance(TFCFarmCharm.MODID, "beer_haley", FluidType.Properties.create().density(1000), new ClientFluidTypeExtensions(new ResourceLocation(TFCFarmCharm.MODID, "block/fluid/beer_haley"), new ResourceLocation(TFCFarmCharm.MODID, "block/fluid/beer_haley")));

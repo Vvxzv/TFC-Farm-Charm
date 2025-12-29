@@ -52,8 +52,8 @@ public class Feed {
             }
             else {
                 Level world = cat.getCommandSenderWorld();
-                world.addParticle(ParticleTypes.HEART, cat.getX(), cat.getY() + (double)1.0F, cat.getZ(), (double)0.0F, (double)0.0F, (double)0.0F);
-                world.playSound((Player)null, cat.getX(), cat.getY(), cat.getZ(), SoundEvents.FOX_EAT, cat.getSoundSource(), 1.0F, 1.0F);
+                world.addParticle(ParticleTypes.HEART, cat.getX(), cat.getY() + 1.0F, cat.getZ(), 0.0F, 0.0F, 0.0F);
+                world.playSound(null, cat.getX(), cat.getY(), cat.getZ(), SoundEvents.FOX_EAT, cat.getSoundSource(), 1.0F, 1.0F);
             }
             event.setCancellationResult(InteractionResult.SUCCESS);
             event.setCanceled(true);
@@ -65,21 +65,21 @@ public class Feed {
                     dog.setOwnerUUID(player.getUUID());
                 }
                 dog.heal(10.0F);
-                dog.addEffect(new MobEffectInstance((MobEffect) MobEffectRegistry.DOG_FOOD.get(), 3600, 0));
+                dog.addEffect(new MobEffectInstance(MobEffectRegistry.DOG_FOOD.get(), 3600, 0));
                 if (!player.getAbilities().instabuild) {
                     stack.shrink(1);
                 }
             } else {
                 Level world = dog.getCommandSenderWorld();
-                world.addParticle(ParticleTypes.HEART, dog.getX(), dog.getY() + (double)1.0F, dog.getZ(), (double)0.0F, (double)0.0F, (double)0.0F);
-                world.playSound((Player)null, dog.getX(), dog.getY(), dog.getZ(), SoundEvents.FOX_EAT, dog.getSoundSource(), 1.0F, 1.0F);
+                world.addParticle(ParticleTypes.HEART, dog.getX(), dog.getY() + 1.0F, dog.getZ(), 0.0F, 0.0F, 0.0F);
+                world.playSound(null, dog.getX(), dog.getY(), dog.getZ(), SoundEvents.FOX_EAT, dog.getSoundSource(), 1.0F, 1.0F);
             }
             event.setCancellationResult(InteractionResult.SUCCESS);
             event.setCanceled(true);
         }
         else if(stack.getItem() instanceof HorseFodderItem && target instanceof TFCHorse horse){
             if (!horse.level().isClientSide) {
-                horse.addEffect(new MobEffectInstance((MobEffect) MobEffectRegistry.HORSE_FODDER.get(), 6000, 0));
+                horse.addEffect(new MobEffectInstance(MobEffectRegistry.HORSE_FODDER.get(), 6000, 0));
                 horse.heal(10.0F);
                 if (!player.getAbilities().instabuild) {
                     stack.shrink(1);
@@ -87,16 +87,16 @@ public class Feed {
             }
             else {
                 Level world = horse.getCommandSenderWorld();
-                world.addParticle(ParticleTypes.HEART, horse.getX(), horse.getY() + (double)1.0F, horse.getZ(), (double)0.0F, (double)1.0F, (double)1.0F);
+                world.addParticle(ParticleTypes.HEART, horse.getX(), horse.getY() + 1.0F, horse.getZ(), 0.0F, 1.0F, 1.0F);
                 world.playSound((Player)null, horse.getX(), horse.getY(), horse.getZ(), SoundEvents.HORSE_EAT, horse.getSoundSource(), 1.0F, 1.0F);
             }
             event.setCancellationResult(InteractionResult.SUCCESS);
             event.setCanceled(true);
         }
         else if(stack.getItem() instanceof ChickenFeedItem && target instanceof OviparousAnimal animal){
-            animal.addEffect(new MobEffectInstance((MobEffect) MobEffectRegistry.CLUCK.get(), 1200));
-            player.level().playSound((Player)null, animal.getX(), animal.getY(), animal.getZ(), SoundEvents.CHICKEN_AMBIENT, SoundSource.NEUTRAL, 1.0F, 1.0F);
-            animal.level().addParticle(ParticleTypes.HEART, animal.getX(), animal.getY() + (double)0.5F, animal.getZ(), (double)0.0F, (double)0.0F, (double)0.0F);
+            animal.addEffect(new MobEffectInstance(MobEffectRegistry.CLUCK.get(), 1200));
+            player.level().playSound(null, animal.getX(), animal.getY(), animal.getZ(), SoundEvents.CHICKEN_AMBIENT, SoundSource.NEUTRAL, 1.0F, 1.0F);
+            animal.level().addParticle(ParticleTypes.HEART, animal.getX(), animal.getY() + 0.5F, animal.getZ(), 0.0F, 0.0F, 0.0F);
             if (!player.getAbilities().instabuild) {
                 stack.shrink(1);
             }

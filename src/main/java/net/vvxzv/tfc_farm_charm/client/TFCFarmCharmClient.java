@@ -10,10 +10,10 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.vvxzv.tfc_farm_charm.TFCFarmCharm;
 import net.vvxzv.tfc_farm_charm.common.registry.TFCFCBlock;
 
-@Mod.EventBusSubscriber(modid = TFCFarmCharm.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = TFCFarmCharm.MODID, bus = Mod.EventBusSubscriber.Bus.MOD , value = Dist.CLIENT )
 public class TFCFarmCharmClient {
     @SubscribeEvent
-    public static void onClientSetup(FMLClientSetupEvent event){
+    public static void onClient(FMLClientSetupEvent event){
         RenderTypeRegistry.register(RenderType.cutout(), new Block[]{
                 TFCFCBlock.SWEETBERRY_JAM.get(),
                 TFCFCBlock.CHOCOLATE_JAM.get(),

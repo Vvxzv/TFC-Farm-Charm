@@ -23,6 +23,7 @@ import net.vvxzv.tfc_farm_charm.TFCFarmCharm;
 
 import java.util.function.Consumer;
 
+@SuppressWarnings("removal")
 public abstract class AbstractAnimateFluidInstance {
     public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, TFCFarmCharm.MODID);
     public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, TFCFarmCharm.MODID);

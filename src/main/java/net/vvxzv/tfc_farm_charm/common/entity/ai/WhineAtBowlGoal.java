@@ -6,10 +6,8 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.phys.Vec3;
 import net.satisfy.farm_and_charm.core.block.entity.PetBowlBlockEntity;
@@ -48,7 +46,7 @@ public class WhineAtBowlGoal extends Goal {
     private static final long EVENING_START = 11500L;
     private static final long EVENING_END = 12500L;
     private static final double NAVIGATION_RECALC_THRESHOLD_SQR = (double)0.5F;
-    private static final List<SoundEvent> WHINE_SOUNDS;
+    private static final List<SoundEvent> WHINE_SOUNDS = List.of(SoundEvents.WOLF_WHINE, SoundEvents.WOLF_PANT);
 
     public WhineAtBowlGoal(Dog dog){
         this.dog = dog;
@@ -76,7 +74,7 @@ public class WhineAtBowlGoal extends Goal {
                     BlockPos closest = null;
 
                     for(BlockPos pos : BlockPos.betweenClosed(wolfPos.offset(-10, -2, -10), wolfPos.offset(10, 2, 10))) {
-                        if (this.dog.level().getBlockState(pos).is((Block) ObjectRegistry.PET_BOWL.get())) {
+                        if (this.dog.level().getBlockState(pos).is(ObjectRegistry.PET_BOWL.get())) {
                             BlockEntity be = this.dog.level().getBlockEntity(pos);
                             if (be instanceof PetBowlBlockEntity) {
                                 PetBowlBlockEntity bowl = (PetBowlBlockEntity)be;
@@ -186,18 +184,13 @@ public class WhineAtBowlGoal extends Goal {
 
                         if ((long)this.whineTicks - this.lastWhineSoundTick >= 60L) {
                             this.playWhineSound();
-                            this.lastWhineSoundTick = (long)this.whineTicks;
+                            this.lastWhineSoundTick = this.whineTicks;
                         }
 
                         if (this.whineTicks % 100 == 0) {
-                            Vec3 pos = this.dog.position().add((double)0.0F, (double)0.5F, (double)0.0F);
+                            Vec3 pos = this.dog.position().add(0.0F, 0.5F, 0.0F);
                             server.sendParticles(ParticleTypes.ANGRY_VILLAGER, pos.x, pos.y, pos.z, 6, 0.3, 0.3, 0.3, 0.01);
                         }
-
-                        LivingEntity owner = this.dog.getOwner();
-                        //if (owner != null && (double)this.dog.distanceTo(owner) < (double)4.0F && server.getRandom().nextInt(100) < 10) {
-                            //this.dog.playSound(SoundEvents.WOLF_WHINE, 0.6F, 0.9F + server.getRandom().nextFloat() * 0.2F);
-                        //}
 
                         if (++this.whineTicks >= 300) {
                             if (this.fadeOutTicks < 30) {
@@ -209,8 +202,7 @@ public class WhineAtBowlGoal extends Goal {
                             if (currentBowl instanceof PetBowlBlockEntity) {
                                 PetBowlBlockEntity finalBowl = (PetBowlBlockEntity)currentBowl;
                                 if (finalBowl.isEmpty()) {
-                                    //this.dog.playSound(SoundEvents.WOLF_GROWL, 0.4F, 0.4F);
-                                    Vec3 pos = this.dog.position().add((double)0.0F, (double)0.5F, (double)0.0F);
+                                    Vec3 pos = this.dog.position().add(0.0F, 0.5F, 0.0F);
                                     server.sendParticles(ParticleTypes.ANGRY_VILLAGER, pos.x, pos.y, pos.z, 15, 0.3, 0.3, 0.3, 0.01);
                                 }
                             }
@@ -244,7 +236,7 @@ public class WhineAtBowlGoal extends Goal {
     }
 
     private void playWhineSound() {
-        SoundEvent sound = (SoundEvent)WHINE_SOUNDS.get(this.dog.getRandom().nextInt(WHINE_SOUNDS.size()));
+        SoundEvent sound = WHINE_SOUNDS.get(this.dog.getRandom().nextInt(WHINE_SOUNDS.size()));
         float volume = 0.4F + this.dog.getRandom().nextFloat() * 0.3F;
         float pitch = 0.4F + this.dog.getRandom().nextFloat() * 0.4F;
         this.dog.playSound(sound, volume, pitch);
@@ -284,9 +276,5 @@ public class WhineAtBowlGoal extends Goal {
     private double getSpeed(long timeOfDay) {
         long dayTime = timeOfDay % 24000L;
         return dayTime >= EVENING_START && dayTime <= EVENING_END ? 0.8 : (double)1.0F;
-    }
-
-    static {
-        WHINE_SOUNDS = List.of(SoundEvents.WOLF_WHINE, SoundEvents.WOLF_PANT);
     }
 }

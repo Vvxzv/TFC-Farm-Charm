@@ -46,7 +46,7 @@ public class DogMixin implements BowlAccessor.StayNearBowl{
             if (this.fedRecently && this.stayCenter != null && !isSittingNow) {
                 double dist = this.stayCenter.distSqr(dog.blockPosition());
                 if (dist > (double) 256.0F) {
-                    dog.getNavigation().moveTo((double) this.stayCenter.getX() + (double) 0.5F, (double) this.stayCenter.getY(), (double) this.stayCenter.getZ() + (double) 0.5F, (double) 1.0F);
+                    dog.getNavigation().moveTo((double) this.stayCenter.getX() + (double) 0.5F, this.stayCenter.getY(), (double) this.stayCenter.getZ() + (double) 0.5F, 1.0F);
                 }
             }
         }

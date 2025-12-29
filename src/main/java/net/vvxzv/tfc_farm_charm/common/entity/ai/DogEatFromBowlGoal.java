@@ -46,7 +46,7 @@ public class DogEatFromBowlGoal extends Goal {
 
             for(BlockPos pos : BlockPos.betweenClosed(dogPos.offset(-16, -4, -16), dogPos.offset(16, 4, 16))) {
                 BlockState state = level.getBlockState(pos);
-                if (state.is((Block)ObjectRegistry.PET_BOWL.get()) && state.hasProperty(PetBowlBlock.FOOD_TYPE) && state.getValue(PetBowlBlock.FOOD_TYPE) == GeneralUtil.FoodType.DOG) {
+                if (state.is(ObjectRegistry.PET_BOWL.get()) && state.hasProperty(PetBowlBlock.FOOD_TYPE) && state.getValue(PetBowlBlock.FOOD_TYPE) == GeneralUtil.FoodType.DOG) {
                     BlockEntity be = level.getBlockEntity(pos);
                     if (be instanceof PetBowlBlockEntity bowl) {
                         if (!bowl.isEmpty() && bowl.canBeUsedBy(this.dog)) {
@@ -75,7 +75,7 @@ public class DogEatFromBowlGoal extends Goal {
     }
 
     public void start() {
-        this.dog.getNavigation().moveTo((double)this.targetVec.x(), (double)this.targetVec.y(), (double)this.targetVec.z(), (double)1.0F);
+        this.dog.getNavigation().moveTo(this.targetVec.x(), this.targetVec.y(), this.targetVec.z(), 1.0F);
         this.eatTicks = 0;
     }
 
@@ -112,15 +112,15 @@ public class DogEatFromBowlGoal extends Goal {
                     float distSqr = this.targetVec.distanceSquared((float)this.dog.getX(), (float)this.dog.getY(), (float)this.dog.getZ());
                     if (distSqr <= 4.0F && this.dog.isSitting()) {
                         ++this.eatTicks;
-                        this.dog.getLookControl().setLookAt((double)this.targetVec.x(), (double)this.targetVec.y(), (double)this.targetVec.z());
+                        this.dog.getLookControl().setLookAt(this.targetVec.x(), this.targetVec.y(), this.targetVec.z());
                         if (!level.isClientSide && this.eatTicks <= 40) {
                             ParticleOptions particle = this.getParticleFromFood();
                             if (particle != null) {
-                                ((ServerLevel)level).sendParticles(particle, (double)this.targetVec.x(), (double)(this.targetVec.y() + 0.09375F), (double)this.targetVec.z(), 3, 0.2, 0.2, 0.2, 0.05);
+                                ((ServerLevel)level).sendParticles(particle, this.targetVec.x(), this.targetVec.y() + 0.09375F, this.targetVec.z(), 3, 0.2, 0.2, 0.2, 0.05);
                             }
 
                             if (this.eatTicks % 10 == 0) {
-                                level.playSound((Player)null, this.dog.blockPosition(), SoundEvents.WOLF_GROWL, SoundSource.NEUTRAL, 0.4F, 0.4F);
+                                level.playSound(null, this.dog.blockPosition(), SoundEvents.WOLF_GROWL, SoundSource.NEUTRAL, 0.4F, 0.4F);
                             }
                         }
 
@@ -129,12 +129,12 @@ public class DogEatFromBowlGoal extends Goal {
                             ((BowlAccessor.StayNearBowl)this.dog).farmAndCharm$setStayCenter(this.targetBowl);
                             if (!level.isClientSide) {
                                 ((ServerLevel)level).sendParticles(ParticleTypes.HEART, this.dog.getX(), this.dog.getY() + (double)0.5F, this.dog.getZ(), 3, 0.3, 0.3, 0.3, 0.01);
-                                level.playSound((Player)null, this.dog.blockPosition(), SoundEvents.WOLF_HOWL, this.dog.getSoundSource(), 0.4F, 0.4F);
+                                level.playSound(null, this.dog.blockPosition(), SoundEvents.WOLF_HOWL, this.dog.getSoundSource(), 0.4F, 0.4F);
                                 BlockState old = level.getBlockState(this.targetBowl);
                                 if (old.getBlock() instanceof PetBowlBlock && old.hasProperty(PetBowlBlock.FOOD_TYPE)) {
-                                    level.setBlockAndUpdate(this.targetBowl, (BlockState)old.setValue(PetBowlBlock.FOOD_TYPE, GeneralUtil.FoodType.NONE));
+                                    level.setBlockAndUpdate(this.targetBowl, old.setValue(PetBowlBlock.FOOD_TYPE, GeneralUtil.FoodType.NONE));
                                     this.dog.heal(20.0F);
-                                    this.dog.addEffect(new MobEffectInstance((MobEffect) MobEffectRegistry.DOG_FOOD.get(), 3600, 0));
+                                    this.dog.addEffect(new MobEffectInstance(MobEffectRegistry.DOG_FOOD.get(), 3600, 0));
                                 }
                             }
                         }

@@ -42,7 +42,7 @@ public abstract class PlowCartEntityMixin extends AbstractTowableEntity {
         PlowCartEntity pce = (PlowCartEntity)(Object) this;
         AbstractTowableEntityAccessor accessor = (AbstractTowableEntityAccessor) pce;
         if (!this.isNoGravity()) {
-            this.setDeltaMovement(this.getDeltaMovement().add((double)0.0F, -0.08, (double)0.0F));
+            this.setDeltaMovement(this.getDeltaMovement().add(0.0F, -0.08F, 0.0F));
         }
 
         super.tick();
@@ -51,12 +51,13 @@ public abstract class PlowCartEntityMixin extends AbstractTowableEntity {
             this.pulledTick();
         }
 
-        accessor.leftWheel().tick();
-        accessor.rightWheel().tick();
+        accessor.getLeftWheel().tick();
+        accessor.getRightWheel().tick();
         this.move(MoverType.SELF, this.getDeltaMovement());
         if (this.level().isClientSide()) {
             tfc_farm_charm$handleClientSide();
-        } else {
+        }
+        else {
             tfc_farm_charm$handleServerSide();
         }
     }
@@ -100,7 +101,7 @@ public abstract class PlowCartEntityMixin extends AbstractTowableEntity {
                     double x = (double)pos.getX() + this.level().random.nextDouble();
                     double y = (double)pos.getY() + this.level().random.nextDouble();
                     double z = (double)pos.getZ() + this.level().random.nextDouble();
-                    this.level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, newBlockState), x, y, z, (double)0.0F, (double)0.0F, (double)0.0F);
+                    this.level().addParticle(new BlockParticleOption(ParticleTypes.BLOCK, newBlockState), x, y, z, 0.0F, 0.0F, 0.0F);
                 }
             }
         }
@@ -159,7 +160,7 @@ public abstract class PlowCartEntityMixin extends AbstractTowableEntity {
                     this.level().updateNeighborsAt(cropPos, newCropState.getBlock());
                     if (this.level() instanceof ServerLevel serverLevel) {
 
-                        for(ItemStack drop : Block.getDrops(cropState, serverLevel, cropPos, (BlockEntity)null)) {
+                        for(ItemStack drop : Block.getDrops(cropState, serverLevel, cropPos, null)) {
                             if (!drop.isEmpty()) {
                                 double dropX = (double)cropPos.getX() + (double)0.5F + (this.level().random.nextDouble() - (double)0.5F) * (double)0.5F;
                                 double dropY = (double)cropPos.getY() + (double)1.0F;

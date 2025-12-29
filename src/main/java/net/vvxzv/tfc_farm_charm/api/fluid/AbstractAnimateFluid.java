@@ -35,12 +35,12 @@ public abstract class AbstractAnimateFluid extends FlowingFluid {
 
     @Nonnull
     public Fluid getFlowing() {
-        return (Fluid)this.abstractAnimateFluidInstance.getFlowingFluid().get();
+        return this.abstractAnimateFluidInstance.getFlowingFluid().get();
     }
 
     @Nonnull
     public Fluid getSource() {
-        return (Fluid)this.abstractAnimateFluidInstance.getSourceFluid().get();
+        return this.abstractAnimateFluidInstance.getSourceFluid().get();
     }
 
     public boolean canConvertToSource(FluidState state, Level level, BlockPos pos) {
@@ -70,7 +70,7 @@ public abstract class AbstractAnimateFluid extends FlowingFluid {
 
     @Nonnull
     public Item getBucket() {
-        return (Item)this.abstractAnimateFluidInstance.getBucketFluid().get();
+        return this.abstractAnimateFluidInstance.getBucketFluid().get();
     }
 
     @ParametersAreNonnullByDefault
@@ -88,7 +88,7 @@ public abstract class AbstractAnimateFluid extends FlowingFluid {
 
     @Nonnull
     protected BlockState createLegacyBlock(@Nonnull FluidState state) {
-        return (BlockState)((Block)this.abstractAnimateFluidInstance.getBlockFluid().get()).defaultBlockState().setValue(LiquidBlock.LEVEL, getLegacyLevel(state));
+        return this.abstractAnimateFluidInstance.getBlockFluid().get().defaultBlockState().setValue(LiquidBlock.LEVEL, getLegacyLevel(state));
     }
 
     public boolean isSource(@Nonnull FluidState state) {
@@ -104,7 +104,7 @@ public abstract class AbstractAnimateFluid extends FlowingFluid {
     }
 
     public FluidType getFluidType() {
-        return (FluidType) this.abstractAnimateFluidInstance.getFluidType().get();
+        return this.abstractAnimateFluidInstance.getFluidType().get();
     }
 
     public abstract static class Source<T extends AbstractAnimateFluidInstance> extends AbstractAnimateFluid {
@@ -127,16 +127,16 @@ public abstract class AbstractAnimateFluid extends FlowingFluid {
     public abstract static class Flowing<T extends AbstractAnimateFluidInstance> extends AbstractAnimateFluid {
         public Flowing(T instance) {
             super(instance);
-            this.registerDefaultState((FluidState)((FluidState)this.getStateDefinition().any()).setValue(LEVEL, 7));
+            this.registerDefaultState(this.getStateDefinition().any().setValue(LEVEL, 7));
         }
 
         protected void createFluidStateDefinition(StateDefinition.Builder<Fluid, FluidState> builder) {
             super.createFluidStateDefinition(builder);
-            builder.add(new Property[]{LEVEL});
+            builder.add(LEVEL);
         }
 
         public int getAmount(@Nonnull FluidState state) {
-            return (Integer)state.getValue(LEVEL);
+            return state.getValue(LEVEL);
         }
 
         public boolean isSource(@Nonnull FluidState state) {

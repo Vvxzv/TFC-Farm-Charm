@@ -22,59 +22,61 @@ import java.util.function.Supplier;
 public class DecayingPuddingBlock extends DecayingPieBlock{
     private static final Supplier<VoxelShape> fullShapeSupplier = () -> {
         VoxelShape shape = Shapes.empty();
-        shape = Shapes.or(shape, Shapes.box((double)0.25F, (double)0.0F, (double)0.25F, (double)0.75F, (double)0.5F, (double)0.75F));
-        shape = Shapes.or(shape, Shapes.box((double)0.3125F, (double)0.5F, (double)0.3125F, (double)0.6875F, (double)0.5625F, (double)0.6875F));
+        shape = Shapes.or(shape, Shapes.box(0.25F, 0.0F, 0.25F, 0.75F, 0.5F, 0.75F));
+        shape = Shapes.or(shape, Shapes.box(0.3125F, 0.5F, 0.3125F, 0.6875F, 0.5625F, 0.6875F));
         return shape;
     };
     public static final Map<Direction, VoxelShape> FULL_SHAPE = (Map) Util.make(new HashMap(), (map) -> {
         for(Direction direction : Direction.Plane.HORIZONTAL) {
-            map.put(direction, GeneralUtil.rotateShape(Direction.NORTH, direction, (VoxelShape)fullShapeSupplier.get()));
+            map.put(direction, GeneralUtil.rotateShape(Direction.NORTH, direction, fullShapeSupplier.get()));
         }
-
     });
+
     private static final Supplier<VoxelShape> threeShapeSupplier = () -> {
         VoxelShape shape = Shapes.empty();
-        shape = Shapes.or(shape, Shapes.box((double)0.25F, (double)0.0F, (double)0.5F, (double)0.75F, (double)0.5F, (double)0.75F));
-        shape = Shapes.or(shape, Shapes.box((double)0.3125F, (double)0.5F, (double)0.5F, (double)0.6875F, (double)0.5625F, (double)0.6875F));
-        shape = Shapes.or(shape, Shapes.box((double)0.25F, (double)0.0F, (double)0.25F, (double)0.5F, (double)0.5F, (double)0.5F));
-        shape = Shapes.or(shape, Shapes.box((double)0.3125F, (double)0.5F, (double)0.3125F, (double)0.5F, (double)0.5625F, (double)0.5F));
+        shape = Shapes.or(shape, Shapes.box(0.25F, 0.0F, 0.5F, 0.75F, 0.5F, 0.75F));
+        shape = Shapes.or(shape, Shapes.box(0.3125F, 0.5F, 0.5F, 0.6875F, 0.5625F, 0.6875F));
+        shape = Shapes.or(shape, Shapes.box(0.25F, 0.0F, 0.25F, 0.5F, 0.5F, 0.5F));
+        shape = Shapes.or(shape, Shapes.box(0.3125F, 0.5F, 0.3125F, 0.5F, 0.5625F, 0.5F));
         return shape;
     };
     public static final Map<Direction, VoxelShape> THREE_SHAPE = (Map)Util.make(new HashMap(), (map) -> {
         for(Direction direction : Direction.Plane.HORIZONTAL) {
-            map.put(direction, GeneralUtil.rotateShape(Direction.NORTH, direction, (VoxelShape)threeShapeSupplier.get()));
+            map.put(direction, GeneralUtil.rotateShape(Direction.NORTH, direction, threeShapeSupplier.get()));
         }
-
     });
+
     private static final Supplier<VoxelShape> halfShapeSupplier = () -> {
         VoxelShape shape = Shapes.empty();
-        shape = Shapes.or(shape, Shapes.box((double)0.25F, (double)0.0F, (double)0.5F, (double)0.75F, (double)0.5F, (double)0.75F));
-        shape = Shapes.or(shape, Shapes.box((double)0.3125F, (double)0.5F, (double)0.5F, (double)0.6875F, (double)0.5625F, (double)0.6875F));
+        shape = Shapes.or(shape, Shapes.box(0.25F, 0.0F, 0.5F, 0.75F, 0.5F, 0.75F));
+        shape = Shapes.or(shape, Shapes.box(0.3125F, 0.5F, 0.5F, 0.6875F, 0.5625F, 0.6875F));
         return shape;
     };
     public static final Map<Direction, VoxelShape> HALF_SHAPE = (Map)Util.make(new HashMap(), (map) -> {
         for(Direction direction : Direction.Plane.HORIZONTAL) {
-            map.put(direction, GeneralUtil.rotateShape(Direction.NORTH, direction, (VoxelShape)halfShapeSupplier.get()));
+            map.put(direction, GeneralUtil.rotateShape(Direction.NORTH, direction, halfShapeSupplier.get()));
         }
-
     });
+
     private static final Supplier<VoxelShape> quarterShapeSupplier = () -> {
         VoxelShape shape = Shapes.empty();
-        shape = Shapes.or(shape, Shapes.box((double)0.25F, (double)0.0F, (double)0.5F, (double)0.5F, (double)0.5F, (double)0.75F));
-        shape = Shapes.or(shape, Shapes.box((double)0.3125F, (double)0.5F, (double)0.5F, (double)0.5F, (double)0.5625F, (double)0.6875F));
+        shape = Shapes.or(shape, Shapes.box(0.25F, 0.0F, 0.5F, 0.5F, 0.5F, 0.75F));
+        shape = Shapes.or(shape, Shapes.box(0.3125F, 0.5F, 0.5F, 0.5F, 0.5625F, 0.6875F));
         return shape;
     };
     public static final Map<Direction, VoxelShape> QUARTER_SHAPE = (Map)Util.make(new HashMap(), (map) -> {
         for(Direction direction : Direction.Plane.HORIZONTAL) {
-            map.put(direction, GeneralUtil.rotateShape(Direction.NORTH, direction, (VoxelShape)quarterShapeSupplier.get()));
+            map.put(direction, GeneralUtil.rotateShape(Direction.NORTH, direction, quarterShapeSupplier.get()));
         }
-
     });
+
     public DecayingPuddingBlock(ExtendedProperties properties, Supplier<Item> slice, Supplier<? extends Block> rotted) {
         super(properties, slice, rotted);
     }
+
+    @Override
     public @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        int cuts = (Integer)state.getValue(CUTS);
+        int cuts = state.getValue(CUTS);
         Map var10000;
         switch (cuts) {
             case 1 -> var10000 = THREE_SHAPE;
@@ -84,7 +86,7 @@ public class DecayingPuddingBlock extends DecayingPieBlock{
         }
 
         Map<Direction, VoxelShape> shape = var10000;
-        Direction direction = (Direction)state.getValue(HorizontalDirectionalBlock.FACING);
-        return (VoxelShape)shape.get(direction);
+        Direction direction = state.getValue(HorizontalDirectionalBlock.FACING);
+        return shape.get(direction);
     }
 }

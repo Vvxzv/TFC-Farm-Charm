@@ -33,7 +33,6 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -47,21 +46,25 @@ import java.util.Objects;
 import java.util.function.Supplier;
 
 public class DecayingFoodBlock extends DecayingFacingBlock{
-    public static final DirectionProperty FACING;
-    public static final IntegerProperty BITES;
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+    public static final IntegerProperty BITES = IntegerProperty.create("bites", 0, 9);
     private int eat;
     private final int maxBites;
-    private final VoxelShape SHAPE = Shapes.box((double)0.1875F, (double)0.0F, (double)0.1875F, (double)0.8125F, (double)0.875F, (double)0.8125F);
+    private final VoxelShape SHAPE = Shapes.box(0.1875F, 0.0F, 0.1875F, 0.8125F, 0.875F, 0.8125F);
+
     public DecayingFoodBlock(ExtendedProperties properties, int eat, int maxBites, Supplier<? extends Block> rotted) {
         super(properties, rotted);
         this.eat = eat;
         this.maxBites = maxBites;
-        this.registerDefaultState((BlockState)((BlockState)this.defaultBlockState().setValue(BITES, 0)).setValue(FACING, Direction.NORTH));
-    }
-    public @Nullable BlockState getStateForPlacement(BlockPlaceContext ctx) {
-        return !((Player) Objects.requireNonNull(ctx.getPlayer())).isShiftKeyDown() ? null : (BlockState)this.defaultBlockState().setValue(FACING, ctx.getHorizontalDirection().getOpposite());
+        this.registerDefaultState(this.defaultBlockState().setValue(BITES, 0).setValue(FACING, Direction.NORTH));
     }
 
+    @Override
+    public @Nullable BlockState getStateForPlacement(BlockPlaceContext ctx) {
+        return !Objects.requireNonNull(ctx.getPlayer()).isShiftKeyDown() ? null : this.defaultBlockState().setValue(FACING, ctx.getHorizontalDirection().getOpposite());
+    }
+
+    @Override
     public @NotNull InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         BlockEntity entity = world.getBlockEntity(pos);
         if(entity instanceof DecayingBlockEntity decaying && decaying.isRotten()) return InteractionResult.SUCCESS;
@@ -74,14 +77,13 @@ public class DecayingFoodBlock extends DecayingFacingBlock{
 
     private InteractionResult tryEat(LevelAccessor world, BlockPos pos, BlockState state, Player player) {
         BlockEntity entity = world.getBlockEntity(pos);
-        int bites = (Integer)state.getValue(BITES);
+        int bites = state.getValue(BITES);
         if (!player.canEat(false)) {
             return InteractionResult.PASS;
         } else {
-            //player.getFoodData().eat(this.foodComponent.getNutrition(), this.foodComponent.getSaturationModifier());
             if(entity instanceof DecayingBlockEntity decaying) {
                 if (player.getFoodData() instanceof TFCFoodData foodData && eat != bites) {
-                    IFood blockFood = (IFood) Helpers.getCapability(decaying.getStack(), FoodCapability.CAPABILITY);
+                    IFood blockFood = Helpers.getCapability(decaying.getStack(), FoodCapability.CAPABILITY);
                     float[] nutrients = blockFood.getData().nutrients();
                     float modifier = 6F / (eat * 5F);
                     int hunger = Math.max((int) ((float) blockFood.getData().hunger() * modifier), 1);
@@ -93,11 +95,11 @@ public class DecayingFoodBlock extends DecayingFacingBlock{
             if (world instanceof Level) {
                 Level level = (Level)world;
                 if(eat != bites){
-                    level.playSound((Player)null, pos, SoundEvents.GENERIC_EAT, SoundSource.PLAYERS, 0.5F, level.getRandom().nextFloat() * 0.1F + 0.9F);
+                    level.playSound(null, pos, SoundEvents.GENERIC_EAT, SoundSource.PLAYERS, 0.5F, level.getRandom().nextFloat() * 0.1F + 0.9F);
                 }
                 level.gameEvent(player, GameEvent.EAT, pos);
                 if (bites < this.maxBites - 1) {
-                    world.setBlock(pos, (BlockState)state.setValue(BITES, bites + 1), 3);
+                    world.setBlock(pos, state.setValue(BITES, bites + 1), 3);
                 } else {
                     world.destroyBlock(pos, false);
                     world.gameEvent(player, GameEvent.BLOCK_DESTROY, pos);
@@ -115,22 +117,27 @@ public class DecayingFoodBlock extends DecayingFacingBlock{
         }
     }
 
+    @Override
     public @NotNull BlockState rotate(BlockState state, Rotation rotation) {
-        return (BlockState)state.setValue(FACING, rotation.rotate((Direction)state.getValue(FACING)));
+        return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
     }
 
+    @Override
     public @NotNull BlockState mirror(BlockState state, Mirror mirror) {
-        return state.rotate(mirror.getRotation((Direction)state.getValue(FACING)));
+        return state.rotate(mirror.getRotation(state.getValue(FACING)));
     }
 
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(new Property[]{FACING, BITES});
+        builder.add(FACING, BITES);
     }
 
+    @Override
     public @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return this.SHAPE;
     }
 
+    @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
         BlockEntity entity = level.getBlockEntity(pos);
         if (entity instanceof DecayingBlockEntity decaying) {
@@ -142,13 +149,9 @@ public class DecayingFoodBlock extends DecayingFacingBlock{
         }
     }
 
+    @Override
     public void appendHoverText(ItemStack itemStack, BlockGetter world, List<Component> tooltip, TooltipFlag tooltipContext) {
-        tooltip.add(Component.translatable("tooltip.farm_and_charm.canbeplaced").withStyle(new ChatFormatting[]{ChatFormatting.ITALIC, ChatFormatting.GRAY}));
-    }
-
-    static {
-        FACING = BlockStateProperties.HORIZONTAL_FACING;
-        BITES = IntegerProperty.create("bites", 0, 9);
+        tooltip.add(Component.translatable("tooltip.farm_and_charm.canbeplaced").withStyle(ChatFormatting.ITALIC, ChatFormatting.GRAY));
     }
 
 }

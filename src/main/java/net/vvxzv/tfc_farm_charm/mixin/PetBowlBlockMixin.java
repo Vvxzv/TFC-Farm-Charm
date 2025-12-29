@@ -11,6 +11,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.satisfy.farm_and_charm.client.FarmAndCharmClient;
 import net.satisfy.farm_and_charm.core.block.PetBowlBlock;
 import net.satisfy.farm_and_charm.core.block.entity.PetBowlBlockEntity;
@@ -19,9 +21,10 @@ import net.satisfy.farm_and_charm.core.util.GeneralUtil;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(PetBowlBlock.class)
-public class PetBowlBlockMixin {
+public class PetBowlBlockMixin{
     /**
      * @author Vvxzv
      * @reason fix bug: one item use on bowl will disappear
@@ -40,7 +43,8 @@ public class PetBowlBlockMixin {
                     }
                 }
                 return InteractionResult.SUCCESS;
-            } else if (heldItem.is(Items.NAME_TAG) && !state.getValue(PetBowlBlock.HAS_NAME_TAG)) {
+            }
+            else if (heldItem.is(Items.NAME_TAG) && !state.getValue(PetBowlBlock.HAS_NAME_TAG)) {
                 if (!level.isClientSide) {
                     level.setBlock(pos, state.setValue(PetBowlBlock.HAS_NAME_TAG, true), 3);
                     if (!player.getAbilities().instabuild) {
@@ -48,19 +52,23 @@ public class PetBowlBlockMixin {
                     }
                 }
                 return InteractionResult.SUCCESS;
-            } else if (state.getValue(PetBowlBlock.HAS_NAME_TAG) && player.isShiftKeyDown()) {
+            }
+            else if (state.getValue(PetBowlBlock.HAS_NAME_TAG) && player.isShiftKeyDown()) {
                 if (level.isClientSide) {
-                    FarmAndCharmClient.openPetBowlScreen(entity);
+                    tfc_farm_charm$openPetBowlScreen(entity);
                 }
                 return InteractionResult.SUCCESS;
-            } else {
+            }
+            else {
                 if (!level.isClientSide && hand == InteractionHand.MAIN_HAND && state.getValue(PetBowlBlock.FOOD_TYPE) == GeneralUtil.FoodType.NONE) {
                     GeneralUtil.FoodType type;
                     if (heldItem.is(ObjectRegistry.CAT_FOOD.get())) {
                         type = GeneralUtil.FoodType.CAT;
-                    } else if (heldItem.is(ObjectRegistry.DOG_FOOD.get())) {
+                    }
+                    else if (heldItem.is(ObjectRegistry.DOG_FOOD.get())) {
                         type = GeneralUtil.FoodType.DOG;
-                    } else {
+                    }
+                    else {
                         type = GeneralUtil.FoodType.NONE;
                     }
 
@@ -78,5 +86,12 @@ public class PetBowlBlockMixin {
             }
         }
         return InteractionResult.PASS;
+    }
+
+
+    @Unique
+    @OnlyIn(Dist.CLIENT)
+    private static void tfc_farm_charm$openPetBowlScreen(PetBowlBlockEntity entity){
+        FarmAndCharmClient.openPetBowlScreen(entity);
     }
 }

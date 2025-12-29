@@ -46,12 +46,14 @@ public class FertilizedSoilBlockMixin {
         if (itemStack.getItem() == ObjectRegistry.PITCHFORK.get()) {
             if (hasSugarCaneAbove) {
                 return InteractionResult.PASS;
-            } else {
-                int newSize = (Integer)state.getValue(FertilizedSoilBlock.SIZE) - 1;
+            }
+            else {
+                int newSize = state.getValue(FertilizedSoilBlock.SIZE) - 1;
                 if (newSize < 0) {
                     level.removeBlock(pos, false);
-                } else {
-                    level.setBlock(pos, (BlockState)state.setValue(FertilizedSoilBlock.SIZE, newSize), 3);
+                }
+                else {
+                    level.setBlock(pos, state.setValue(FertilizedSoilBlock.SIZE, newSize), 3);
                     BlockPos min = pos.offset(-4, -4, -4);
                     BlockPos max = pos.offset(4, 4, 4);
                     if (level.hasChunksAt(min, max)) {
@@ -67,22 +69,23 @@ public class FertilizedSoilBlockMixin {
                 }
 
                 this.tfc_farm_charm$spawnParticles(level, pos, state, false);
-                level.playSound((Player)null, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
                 itemStack.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(hand));
                 return InteractionResult.SUCCESS;
             }
         } else if (itemStack.getItem() instanceof HoeItem) {
             if (hasSugarCaneAbove) {
                 return InteractionResult.PASS;
-            } else {
-                int currentSize = (Integer)state.getValue(FertilizedSoilBlock.SIZE);
+            }
+            else {
+                int currentSize = state.getValue(FertilizedSoilBlock.SIZE);
                 if (currentSize == 3) {
                     level.setBlock(pos, TFCFCBlock.FERTILIZED_FARMLAND.get().defaultBlockState(), 3);
                     if (!player.isCreative()) {
                         itemStack.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(hand));
                     }
 
-                    level.playSound((Player)null, pos, SoundEvents.HOE_TILL, SoundSource.BLOCKS, 1.0F, 1.0F);
+                    level.playSound(null, pos, SoundEvents.HOE_TILL, SoundSource.BLOCKS, 1.0F, 1.0F);
                     return InteractionResult.SUCCESS;
                 }
             }
@@ -113,11 +116,10 @@ public class FertilizedSoilBlockMixin {
     private void tfc_farm_charm$spawnParticles(Level level, BlockPos pos, BlockState state, boolean happy) {
         if (!level.isClientSide) {
             ServerLevel server = (ServerLevel)level;
-            server.sendParticles(new BlockParticleOption(ParticleTypes.BLOCK, state), (double)pos.getX() + (double)0.5F, (double)pos.getY() + (double)0.5F, (double)pos.getZ() + (double)0.5F, 20, (double)0.5F, (double)0.5F, (double)0.5F, 0.2);
+            server.sendParticles(new BlockParticleOption(ParticleTypes.BLOCK, state), (double)pos.getX() + (double)0.5F, (double)pos.getY() + (double)0.5F, (double)pos.getZ() + (double)0.5F, 20, 0.5F, 0.5F, 0.5F, 0.2);
             if (happy) {
-                server.sendParticles(ParticleTypes.HAPPY_VILLAGER, (double)pos.getX() + (double)0.5F, (double)pos.getY() + (double)0.25F, (double)pos.getZ() + (double)0.5F, 4, (double)0.25F, 0.1, (double)0.25F, 0.01);
+                server.sendParticles(ParticleTypes.HAPPY_VILLAGER, (double)pos.getX() + (double)0.5F, (double)pos.getY() + (double)0.25F, (double)pos.getZ() + (double)0.5F, 4, 0.25F, 0.1, 0.25F, 0.01);
             }
         }
-
     }
 }

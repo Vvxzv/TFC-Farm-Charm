@@ -8,13 +8,13 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 
 @Mixin(AbstractTowableEntity.class)
 public interface AbstractTowableEntityAccessor {
-    @Accessor("leftWheel")
-    CartWheel leftWheel();
+    @Accessor(value = "leftWheel", remap = false)
+    CartWheel getLeftWheel();
 
-    @Accessor("rightWheel")
-    CartWheel rightWheel();
+    @Accessor(value = "rightWheel", remap = false)
+    CartWheel getRightWheel();
 
-    @Invoker("tickLerp")
+    @Invoker(value = "tickLerp", remap = false)
     void invokeTickLerp();
 
 }

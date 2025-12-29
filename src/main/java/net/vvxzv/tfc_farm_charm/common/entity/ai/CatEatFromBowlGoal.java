@@ -43,7 +43,7 @@ public class CatEatFromBowlGoal extends Goal {
 
             for(BlockPos pos : BlockPos.betweenClosed(catPos.offset(-16, -4, -16), catPos.offset(16, 4, 16))) {
                 BlockState state = level.getBlockState(pos);
-                if (state.is((Block) ObjectRegistry.PET_BOWL.get()) && state.hasProperty(PetBowlBlock.FOOD_TYPE) && state.getValue(PetBowlBlock.FOOD_TYPE) == GeneralUtil.FoodType.CAT) {
+                if (state.is(ObjectRegistry.PET_BOWL.get()) && state.hasProperty(PetBowlBlock.FOOD_TYPE) && state.getValue(PetBowlBlock.FOOD_TYPE) == GeneralUtil.FoodType.CAT) {
                     BlockEntity be = level.getBlockEntity(pos);
                     if (be instanceof PetBowlBlockEntity bowl) {
                         if (!bowl.isEmpty() && bowl.canBeUsedBy(this.cat)) {
@@ -72,7 +72,7 @@ public class CatEatFromBowlGoal extends Goal {
     }
 
     public void start() {
-        this.cat.getNavigation().moveTo((double)this.targetVec.x(), (double)this.targetVec.y(), (double)this.targetVec.z(), (double)1.0F);
+        this.cat.getNavigation().moveTo(this.targetVec.x(), this.targetVec.y(), this.targetVec.z(), 1.0F);
         this.eatTicks = 0;
     }
 
@@ -109,15 +109,15 @@ public class CatEatFromBowlGoal extends Goal {
                     float distSqr = this.targetVec.distanceSquared((float)this.cat.getX(), (float)this.cat.getY(), (float)this.cat.getZ());
                     if (distSqr <= 4.0F && this.cat.isSitting()) {
                         ++this.eatTicks;
-                        this.cat.getLookControl().setLookAt((double)this.targetVec.x(), (double)this.targetVec.y(), (double)this.targetVec.z());
+                        this.cat.getLookControl().setLookAt(this.targetVec.x(), this.targetVec.y(), this.targetVec.z());
                         if (!level.isClientSide && this.eatTicks <= 40) {
                             ParticleOptions particle = this.getParticleFromFood();
                             if (particle != null) {
-                                ((ServerLevel)level).sendParticles(particle, (double)this.targetVec.x(), (double)(this.targetVec.y() + 0.09375F), (double)this.targetVec.z(), 3, 0.2, 0.2, 0.2, 0.05);
+                                ((ServerLevel)level).sendParticles(particle, this.targetVec.x(), this.targetVec.y() + 0.09375F, this.targetVec.z(), 3, 0.2, 0.2, 0.2, 0.05);
                             }
 
                             if (this.eatTicks % 10 == 0) {
-                                level.playSound((Player)null, this.cat.blockPosition(), SoundEvents.CAT_EAT, SoundSource.NEUTRAL, 0.8F, 1.0F);
+                                level.playSound(null, this.cat.blockPosition(), SoundEvents.CAT_EAT, SoundSource.NEUTRAL, 0.8F, 1.0F);
                             }
                         }
 
@@ -126,10 +126,10 @@ public class CatEatFromBowlGoal extends Goal {
                             ((BowlAccessor.FedTracker)this.cat).farmAndCharm$$markAsFed();
                             if (!level.isClientSide) {
                                 ((ServerLevel)level).sendParticles(ParticleTypes.HEART, this.cat.getX(), this.cat.getY() + (double)0.5F, this.cat.getZ(), 3, 0.3, 0.3, 0.3, 0.01);
-                                level.playSound((Player)null, this.cat.blockPosition(), SoundEvents.CAT_PURR, this.cat.getSoundSource(), 1.0F, 1.0F);
+                                level.playSound(null, this.cat.blockPosition(), SoundEvents.CAT_PURR, this.cat.getSoundSource(), 1.0F, 1.0F);
                                 BlockState old = level.getBlockState(this.targetBowl);
                                 if (old.getBlock() instanceof PetBowlBlock && old.hasProperty(PetBowlBlock.FOOD_TYPE)) {
-                                    level.setBlockAndUpdate(this.targetBowl, (BlockState)old.setValue(PetBowlBlock.FOOD_TYPE, GeneralUtil.FoodType.NONE));
+                                    level.setBlockAndUpdate(this.targetBowl, old.setValue(PetBowlBlock.FOOD_TYPE, GeneralUtil.FoodType.NONE));
                                     this.cat.heal(20);
                                 }
                             }

@@ -7,7 +7,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.phys.Vec3;
 import net.satisfy.farm_and_charm.core.block.entity.PetBowlBlockEntity;
@@ -58,7 +57,7 @@ public class MeowAtBowlGoal extends Goal {
                         BlockPos closest = null;
 
                         for(BlockPos pos : BlockPos.betweenClosed(catPos.offset(-32, -4, -32), catPos.offset(32, 4, 32))) {
-                            if (level.getBlockState(pos).is((Block) ObjectRegistry.PET_BOWL.get()) && level.getBlockState(pos).hasBlockEntity()) {
+                            if (level.getBlockState(pos).is(ObjectRegistry.PET_BOWL.get()) && level.getBlockState(pos).hasBlockEntity()) {
                                 BlockEntity be = level.getBlockEntity(pos);
                                 if (be instanceof PetBowlBlockEntity) {
                                     PetBowlBlockEntity bowl = (PetBowlBlockEntity)be;
@@ -123,7 +122,7 @@ public class MeowAtBowlGoal extends Goal {
     public void start() {
         if (this.bowlPos != null) {
             if (!this.isNearBowl()) {
-                this.cat.getNavigation().moveTo((double)this.bowlPos.getX() + (double)0.5F, (double)this.bowlPos.getY(), (double)this.bowlPos.getZ() + (double)0.5F, (double)1.0F);
+                this.cat.getNavigation().moveTo((double)this.bowlPos.getX() + (double)0.5F, this.bowlPos.getY(), (double)this.bowlPos.getZ() + (double)0.5F, 1.0F);
             }
 
             this.meowTicks = 0;
@@ -154,7 +153,7 @@ public class MeowAtBowlGoal extends Goal {
 
                             this.cat.getLookControl().setLookAt((double)this.bowlPos.getX() + (double)0.5F, (double)this.bowlPos.getY() + (double)0.5F, (double)this.bowlPos.getZ() + (double)0.5F);
                         } else if (!this.cat.getNavigation().isInProgress()) {
-                            this.cat.getNavigation().moveTo((double)this.bowlPos.getX() + (double)0.5F, (double)this.bowlPos.getY(), (double)this.bowlPos.getZ() + (double)0.5F, (double)1.0F);
+                            this.cat.getNavigation().moveTo((double)this.bowlPos.getX() + (double)0.5F, this.bowlPos.getY(), (double)this.bowlPos.getZ() + (double)0.5F, 1.0F);
                         }
 
                         if (this.meowTicks % 60 == 0) {
@@ -162,13 +161,13 @@ public class MeowAtBowlGoal extends Goal {
                         }
 
                         if (this.meowTicks % 100 == 0) {
-                            Vec3 pos = this.cat.position().add((double)0.0F, (double)0.5F, (double)0.0F);
+                            Vec3 pos = this.cat.position().add(0.0F, 0.5F, 0.0F);
                             server.sendParticles(ParticleTypes.ANGRY_VILLAGER, pos.x, pos.y, pos.z, 6, 0.3, 0.3, 0.3, 0.01);
                         }
 
                         if (++this.meowTicks >= 300) {
                             this.cat.playSound(SoundEvents.CAT_HISS, 1.0F, 1.0F);
-                            Vec3 pos = this.cat.position().add((double)0.0F, (double)0.5F, (double)0.0F);
+                            Vec3 pos = this.cat.position().add(0.0F, 0.5F, 0.0F);
                             server.sendParticles(ParticleTypes.ANGRY_VILLAGER, pos.x, pos.y, pos.z, 15, 0.3, 0.3, 0.3, 0.01);
                             this.stop();
                         }

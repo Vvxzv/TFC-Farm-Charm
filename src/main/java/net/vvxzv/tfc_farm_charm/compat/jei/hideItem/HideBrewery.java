@@ -13,6 +13,7 @@ import java.util.List;
 @JeiPlugin
 public class HideBrewery implements IModPlugin {
     @Override
+    @SuppressWarnings("removal")
     public ResourceLocation getPluginUid() {
         return new ResourceLocation(TFCFarmCharm.MODID, "hide_brewery_item");
     }

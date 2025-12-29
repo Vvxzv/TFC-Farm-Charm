@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class SmallCookingPotBlockEntityMixin {
     @Inject(method = "isBeingBurned", at = @At("RETURN"), remap = false, cancellable = true)
     public void isBeingBurned(CallbackInfoReturnable<Boolean> cir) {
-        Level level = (Level)((SmallCookingPotBlockEntity)(Object)this).getLevel();
+        Level level = ((SmallCookingPotBlockEntity)(Object)this).getLevel();
         BlockPos pos = ((SmallCookingPotBlockEntity)(Object)this).getBlockPos();
         BlockState belowState = level.getBlockState(pos.below());
         if (belowState.is(BlockTags.HEAT_SOURCE)) {
