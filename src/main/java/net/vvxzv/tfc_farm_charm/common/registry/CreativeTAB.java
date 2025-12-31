@@ -6,13 +6,14 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.vvxzv.tfc_farm_charm.TFCFarmCharm;
 
 import java.util.List;
 
-public class TAB {
+public class CreativeTAB {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TFCFarmCharm.MODID);
 
     public static final RegistryObject<CreativeModeTab> TFC_FARM_CHARM;
@@ -39,32 +40,26 @@ public class TAB {
                             TFCFCItem.UNFINISHED_LINZER_TART,
                             TFCFCItem.UNFINISHED_PRETZEL,
                             TFCFCItem.UNFINISHED_TOAST,
-                            TFCFCItem.UNFINISHED_WAFFLE
+                            TFCFCItem.UNFINISHED_WAFFLE,
+                            TFCFCItem.CRUSTY_BREAD,
+                            TFCFCItem.BREAD,
+                            TFCFCItem.BAGUETTE,
+                            TFCFCItem.TOAST,
+                            TFCFCItem.BRAIDED_BREAD,
+                            TFCFCItem.BUN,
+                            TFCFCItem.WAFFLE,
+                            TFCFCItem.OAT_PANCAKE,
+                            TFCFCItem.FARMERS_BREAKFAST,
+                            TFCFCItem.BAKED_LAMB_HAM,
+                            TFCFCItem.POTATO_WITH_ROAST_MEAT,
+                            TFCFCItem.STUFFED_CHICKEN,
+                            TFCFCItem.STUFFED_RABBIT,
+                            TFCFCItem.GRANDMOTHERS_STRAWBERRY_CAKE,
+                            TFCFCItem.FARMERS_BREAD,
+                            TFCFCItem.ROASTED_CORN
                     );
                     modItems.forEach(item -> output.accept(item.get()));
-
                     List<RegistryObject<Block>> modBlockItem = List.of(
-                            TFCFCBlock.CRUSTY_BREAD,
-                            TFCFCBlock.BREAD,
-                            TFCFCBlock.BAGUETTE,
-                            TFCFCBlock.TOAST,
-                            TFCFCBlock.BRAIDED_BREAD,
-                            TFCFCBlock.BUN,
-                            TFCFCBlock.WAFFLE,
-                            TFCFCBlock.PORK_KNUCKLE,
-                            TFCFCBlock.FRIED_CHICKEN,
-                            TFCFCBlock.DUMPLINGS,
-                            TFCFCBlock.HALF_CHICKEN,
-                            TFCFCBlock.MASHED_POTATOES,
-                            TFCFCBlock.POTATO_SALAD,
-                            TFCFCBlock.OAT_PANCAKE,
-                            TFCFCBlock.FARMERS_BREAKFAST,
-                            TFCFCBlock.BAKED_LAMB_HAM,
-                            TFCFCBlock.POTATO_WITH_ROAST_MEAT,
-                            TFCFCBlock.STUFFED_CHICKEN,
-                            TFCFCBlock.STUFFED_RABBIT,
-                            TFCFCBlock.GRANDMOTHERS_STRAWBERRY_CAKE,
-                            TFCFCBlock.FARMERS_BREAD,
                             TFCFCBlock.BREAD_CRATE,
                             TFCFCBlock.CHOCOLATE_BOX,
                             TFCFCBlock.STRAWBERRY_JAM,
@@ -82,12 +77,23 @@ public class TAB {
                             TFCFCBlock.GLOWBERRY_TART,
                             TFCFCBlock.CHOCOLATE_TART,
                             TFCFCBlock.PUDDING,
-                            TFCFCBlock.ROASTED_CORN,
                             TFCFCBlock.FERTILIZED_FARMLAND
                     );
                     modBlockItem.forEach(item -> output.accept(item.get()));
 
-                    //TFCFCFluid.addBucketItemsToCreativeModeTab().forEach(item -> output.accept(item.get()));
+                    TFCFCItem.BEER_FLUID_BUCKETS.values().forEach(reg -> output.accept(reg.get()));
+
+                    if(ModList.get().isLoaded("brewery")){
+                        List<RegistryObject<Item>> breweryItems = List.of(
+                                TFCFCItem.PORK_KNUCKLE,
+                                TFCFCItem.FRIED_CHICKEN,
+                                TFCFCItem.DUMPLINGS,
+                                TFCFCItem.HALF_CHICKEN,
+                                TFCFCItem.MASHED_POTATOES,
+                                TFCFCItem.POTATO_SALAD
+                        );
+                        breweryItems.forEach(item -> output.accept(item.get()));
+                    }
                 })
                 .build()
         );

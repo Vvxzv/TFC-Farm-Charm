@@ -1,0 +1,16 @@
+{
+	"type": "tfc:barrel_instant",
+	"input_item": {
+		"ingredient": {
+			"item": "brewery:beer_mug",
+			"count": 1
+		}
+	},
+	"input_fluid": {
+		"ingredient": "tfc_farm_charm:beer_nettle",
+		"amount": 500
+	},
+	"output_item": {
+		"item": "brewery:beer_nettle"
+	}
+}

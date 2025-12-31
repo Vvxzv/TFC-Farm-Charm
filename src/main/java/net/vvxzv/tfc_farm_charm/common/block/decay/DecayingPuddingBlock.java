@@ -26,7 +26,7 @@ public class DecayingPuddingBlock extends DecayingPieBlock{
         shape = Shapes.or(shape, Shapes.box(0.3125F, 0.5F, 0.3125F, 0.6875F, 0.5625F, 0.6875F));
         return shape;
     };
-    public static final Map<Direction, VoxelShape> FULL_SHAPE = (Map) Util.make(new HashMap(), (map) -> {
+    public static final Map<Direction, VoxelShape> FULL_SHAPE = Util.make(new HashMap(), (map) -> {
         for(Direction direction : Direction.Plane.HORIZONTAL) {
             map.put(direction, GeneralUtil.rotateShape(Direction.NORTH, direction, fullShapeSupplier.get()));
         }
@@ -40,7 +40,7 @@ public class DecayingPuddingBlock extends DecayingPieBlock{
         shape = Shapes.or(shape, Shapes.box(0.3125F, 0.5F, 0.3125F, 0.5F, 0.5625F, 0.5F));
         return shape;
     };
-    public static final Map<Direction, VoxelShape> THREE_SHAPE = (Map)Util.make(new HashMap(), (map) -> {
+    public static final Map<Direction, VoxelShape> THREE_SHAPE = Util.make(new HashMap(), (map) -> {
         for(Direction direction : Direction.Plane.HORIZONTAL) {
             map.put(direction, GeneralUtil.rotateShape(Direction.NORTH, direction, threeShapeSupplier.get()));
         }
@@ -52,7 +52,7 @@ public class DecayingPuddingBlock extends DecayingPieBlock{
         shape = Shapes.or(shape, Shapes.box(0.3125F, 0.5F, 0.5F, 0.6875F, 0.5625F, 0.6875F));
         return shape;
     };
-    public static final Map<Direction, VoxelShape> HALF_SHAPE = (Map)Util.make(new HashMap(), (map) -> {
+    public static final Map<Direction, VoxelShape> HALF_SHAPE = Util.make(new HashMap(), (map) -> {
         for(Direction direction : Direction.Plane.HORIZONTAL) {
             map.put(direction, GeneralUtil.rotateShape(Direction.NORTH, direction, halfShapeSupplier.get()));
         }
@@ -64,7 +64,7 @@ public class DecayingPuddingBlock extends DecayingPieBlock{
         shape = Shapes.or(shape, Shapes.box(0.3125F, 0.5F, 0.5F, 0.5F, 0.5625F, 0.6875F));
         return shape;
     };
-    public static final Map<Direction, VoxelShape> QUARTER_SHAPE = (Map)Util.make(new HashMap(), (map) -> {
+    public static final Map<Direction, VoxelShape> QUARTER_SHAPE = Util.make(new HashMap(), (map) -> {
         for(Direction direction : Direction.Plane.HORIZONTAL) {
             map.put(direction, GeneralUtil.rotateShape(Direction.NORTH, direction, quarterShapeSupplier.get()));
         }

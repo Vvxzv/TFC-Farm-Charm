@@ -5,22 +5,28 @@
 
 package net.vvxzv.tfc_farm_charm.common.registry;
 
+import java.util.Locale;
+import java.util.Map;
 import java.util.function.Supplier;
 
 import net.dries007.tfc.common.TFCTags;
-import net.dries007.tfc.common.items.JugItem;
 import net.dries007.tfc.config.TFCConfig;
+import net.dries007.tfc.util.Helpers;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.satisfy.farm_and_charm.core.item.food.EffectBlockItem;
 import net.satisfy.farm_and_charm.core.registry.MobEffectRegistry;
 import net.vvxzv.tfc_farm_charm.TFCFarmCharm;
+import net.vvxzv.tfc_farm_charm.common.fluid.Beers;
+import net.vvxzv.tfc_farm_charm.common.item.CupItem;
 
 public class TFCFCItem {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TFCFarmCharm.MODID);
@@ -41,7 +47,11 @@ public class TFCFCItem {
         return (new Item.Properties()).food((new FoodProperties.Builder()).effect(new MobEffectInstance(effect, duration), 1.0F).build());
     }
 
-    public static final RegistryObject<Item> CUP = registerItem("cup", () -> new JugItem((new Item.Properties()).stacksTo(1), TFCConfig.SERVER.jugCapacity, TFCTags.Fluids.USABLE_IN_JUG));
+    private static <T extends Item> RegistryObject<T> registerFluidBucket(String name, Supplier<T> item) {
+        return ITEMS.register(name.toLowerCase(Locale.ROOT), item);
+    }
+
+    public static final RegistryObject<Item> CUP = registerItem("cup", () -> new CupItem(new Item.Properties().stacksTo(1), TFCConfig.SERVER.jugCapacity, TFCTags.Fluids.USABLE_IN_JUG));
 
     public static final RegistryObject<Item> UNFINISHED_APPLE_PIE = registerFoodItem("unfinished_apple_pie");
 
@@ -118,4 +128,6 @@ public class TFCFCItem {
     public static final RegistryObject<Item> ROASTED_CORN = registerItem("roasted_corn", () -> new EffectBlockItem(TFCFCBlock.ROASTED_CORN.get(), setEffectFood(MobEffectRegistry.FEAST.get(), 3600)));
 
     public static final RegistryObject<Item> GRANDMOTHERS_STRAWBERRY_CAKE = registerItem("grandmothers_strawberry_cake", () -> new EffectBlockItem(TFCFCBlock.GRANDMOTHERS_STRAWBERRY_CAKE.get(), setEffectFood(MobEffectRegistry.GRANDMAS_BLESSING.get(), 2400)));
+
+    public static final Map<Beers, RegistryObject<BucketItem>> BEER_FLUID_BUCKETS = Helpers.mapOfKeys(Beers.class, (fluid) -> registerFluidBucket("bucket/" + fluid.getSerializedName(), () -> new BucketItem((TFCFCFluid.BEERS.get(fluid)).source(), (new Item.Properties()).craftRemainder(Items.BUCKET).stacksTo(1))));
 }

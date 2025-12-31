@@ -19,6 +19,12 @@
   "item.tfc_farm_charm.unfinished_pretzel":"Unfinished Pretzel",
   "item.tfc_farm_charm.unfinished_toast":"Unfinished Toast",
   "item.tfc_farm_charm.unfinished_waffle":"Unfinished Waffle",
+  "item.tfc_farm_charm.bucket.beer_barley":"Barley Beer Bucket",
+  "item.tfc_farm_charm.bucket.beer_haley":"Haley Beer Bucket",
+  "item.tfc_farm_charm.bucket.beer_hops":"Hops Beer Bucket",
+  "item.tfc_farm_charm.bucket.beer_wheat":"Wheat Beer Bucket",
+  "item.tfc_farm_charm.bucket.beer_nettle":"Nettle Beer Bucket",
+  "item.tfc_farm_charm.bucket.beer_oat":"Oat Beer Bucket",
 
   "block.tfc_farm_charm.crusty_bread":"Crusty Bread",
   "block.tfc_farm_charm.bread":"Bread",
@@ -60,6 +66,19 @@
   "block.tfc_farm_charm.pudding":"Pudding",
   "block.tfc_farm_charm.roasted_corn": "Roasted Corn",
   "block.tfc_farm_charm.fertilized_farmland": "Fertilized Farmland",
+  "block.tfc_farm_charm.beer_barley":"Barley Beer",
+  "block.tfc_farm_charm.beer_haley":"Haley Beer",
+  "block.tfc_farm_charm.beer_hops":"Hops Beer",
+  "block.tfc_farm_charm.beer_wheat":"Wheat Beer",
+  "block.tfc_farm_charm.beer_nettle":"Nettle Beer",
+  "block.tfc_farm_charm.beer_oat":"Oat Beer",
+
+  "fluid.tfc_farm_charm.beer_barley":"Barley Beer",
+  "fluid.tfc_farm_charm.beer_haley":"Haley Beer",
+  "fluid.tfc_farm_charm.beer_hops":"Hops Beer",
+  "fluid.tfc_farm_charm.beer_wheat":"Wheat Beer",
+  "fluid.tfc_farm_charm.beer_nettle":"Nettle Beer",
+  "fluid.tfc_farm_charm.beer_oat":"Oat Beer",
 
   "tooltip.tfc_farm_charm.cat_effect": "Taming a cat"
 }

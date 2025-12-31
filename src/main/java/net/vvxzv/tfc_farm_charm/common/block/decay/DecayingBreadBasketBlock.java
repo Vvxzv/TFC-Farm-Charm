@@ -51,7 +51,7 @@ public class DecayingBreadBasketBlock extends DecayingEatableBoxBlock{
         shape = Shapes.joinUnoptimized(shape, Shapes.box(0.8125F, 0.0625F, 0.1875F, 0.875F, 0.5625F, 0.8125F), BooleanOp.OR);
         return shape;
     };
-    public static final Map<Direction, VoxelShape> SHAPE = (Map) Util.make(new HashMap(), (map) -> {
+    public static final Map<Direction, VoxelShape> SHAPE = Util.make(new HashMap(), (map) -> {
         for(Direction direction : Direction.Plane.HORIZONTAL.stream().toList()) {
             map.put(direction, GeneralUtil.rotateShape(Direction.NORTH, direction, voxelShapeSupplier.get()));
         }

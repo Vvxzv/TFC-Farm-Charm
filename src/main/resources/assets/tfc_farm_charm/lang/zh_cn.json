@@ -19,6 +19,12 @@
   "item.tfc_farm_charm.unfinished_pretzel":"生碱水结",
   "item.tfc_farm_charm.unfinished_toast":"吐司面团",
   "item.tfc_farm_charm.unfinished_waffle":"生华夫饼",
+  "item.tfc_farm_charm.bucket.beer_barley":"大麦啤酒桶",
+  "item.tfc_farm_charm.bucket.beer_haley":"海莉啤酒桶",
+  "item.tfc_farm_charm.bucket.beer_hops":"酒花啤酒桶",
+  "item.tfc_farm_charm.bucket.beer_wheat":"小麦啤酒桶",
+  "item.tfc_farm_charm.bucket.beer_nettle":"荨麻啤酒桶",
+  "item.tfc_farm_charm.bucket.beer_oat":"燕麦啤酒桶",
 
   "block.tfc_farm_charm.crusty_bread":"脆皮面包",
   "block.tfc_farm_charm.bread":"烘焙师面包",
@@ -60,6 +66,19 @@
   "block.tfc_farm_charm.pudding":"布丁",
   "block.tfc_farm_charm.roasted_corn": "烤玉米",
   "block.tfc_farm_charm.fertilized_farmland": "肥沃耕地",
+  "block.tfc_farm_charm.beer_barley":"大麦啤酒",
+  "block.tfc_farm_charm.beer_haley":"海莉啤酒",
+  "block.tfc_farm_charm.beer_hops":"酒花啤酒",
+  "block.tfc_farm_charm.beer_wheat":"小麦啤酒",
+  "block.tfc_farm_charm.beer_nettle":"荨麻啤酒",
+  "block.tfc_farm_charm.beer_oat":"燕麦啤酒",
+
+  "fluid.tfc_farm_charm.beer_barley":"大麦啤酒",
+  "fluid.tfc_farm_charm.beer_haley":"海莉啤酒",
+  "fluid.tfc_farm_charm.beer_hops":"酒花啤酒",
+  "fluid.tfc_farm_charm.beer_wheat":"小麦啤酒",
+  "fluid.tfc_farm_charm.beer_nettle":"荨麻啤酒",
+  "fluid.tfc_farm_charm.beer_oat":"燕麦啤酒",
 
   "tooltip.tfc_farm_charm.cat_effect": "驯猫"
 }

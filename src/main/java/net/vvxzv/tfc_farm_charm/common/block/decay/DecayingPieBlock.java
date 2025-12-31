@@ -51,7 +51,7 @@ public class DecayingPieBlock extends DecayingFacingBlock{
         shape = Shapes.joinUnoptimized(shape, Shapes.box(0.0F, 0.0F, 0.25F, 1.0F, 1.0F, 1.0F), BooleanOp.OR);
         return shape;
     };
-    public static final Map<Direction, VoxelShape> SHAPE = (Map) Util.make(new HashMap(), (map) -> {
+    public static final Map<Direction, VoxelShape> SHAPE = Util.make(new HashMap(), (map) -> {
         for(Direction direction : Direction.Plane.HORIZONTAL.stream().toList()) {
             map.put(direction, GeneralUtil.rotateShape(Direction.NORTH, direction, voxelShapeSupplier.get()));
         }

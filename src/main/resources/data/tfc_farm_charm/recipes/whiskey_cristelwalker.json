@@ -1,0 +1,30 @@
+{
+	"type": "tfc:extra_products_shapeless_crafting",
+	"extra_products": [
+		{
+			"item": "brewery:beer_mug",
+			"count": 2
+		}
+	],
+	"recipe": {
+		"type": "minecraft:crafting_shapeless",
+		"ingredients": [
+			{
+				"item": "brewery:beer_nettle",
+				"count": 1
+			},
+			{
+				"item": "brewery:beer_nettle",
+				"count": 1
+			},
+			{
+				"item": "brewery:beer_hops",
+				"count": 1
+			}
+		],
+		"result": {
+			"item": "brewery:whiskey_cristelwalker",
+			"count": 1
+		}
+	}
+}

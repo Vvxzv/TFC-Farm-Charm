@@ -5,11 +5,15 @@ import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.soil.FarmlandBlock;
+import net.dries007.tfc.util.Helpers;
+import net.dries007.tfc.util.registry.RegistrationHelpers;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -19,7 +23,9 @@ import net.minecraftforge.registries.RegistryObject;
 import net.satisfy.bakery.core.registry.ObjectRegistry;
 import net.vvxzv.tfc_farm_charm.TFCFarmCharm;
 import net.vvxzv.tfc_farm_charm.common.block.decay.*;
+import net.vvxzv.tfc_farm_charm.common.fluid.Beers;
 
+import java.util.Map;
 import java.util.function.Supplier;
 
 public class TFCFCBlock {
@@ -37,6 +43,10 @@ public class TFCFCBlock {
 
     private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> Block){
         TFCFCItem.ITEMS.register(name, () -> new BlockItem(Block.get(), new Item.Properties()));
+    }
+
+    private static <T extends Block> RegistryObject<T> registerFluidBlock(String name, Supplier<T> blockSupplier) {
+        return RegistrationHelpers.registerBlock(BLOCKS, TFCFCItem.ITEMS, name, blockSupplier, null);
     }
 
     private static ExtendedProperties foodProperties(){
@@ -139,4 +149,6 @@ public class TFCFCBlock {
     public static final RegistryObject<Block> ROASTED_CORN = registerNoItemBlock("roasted_corn", () -> new DecayingStackableEatableBlock(foodProperties(), 4, TFCFCBlock.ROASTED_CORN));
 
     public static final RegistryObject<Block> FERTILIZED_FARMLAND = registerBlock("fertilized_farmland", () -> new FarmlandBlock(ExtendedProperties.of(MapColor.DIRT).strength(1.3F).sound(SoundType.GRAVEL).isViewBlocking(TFCBlocks::always).isSuffocating(TFCBlocks::always).blockEntity(TFCBlockEntities.FARMLAND), net.satisfy.farm_and_charm.core.registry.ObjectRegistry.FERTILIZED_SOIL_BLOCK));
+
+    public static final Map<Beers, RegistryObject<LiquidBlock>> BEER_FLUIDS = Helpers.mapOfKeys(Beers.class, (fluid) -> registerFluidBlock(fluid.getSerializedName(), () -> new LiquidBlock((TFCFCFluid.BEERS.get(fluid)).source(), BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable())));
 }

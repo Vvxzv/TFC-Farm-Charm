@@ -211,9 +211,6 @@ dependencies {
     // bakery
     implementation fg.deobf("curse.maven:lets-do-bakery-farm-charm-compat-1038130:6847992")
 
-    // jech
-    //implementation fg.deobf("curse.maven:just-enough-characters-250702:6680042")
-
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

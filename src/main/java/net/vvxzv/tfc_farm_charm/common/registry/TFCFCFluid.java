@@ -1,30 +1,36 @@
 package net.vvxzv.tfc_farm_charm.common.registry;
 
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
+import net.dries007.tfc.common.fluids.*;
+import net.dries007.tfc.util.Helpers;
+import net.dries007.tfc.util.registry.RegistrationHelpers;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.level.material.FlowingFluid;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.fluids.FluidType;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.fluids.ForgeFlowingFluid;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.vvxzv.tfc_farm_charm.TFCFarmCharm;
-import net.vvxzv.tfc_farm_charm.common.fluid.BeerInstance;
-import net.vvxzv.tfc_farm_charm.common.fluid.ClientFluidTypeExtensions;
+import net.vvxzv.tfc_farm_charm.common.fluid.Beers;
 
-import java.util.ArrayList;
+import java.util.Map;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class TFCFCFluid {
-    public static BeerInstance BEER_BARLEY;
-    public static BeerInstance BEER_HALEY;
+    public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, TFCFarmCharm.MODID);
 
-    @SuppressWarnings("removal")
-    public static void generateFeatures(){
-        BEER_BARLEY = new BeerInstance(TFCFarmCharm.MODID, "beer_barley", FluidType.Properties.create().density(1000), new ClientFluidTypeExtensions(new ResourceLocation(TFCFarmCharm.MODID, "block/fluid/beer_barley"), new ResourceLocation(TFCFarmCharm.MODID, "block/fluid/beer_barley")));
-        BEER_HALEY = new BeerInstance(TFCFarmCharm.MODID, "beer_haley", FluidType.Properties.create().density(1000), new ClientFluidTypeExtensions(new ResourceLocation(TFCFarmCharm.MODID, "block/fluid/beer_haley"), new ResourceLocation(TFCFarmCharm.MODID, "block/fluid/beer_haley")));
-
+    private static FluidType.Properties waterLike() {
+        return FluidType.Properties.create().adjacentPathType(BlockPathTypes.WATER).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL).sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY).canConvertToSource(true).canDrown(true).canExtinguish(true).canHydrate(false).canPushEntity(true).canSwim(true).supportsBoating(true);
     }
 
-    public static ArrayList<RegistryObject<Item>> addBucketItemsToCreativeModeTab(){
-        ArrayList<RegistryObject<Item>> items = new ArrayList<>();
-        items.add(BEER_BARLEY.getBucketFluid());
-        items.add(BEER_HALEY.getBucketFluid());
-        return items;
+    private static <F extends FlowingFluid> FluidRegistryObject<F> register(String name, Consumer<ForgeFlowingFluid.Properties> builder, FluidType.Properties typeProperties, FluidTypeClientProperties clientProperties, Function<ForgeFlowingFluid.Properties, F> sourceFactory, Function<ForgeFlowingFluid.Properties, F> flowingFactory) {
+        int index = name.lastIndexOf(47);
+        String flowingName = index == -1 ? "flowing_" + name : name.substring(0, index) + "/flowing_" + name.substring(index + 1);
+        return RegistrationHelpers.registerFluid(TFCFluids.FLUID_TYPES, FLUIDS, name, name, flowingName, builder, () -> new ExtendedFluidType(typeProperties, clientProperties), sourceFactory, flowingFactory);
     }
+
+    public static final Map<Beers, FluidRegistryObject<ForgeFlowingFluid>> BEERS = Helpers.mapOfKeys(Beers.class, (fluid) -> register(fluid.getSerializedName(), (properties) -> properties.block(TFCFCBlock.BEER_FLUIDS.get(fluid)).bucket(TFCFCItem.BEER_FLUID_BUCKETS.get(fluid)), waterLike().descriptionId("fluid.tfc_farm_charm." + fluid.getSerializedName()).canConvertToSource(false), new FluidTypeClientProperties(fluid.getColor(), TFCFluids.WATER_STILL, TFCFluids.WATER_FLOW, TFCFluids.WATER_OVERLAY, null), MixingFluid.Source::new, MixingFluid.Flowing::new));
 }

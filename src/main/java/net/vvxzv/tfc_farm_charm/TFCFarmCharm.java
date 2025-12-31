@@ -6,11 +6,7 @@ import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.vvxzv.tfc_farm_charm.api.fluid.AbstractAnimateFluidInstance;
-import net.vvxzv.tfc_farm_charm.common.registry.TAB;
-import net.vvxzv.tfc_farm_charm.common.registry.TFCFCBlock;
-import net.vvxzv.tfc_farm_charm.common.registry.TFCFCFluid;
-import net.vvxzv.tfc_farm_charm.common.registry.TFCFCItem;
+import net.vvxzv.tfc_farm_charm.common.registry.*;
 import org.slf4j.Logger;
 
 @Mod(TFCFarmCharm.MODID)
@@ -24,14 +20,9 @@ public class TFCFarmCharm {
         TFCFCBlock.BLOCKS.register(modEventBus);
         TFCFCItem.ITEMS.register(modEventBus);
 
-        //AbstractAnimateFluidInstance.ITEMS.register(modEventBus);
-        //AbstractAnimateFluidInstance.BLOCKS.register(modEventBus);
-        //AbstractAnimateFluidInstance.FLUIDS.register(modEventBus);
-        //AbstractAnimateFluidInstance.FLUID_TYPES.register(modEventBus);
+        TFCFCFluid.FLUIDS.register(modEventBus);
 
-        //TFCFCFluid.generateFeatures();
-
-        TAB.CREATIVE_MODE_TAB.register(modEventBus);
+        CreativeTAB.CREATIVE_MODE_TAB.register(modEventBus);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

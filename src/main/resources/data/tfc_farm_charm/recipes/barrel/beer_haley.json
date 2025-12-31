@@ -1,0 +1,18 @@
+{
+	"type": "tfc:barrel_sealed",
+	"input_item": {
+		"ingredient": {
+			"item": "minecraft:chorus_fruit",
+			"count": 1
+		}
+	},
+	"input_fluid": {
+		"ingredient": "tfc:beer",
+		"amount": 500
+	},
+	"output_fluid": {
+		"fluid": "tfc_farm_charm:beer_haley",
+		"amount": 500
+	},
+	"duration": 192000
+}

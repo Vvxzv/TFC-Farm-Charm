@@ -1,0 +1,10 @@
+{
+    "values":[
+        "tfc_farm_charm:beer_barley",
+        "tfc_farm_charm:beer_haley",
+        "tfc_farm_charm:beer_hops",
+        "tfc_farm_charm:beer_wheat",
+        "tfc_farm_charm:beer_nettle",
+        "tfc_farm_charm:beer_oat"
+    ]
+}
