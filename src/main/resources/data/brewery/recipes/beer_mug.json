@@ -13,5 +13,9 @@
   "result": {
     "count": 8,
     "item": "brewery:beer_mug"
-  }
+  },
+  "conditions": [{
+    "type": "forge:mod_loaded",
+    "modid": "brewery"
+  }]
 }

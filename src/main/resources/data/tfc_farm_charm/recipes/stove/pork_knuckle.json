@@ -16,5 +16,9 @@
 		"count": 1
 	},
 	"experience": 0.5,
-	"requiresLearning": false
+	"requiresLearning": false,
+	"conditions": [{
+		"type": "forge:mod_loaded",
+		"modid": "brewery"
+	}]
 }

@@ -12,5 +12,9 @@
 	},
 	"output_item": {
 		"item": "brewery:beer_nettle"
-	}
+	},
+	"conditions": [{
+		"type": "forge:mod_loaded",
+		"modid": "brewery"
+	}]
 }

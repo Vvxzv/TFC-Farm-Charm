@@ -17,5 +17,9 @@
 	"result": {
 		"count": 2,
 		"item": "brewery:sideboard"
-	}
+	},
+	"conditions": [{
+		"type": "forge:mod_loaded",
+		"modid": "brewery"
+	}]
 }

@@ -14,5 +14,9 @@
 		"fluid": "tfc_farm_charm:beer_haley",
 		"amount": 500
 	},
-	"duration": 192000
+	"duration": 192000,
+	"conditions": [{
+		"type": "forge:mod_loaded",
+		"modid": "brewery"
+	}]
 }

@@ -26,5 +26,9 @@
 			"item": "brewery:whiskey_smokey_reverie",
 			"count": 1
 		}
-	}
+	},
+	"conditions": [{
+		"type": "forge:mod_loaded",
+		"modid": "brewery"
+	}]
 }

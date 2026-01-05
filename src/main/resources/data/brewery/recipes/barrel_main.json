@@ -12,5 +12,9 @@
 	"result": {
 		"count": 1,
 		"item": "brewery:barrel_main"
-	}
+	},
+	"conditions": [{
+		"type": "forge:mod_loaded",
+		"modid": "brewery"
+	}]
 }

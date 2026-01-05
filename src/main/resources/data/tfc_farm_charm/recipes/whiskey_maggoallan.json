@@ -26,5 +26,9 @@
 			"item": "brewery:whiskey_maggoallan",
 			"count": 1
 		}
-	}
+	},
+	"conditions": [{
+		"type": "forge:mod_loaded",
+		"modid": "brewery"
+	}]
 }

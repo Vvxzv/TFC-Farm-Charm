@@ -26,5 +26,9 @@
 			"item": "brewery:whiskey_carrasconlabel",
 			"count": 1
 		}
-	}
+	},
+	"conditions": [{
+		"type": "forge:mod_loaded",
+		"modid": "brewery"
+	}]
 }

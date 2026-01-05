@@ -26,5 +26,9 @@
 			"item": "brewery:whiskey_cristelwalker",
 			"count": 1
 		}
-	}
+	},
+	"conditions": [{
+		"type": "forge:mod_loaded",
+		"modid": "brewery"
+	}]
 }

@@ -14,5 +14,9 @@
   "result": {
     "count": 1,
     "item": "brewery:breathalyzer"
-  }
+  },
+  "conditions": [{
+    "type": "forge:mod_loaded",
+    "modid": "brewery"
+  }]
 }

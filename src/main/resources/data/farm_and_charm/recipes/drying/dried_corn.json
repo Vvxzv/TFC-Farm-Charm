@@ -10,5 +10,9 @@
 	"result": {
 		"item": "brewery:dried_corn",
 		"count": 1
-	}
+	},
+	"conditions": [{
+		"type": "forge:mod_loaded",
+		"modid": "brewery"
+	}]
 }

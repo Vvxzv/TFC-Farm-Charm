@@ -13,5 +13,9 @@
   "result": {
     "count": 1,
     "item": "brewery:table"
-  }
+  },
+  "conditions": [{
+    "type": "forge:mod_loaded",
+    "modid": "brewery"
+  }]
 }

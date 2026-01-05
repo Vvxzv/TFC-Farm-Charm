@@ -39,5 +39,9 @@
 		"item": "tfc_farm_charm:fried_chicken",
 		"count": 1
 	},
-	"requiresLearning": false
+	"requiresLearning": false,
+	"conditions": [{
+		"type": "forge:mod_loaded",
+		"modid": "brewery"
+	}]
 }

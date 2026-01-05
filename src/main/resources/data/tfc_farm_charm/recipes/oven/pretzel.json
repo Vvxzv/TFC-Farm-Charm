@@ -12,5 +12,9 @@
 		}
 	},
 	"temperature": 200,
-	"duration": 1000
+	"duration": 1000,
+	"conditions": [{
+		"type": "forge:mod_loaded",
+		"modid": "brewery"
+	}]
 }

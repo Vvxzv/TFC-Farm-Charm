@@ -16,5 +16,9 @@
   "result": {
     "count": 4,
     "item": "brewery:patterned_wool"
-  }
+  },
+  "conditions": [{
+    "type": "forge:mod_loaded",
+    "modid": "brewery"
+  }]
 }

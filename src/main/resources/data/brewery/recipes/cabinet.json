@@ -17,5 +17,9 @@
 	"result": {
 		"item": "brewery:cabinet",
 		"count": 3
-	}
+	},
+	"conditions": [{
+		"type": "forge:mod_loaded",
+		"modid": "brewery"
+	}]
 }

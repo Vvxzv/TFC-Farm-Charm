@@ -16,5 +16,9 @@
 	"result": {
 		"item": "brewery:wall_cabinet",
 		"count": 2
-	}
+	},
+	"conditions": [{
+		"type": "forge:mod_loaded",
+		"modid": "brewery"
+	}]
 }

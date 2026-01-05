@@ -12,5 +12,9 @@
 	},
 	"output_item": {
 		"item": "brewery:beer_barley"
-	}
+	},
+	"conditions": [{
+		"type": "forge:mod_loaded",
+		"modid": "brewery"
+	}]
 }

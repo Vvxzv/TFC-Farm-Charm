@@ -12,5 +12,9 @@
   "result": {
     "count": 2,
     "item": "brewery:bench"
-  }
+  },
+  "conditions": [{
+    "type": "forge:mod_loaded",
+    "modid": "brewery"
+  }]
 }
