@@ -125,5 +125,9 @@ public class DecayingEatableBoxBlock extends DecayingFacingBlock{
                 }
             }
         }
+
+        if (state.hasBlockEntity() && (!state.is(newState.getBlock()) || !newState.hasBlockEntity())) {
+            level.removeBlockEntity(pos);
+        }
     }
 }

@@ -173,5 +173,9 @@ public class DecayingPieBlock extends DecayingFacingBlock{
                 Helpers.spawnItem(level, pos, decaying.getStack());
             }
         }
+
+        if (state.hasBlockEntity() && (!state.is(newState.getBlock()) || !newState.hasBlockEntity())) {
+            level.removeBlockEntity(pos);
+        }
     }
 }

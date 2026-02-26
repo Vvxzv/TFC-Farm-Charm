@@ -147,5 +147,9 @@ public class DecayingStackableEatableBlock extends DecayingBlock {
                 Helpers.spawnItem(level, pos, stack);
             }
         }
+
+        if (state.hasBlockEntity() && (!state.is(newState.getBlock()) || !newState.hasBlockEntity())) {
+            level.removeBlockEntity(pos);
+        }
     }
 }

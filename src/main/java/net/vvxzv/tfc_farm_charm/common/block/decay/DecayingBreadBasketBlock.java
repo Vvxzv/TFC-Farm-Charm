@@ -126,5 +126,9 @@ public class DecayingBreadBasketBlock extends DecayingEatableBoxBlock{
                 }
             }
         }
+
+        if (state.hasBlockEntity() && (!state.is(newState.getBlock()) || !newState.hasBlockEntity())) {
+            level.removeBlockEntity(pos);
+        }
     }
 }
