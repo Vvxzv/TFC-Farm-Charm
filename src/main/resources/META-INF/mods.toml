@@ -69,16 +69,23 @@ versionRange="[2.1,)"
 ordering="AFTER"
 side="BOTH"
 
-#[[dependencies."${mod_id}"]]
-#modId="brewery"
-#mandatory=true
-#versionRange="[2.0,)"
-#ordering="AFTER"
-#side="BOTH"
+[[dependencies."${mod_id}"]]
+modId="brewery"
+mandatory=false
+versionRange="[2.0,)"
+ordering="AFTER"
+side="BOTH"
 
 [[dependencies."${mod_id}"]]
 modId="bakery"
 mandatory=true
 versionRange="[2.0,)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies."${mod_id}"]]
+modId="oneenoughitem"
+mandatory=true
+versionRange="[1.,)"
 ordering="AFTER"
 side="BOTH"

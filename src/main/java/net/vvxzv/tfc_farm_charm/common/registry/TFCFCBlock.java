@@ -55,7 +55,6 @@ public class TFCFCBlock {
                 .strength(1.0F)
                 .sound(SoundType.WOOD)
                 .blockEntity(TFCBlockEntities.DECAYING)
-                .serverTicks(DecayingBlockEntity::serverTick)
                 .instrument(NoteBlockInstrument.DIDGERIDOO)
                 .pushReaction(PushReaction.DESTROY);
     }
@@ -63,7 +62,6 @@ public class TFCFCBlock {
     private static ExtendedProperties jarProperties(){
         return ExtendedProperties.of(Blocks.GLASS)
                 .blockEntity(TFCBlockEntities.DECAYING)
-                .serverTicks(DecayingBlockEntity::serverTick)
                 .pushReaction(PushReaction.DESTROY)
                 .instabreak()
                 .sound(SoundType.GLASS)

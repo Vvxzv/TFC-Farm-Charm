@@ -32,7 +32,8 @@ public class TFCFarmCharmClient {
                 TFCFCBlock.APPLE_JAM.get(),
                 TFCFCBlock.FARMERS_BREAKFAST.get(),
                 TFCFCBlock.STUFFED_CHICKEN.get(),
-                TFCFCBlock.STUFFED_RABBIT.get()
+                TFCFCBlock.STUFFED_RABBIT.get(),
+                TFCFCBlock.ROASTED_CORN.get()
         });
     }
 
