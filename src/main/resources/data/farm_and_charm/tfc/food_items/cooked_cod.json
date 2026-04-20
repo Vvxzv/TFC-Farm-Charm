@@ -1,0 +1,12 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:cooked_cod"
+	},
+	"decay_modifier": 2,
+	"hunger": 4,
+	"saturation": 2,
+	"grain": 1,
+	"vegetables": 1,
+	"protein": 1,
+	"dairy": 1
+}

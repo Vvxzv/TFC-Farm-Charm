@@ -1,0 +1,22 @@
+{
+	"type": "tfc:barrel_instant",
+	"output_item": {
+		"item": "brewery:beer_barley",
+		"count": 1
+	},
+	"input_item": {
+		"ingredient": {
+			"item": "brewery:beer_mug"
+		}
+	},
+	"input_fluid": {
+		"ingredient": "tfc_farm_charm:beer_barley",
+		"amount": 100
+	},
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "brewery"
+		}
+	]
+}

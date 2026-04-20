@@ -10,13 +10,7 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"item": "tfc:food/cooked_beef"
-			}
-		},
-		{
-			"type": "tfc:not_rotten",
-			"ingredient": {
-				"item": "farm_and_charm:simple_tomato_soup"
+				"item": "tfc:food/potato"
 			}
 		},
 		{
@@ -28,19 +22,21 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"item": "tfc:food/potato"
+				"item": "tfc:food/cooked_beef"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:simple_tomato_soup"
 			}
 		}
 	],
-	"container": {
-		"required": false,
-		"item": {
-			"item": "minecraft:bowl"
-		}
-	},
 	"result": {
 		"item": "farm_and_charm:goulash",
 		"count": 1
 	},
-	"requiresLearning": false
+	"container": {
+		"required": false
+	}
 }

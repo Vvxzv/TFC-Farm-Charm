@@ -1,23 +1,22 @@
 {
 	"type": "minecraft:crafting_shaped",
-	"pattern": [
-		"III",
-		"###",
-		"#B#"
-	],
-	"key": {
-		"#": {
-			"item": "minecraft:bricks"
-		},
-		"B": {
-			"item": "tfc:thatch"
-		},
-		"I": {
-			"item": "tfc:metal/ingot/cast_iron"
-		}
-	},
 	"result": {
 		"item": "farm_and_charm:stove",
 		"count": 1
+	},
+	"pattern": [
+		"aba",
+		"aca"
+	],
+	"key": {
+		"a": {
+			"item": "minecraft:bricks"
+		},
+		"b": {
+			"item": "tfc:wrought_iron_grill"
+		},
+		"c": {
+			"item": "tfc:thatch"
+		}
 	}
 }

@@ -4,25 +4,25 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
+				"tag": "tfc:foods/vegetables"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
 				"item": "tfc:food/tomato"
 			}
 		},
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"item": "tfc:food/onion"
-			}
-		},
-		{
-			"type": "tfc:not_rotten",
-			"ingredient": {
-				"item": "tfc:food/cabbage"
-			}
-		},
-		{
-			"type": "tfc:not_rotten",
-			"ingredient": {
 				"item": "tfc:food/strawberry"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/onion"
 			}
 		}
 	],

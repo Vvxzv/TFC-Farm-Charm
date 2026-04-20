@@ -1,0 +1,10 @@
+{
+	"ingredient": {
+		"item": "bakery:braided_bread"
+	},
+	"decay_modifier": 1,
+	"hunger": 4,
+	"saturation": 3,
+	"grain": 1.3,
+	"protein": 0.8
+}

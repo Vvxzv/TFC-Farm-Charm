@@ -1,0 +1,11 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:goulash"
+	},
+	"decay_modifier": 1.5,
+	"hunger": 4,
+	"saturation": 5,
+	"water": 20,
+	"vegetables": 6,
+	"protein": 2.5
+}

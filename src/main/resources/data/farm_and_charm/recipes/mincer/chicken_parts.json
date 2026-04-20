@@ -1,14 +1,14 @@
 {
 	"type": "farm_and_charm:mincer",
+	"recipe_type": "MEAT",
 	"ingredient": {
 		"type": "tfc:not_rotten",
 		"ingredient": {
-			"tag": "tfc_farm_charm:chicken"
+			"tag": "tfc_farm_charm:chicken_type"
 		}
 	},
-	"recipe_type": "MEAT",
 	"result": {
 		"item": "farm_and_charm:chicken_parts",
-		"count": 3
+		"count": 2
 	}
 }

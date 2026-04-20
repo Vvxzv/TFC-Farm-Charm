@@ -1,16 +1,19 @@
 {
 	"type": "firmalife:oven",
 	"ingredient": {
-		"type": "tfc:not_rotten",
-		"ingredient": {
-			"item": "tfc_farm_charm:unfinished_toast"
-		}
+		"item": "tfc_farm_charm:unfinished_toast"
 	},
+	"temperature": 200.0,
+	"duration": 1000,
 	"result_item": {
 		"stack": {
-			"item": "tfc_farm_charm:toast"
-		}
-	},
-	"temperature": 200,
-	"duration": 1000
+			"item": "bakery:toast",
+			"count": 1
+		},
+		"modifiers": [
+			{
+				"type": "tfc:copy_food"
+			}
+		]
+	}
 }

@@ -1,15 +1,15 @@
 {
 	"type": "tfc:anvil",
-	"input": {
-		"tag": "forge:double_sheets/wrought_iron"
-	},
 	"result": {
-		"item": "farm_and_charm:cooking_pot"
+		"item": "farm_and_charm:cooking_pot",
+		"count": 1
 	},
-	"tier": 3,
+	"input": {
+		"item": "tfc:metal/double_sheet/wrought_iron"
+	},
 	"rules": [
-		"punch_last",
-		"punch_second_last",
+		"hit_last",
+		"bend_second_last",
 		"bend_third_last"
 	]
 }

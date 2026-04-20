@@ -1,0 +1,10 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:potato_soup"
+	},
+	"decay_modifier": 1.5,
+	"hunger": 4,
+	"saturation": 2,
+	"water": 40,
+	"vegetables": 2
+}

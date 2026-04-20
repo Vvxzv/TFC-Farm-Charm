@@ -16,7 +16,7 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "farm_and_charm:butter"
+				"item": "farm_and_charm:butter"
 			}
 		},
 		{
@@ -34,7 +34,7 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"item": "tfc:food/cabbage"
+				"tag": "tfc:foods/vegetables"
 			}
 		}
 	],
@@ -44,6 +44,5 @@
 	"result": {
 		"item": "farm_and_charm:beef_patty_with_vegetables",
 		"count": 1
-	},
-	"requiresLearning": false
+	}
 }

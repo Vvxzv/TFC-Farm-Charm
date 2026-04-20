@@ -1,7 +1,34 @@
 {
-	"conditions": [
+	"type": "farm_and_charm:pot_cooking",
+	"ingredients": [
 		{
-			"type": "forge:false"
+			"type": "tfc:fluid_item",
+			"fluid_ingredient": {
+				"ingredient": {
+					"tag": "tfc:milks"
+				},
+				"amount": 100
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "bakery:chocolate_truffle"
+			}
+		},
+		{
+			"item": "minecraft:sugar"
 		}
-	]
+	],
+	"result": {
+		"item": "bakery:chocolate_jam",
+		"count": 1
+	},
+	"container": {
+		"required": true,
+		"item": {
+			"item": "bakery:jar",
+			"count": 1
+		}
+	}
 }

@@ -1,0 +1,55 @@
+{
+  "type": "tfc_farm_charm:composite",
+  "modifiers": [
+    {
+      "type": "tfc_farm_charm:remove_items",
+      "conditions": [
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "bakery:blocks/strawberry_jam"
+        }
+      ],
+      "targets": ["bakery:strawberry_jam"]
+    },
+    {
+      "type": "tfc_farm_charm:remove_items",
+      "conditions": [
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "bakery:blocks/sweetberry_jam"
+        }
+      ],
+      "targets": ["bakery:sweetberry_jam"]
+    },
+    {
+      "type": "tfc_farm_charm:remove_items",
+      "conditions": [
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "bakery:blocks/glowberry_jam"
+        }
+      ],
+      "targets": ["bakery:glowberry_jam"]
+    },
+    {
+      "type": "tfc_farm_charm:remove_items",
+      "conditions": [
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "bakery:blocks/apple_jam"
+        }
+      ],
+      "targets": ["bakery:apple_jam"]
+    },
+    {
+      "type": "tfc_farm_charm:remove_items",
+      "conditions": [
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "bakery:blocks/chocolate_jam"
+        }
+      ],
+      "targets": ["bakery:chocolate_jam"]
+    }
+  ]
+}

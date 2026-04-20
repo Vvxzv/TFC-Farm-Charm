@@ -24,6 +24,5 @@
 		"item": "bakery:cornet",
 		"count": 1
 	},
-	"experience": 0.2,
-	"requiresLearning": false
+	"experience": 0.2
 }

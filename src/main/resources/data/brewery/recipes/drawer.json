@@ -1,25 +1,26 @@
 {
 	"type": "minecraft:crafting_shaped",
-	"group": "cabinet",
 	"pattern": [
-		"###",
-		"#B#",
-		"#B#"
+		"aaa",
+		"aba",
+		"aba"
 	],
 	"key": {
-		"#": {
+		"a": {
 			"tag": "minecraft:planks"
 		},
-		"B": {
+		"b": {
 			"tag": "forge:chests/wooden"
 		}
 	},
 	"result": {
 		"item": "brewery:drawer",
-		"count": 2
+		"count": 1
 	},
-	"conditions": [{
-		"type": "forge:mod_loaded",
-		"modid": "brewery"
-	}]
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "brewery"
+		}
+	]
 }

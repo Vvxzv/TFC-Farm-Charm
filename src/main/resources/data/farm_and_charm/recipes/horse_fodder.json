@@ -1,16 +1,27 @@
 {
-	"type": "minecraft:crafting_shaped",
-	"pattern": [
-		"WWW",
-		"WWW"
-	],
-	"key": {
-		"W": {
-			"tag": "tfc:horse_food"
-		}
-	},
+	"type": "minecraft:crafting_shapeless",
 	"result": {
 		"item": "farm_and_charm:horse_fodder",
 		"count": 1
-	}
+	},
+	"ingredients": [
+		{
+			"tag": "tfc:horse_food"
+		},
+		{
+			"tag": "tfc:horse_food"
+		},
+		{
+			"tag": "tfc:horse_food"
+		},
+		{
+			"tag": "tfc:horse_food"
+		},
+		{
+			"tag": "tfc:horse_food"
+		},
+		{
+			"tag": "tfc:horse_food"
+		}
+	]
 }

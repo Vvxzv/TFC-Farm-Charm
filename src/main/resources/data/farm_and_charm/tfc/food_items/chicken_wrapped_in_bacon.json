@@ -1,0 +1,11 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:chicken_wrapped_in_bacon"
+	},
+	"decay_modifier": 2,
+	"hunger": 4,
+	"saturation": 3,
+	"grain": 1,
+	"protein": 2,
+	"dairy": 1
+}

@@ -1,25 +1,29 @@
 {
 	"type": "minecraft:crafting_shaped",
-	"group": "cabinet",
 	"pattern": [
-		"   ",
-		"###",
-		"#B#"
+		"ccc",
+		"aba",
+		"aba"
 	],
 	"key": {
-		"#": {
+		"a": {
 			"tag": "minecraft:planks"
 		},
-		"B": {
+		"b": {
 			"tag": "forge:chests/wooden"
+		},
+		"c": {
+			"tag": "minecraft:wooden_slabs"
 		}
 	},
 	"result": {
-		"count": 2,
-		"item": "brewery:sideboard"
+		"item": "brewery:sideboard",
+		"count": 1
 	},
-	"conditions": [{
-		"type": "forge:mod_loaded",
-		"modid": "brewery"
-	}]
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "brewery"
+		}
+	]
 }

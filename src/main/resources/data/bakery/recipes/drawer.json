@@ -1,19 +1,19 @@
 {
 	"type": "minecraft:crafting_shaped",
+	"result": {
+		"item": "bakery:drawer",
+		"count": 1
+	},
 	"pattern": [
-		"ab",
-		"ab"
+		"ba",
+		"ba"
 	],
 	"key": {
 		"a": {
-			"tag": "forge:chests/wooden"
+			"tag": "minecraft:planks"
 		},
 		"b": {
-			"tag": "minecraft:planks"
+			"tag": "forge:chests/wooden"
 		}
-	},
-	"result": {
-		"item": "bakery:drawer",
-		"count": 2
 	}
 }

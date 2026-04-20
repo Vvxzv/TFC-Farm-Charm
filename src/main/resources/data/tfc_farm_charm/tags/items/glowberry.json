@@ -1,12 +1,10 @@
 {
-    "values": [
-        "minecraft:glow_berries",
-        "tfc:food/blueberry",
-        "tfc:food/bunchberry",
-        "tfc:food/cloudberry",
-        "tfc:food/gooseberry",
-        "tfc:food/snowberry",
-        "tfc:food/wintergreen_berry",
-        "tfc:food/cherry"
-    ]
+	"values": [
+		"minecraft:glow_berries",
+		"tfc:food/blueberry",
+		"tfc:food/cloudberry",
+		"tfc:food/elderberry",
+		"tfc:food/raspberry",
+		"tfc:food/snowberry"
+	]
 }

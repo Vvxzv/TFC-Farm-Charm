@@ -1,0 +1,35 @@
+{
+  "type": "tfc_farm_charm:composite",
+  "modifiers": [
+    {
+      "type": "tfc_farm_charm:remove_items",
+      "conditions": [
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "bakery:blocks/bread_crate"
+        }
+      ],
+      "targets": ["bakery:tray"]
+    },
+    {
+      "type": "tfc_farm_charm:add_item",
+      "conditions": [
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "bakery:blocks/bread_crate"
+        },
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:block_state_property",
+            "block": "bakery:bread_crate",
+            "properties": {
+              "bites": "0"
+            }
+          }
+        }
+      ],
+      "item": "bakery:tray"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+	"type": "farm_and_charm:crafting_bowl",
+	"ingredients": [
+		{
+			"type": "tfc:fluid_item",
+			"fluid_ingredient": {
+				"ingredient": {
+					"fluid": "firmalife:yeast_starter"
+				},
+				"amount": 100
+			}
+		},
+		{
+			"tag": "tfc:sweetener"
+		}
+	],
+	"result": {
+		"item": "farm_and_charm:yeast",
+		"count": 1
+	}
+}

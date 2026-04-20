@@ -1,11 +1,10 @@
 {
-    "values":[
-        "minecraft:sweet_berries",
-        "firmalife:food/fig",
-        "firmalife:food/red_grapes",
-        "firmalife:food/white_grapes",
-        "tfc:food/blackberry",
-        "tfc:food/cranberry",
-        "tfc:food/raspberry"
-    ]
+	"values": [
+		"minecraft:sweet_berries",
+		"tfc:food/blackberry",
+		"tfc:food/bunchberry",
+		"tfc:food/cranberry",
+		"tfc:food/gooseberry",
+		"tfc:food/wintergreen_berry"
+	]
 }

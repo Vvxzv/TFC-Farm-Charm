@@ -8,20 +8,20 @@
 			}
 		},
 		{
-			"item": "farm_and_charm:yeast"
-		},
-		{
 			"type": "tfc:fluid_item",
 			"fluid_ingredient": {
 				"ingredient": {
-					"fluid": "water"
+					"fluid": "minecraft:water"
 				},
 				"amount": 100
 			}
+		},
+		{
+			"item": "farm_and_charm:yeast"
 		}
 	],
 	"result": {
 		"item": "farm_and_charm:dough",
-		"count": 4
+		"count": 2
 	}
 }

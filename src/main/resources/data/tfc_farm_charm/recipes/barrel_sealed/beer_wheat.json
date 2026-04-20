@@ -1,0 +1,23 @@
+{
+	"type": "tfc:barrel_sealed",
+	"duration": 72000,
+	"output_fluid": {
+		"fluid": "tfc_farm_charm:beer_wheat",
+		"amount": 500
+	},
+	"input_item": {
+		"ingredient": {
+			"item": "brewery:dried_wheat"
+		}
+	},
+	"input_fluid": {
+		"ingredient": "tfc:beer",
+		"amount": 500
+	},
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "brewery"
+		}
+	]
+}

@@ -1,20 +1,20 @@
 {
 	"type": "minecraft:crafting_shaped",
-	"pattern": [
-		"B",
-		"W",
-		"W"
-	],
-	"key": {
-		"B": {
-			"item": "tfc:metal/rod/wrought_iron"
-		},
-		"W": {
-			"tag": "minecraft:wooden_slabs"
-		}
-	},
 	"result": {
 		"item": "bakery:cupcake_display",
-		"count": 1
+		"count": 2
+	},
+	"pattern": [
+		"aaa",
+		"aba",
+		"aba"
+	],
+	"key": {
+		"a": {
+			"tag": "tfc_farm_charm:chain"
+		},
+		"b": {
+			"tag": "minecraft:wooden_slabs"
+		}
 	}
 }

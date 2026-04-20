@@ -1,0 +1,11 @@
+{
+	"ingredient": {
+		"item": "bakery:waffle"
+	},
+	"decay_modifier": 1,
+	"hunger": 4,
+	"saturation": 1,
+	"grain": 1,
+	"protein": 3,
+	"dairy": 0.6
+}

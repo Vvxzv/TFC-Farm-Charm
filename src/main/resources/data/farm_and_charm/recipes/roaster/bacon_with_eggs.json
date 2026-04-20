@@ -16,19 +16,19 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "forge:eggs"
+				"item": "minecraft:egg"
 			}
 		},
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "forge:eggs"
+				"item": "minecraft:egg"
 			}
 		},
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "farm_and_charm:butter"
+				"item": "farm_and_charm:butter"
 			}
 		}
 	],
@@ -37,7 +37,6 @@
 	},
 	"result": {
 		"item": "farm_and_charm:bacon_with_eggs",
-		"count": 1
-	},
-	"requiresLearning": false
+		"count": 2
+	}
 }

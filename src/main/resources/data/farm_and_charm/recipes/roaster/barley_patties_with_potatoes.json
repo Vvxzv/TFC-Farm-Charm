@@ -22,19 +22,19 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "farm_and_charm:butter"
+				"item": "farm_and_charm:butter"
 			}
 		},
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "forge:eggs"
+				"item": "minecraft:egg"
 			}
 		},
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"item": "tfc:food/cabbage"
+				"tag": "tfc:foods/vegetables"
 			}
 		}
 	],
@@ -44,6 +44,5 @@
 	"result": {
 		"item": "farm_and_charm:barley_patties_with_potatoes",
 		"count": 1
-	},
-	"requiresLearning": false
+	}
 }

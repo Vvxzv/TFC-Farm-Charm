@@ -1,0 +1,12 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:sausage_with_oat_patty"
+	},
+	"decay_modifier": 2,
+	"hunger": 4,
+	"saturation": 3,
+	"grain": 1,
+	"vegetables": 2,
+	"protein": 2.67,
+	"dairy": 1
+}

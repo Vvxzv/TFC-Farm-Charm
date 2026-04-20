@@ -9,10 +9,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.satisfy.farm_and_charm.core.block.PetBowlBlock;
@@ -60,7 +58,7 @@ public class CatEatFromBowlGoal extends Goal {
 
             if (closest != null) {
                 this.targetBowl = closest;
-                this.targetVec = new Vector3f((float)closest.getX() + 0.5F, (float)closest.getY(), (float)closest.getZ() + 0.5F);
+                this.targetVec = new Vector3f(closest.getX() + 0.5F, closest.getY(), closest.getZ() + 0.5F);
                 this.foodStack = candidateFood;
                 return true;
             } else {
@@ -108,7 +106,7 @@ public class CatEatFromBowlGoal extends Goal {
                 if (!bowl.isEmpty()) {
                     float distSqr = this.targetVec.distanceSquared((float)this.cat.getX(), (float)this.cat.getY(), (float)this.cat.getZ());
                     if (distSqr <= 4.0F && this.cat.isSitting()) {
-                        ++this.eatTicks;
+                        this.eatTicks++;
                         this.cat.getLookControl().setLookAt(this.targetVec.x(), this.targetVec.y(), this.targetVec.z());
                         if (!level.isClientSide && this.eatTicks <= 40) {
                             ParticleOptions particle = this.getParticleFromFood();

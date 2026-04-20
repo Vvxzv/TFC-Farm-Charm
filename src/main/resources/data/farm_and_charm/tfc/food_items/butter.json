@@ -1,0 +1,8 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:butter"
+	},
+	"decay_modifier": 1,
+	"hunger": 4,
+	"dairy": 1
+}

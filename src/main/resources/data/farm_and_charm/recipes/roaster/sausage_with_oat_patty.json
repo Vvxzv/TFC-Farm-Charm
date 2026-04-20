@@ -10,7 +10,7 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"item": "brewery:sausage"
+				"item": "farm_and_charm:butter"
 			}
 		},
 		{
@@ -44,6 +44,5 @@
 	"result": {
 		"item": "farm_and_charm:sausage_with_oat_patty",
 		"count": 1
-	},
-	"requiresLearning": false
+	}
 }

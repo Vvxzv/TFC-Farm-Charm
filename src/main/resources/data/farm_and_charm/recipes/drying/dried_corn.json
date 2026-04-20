@@ -1,18 +1,7 @@
 {
-	"type": "farm_and_charm:drying",
-	"ingredient": {
-		"type": "tfc:not_rotten",
-		"ingredient": {
-			"item": "tfc:food/maize"
+	"conditions": [
+		{
+			"type": "forge:false"
 		}
-	},
-	"recipe_type": "MEAT",
-	"result": {
-		"item": "brewery:dried_corn",
-		"count": 1
-	},
-	"conditions": [{
-		"type": "forge:mod_loaded",
-		"modid": "brewery"
-	}]
+	]
 }

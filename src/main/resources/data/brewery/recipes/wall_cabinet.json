@@ -1,24 +1,25 @@
 {
 	"type": "minecraft:crafting_shaped",
-	"group": "cabinet",
 	"pattern": [
-		"#B#",
-		"#B#"
+		"aba",
+		"aba"
 	],
 	"key": {
-		"#": {
-			"tag": "minecraft:planks"
+		"a": {
+			"tag": "minecraft:wooden_slabs"
 		},
-		"B": {
+		"b": {
 			"tag": "forge:chests/wooden"
 		}
 	},
 	"result": {
 		"item": "brewery:wall_cabinet",
-		"count": 2
+		"count": 1
 	},
-	"conditions": [{
-		"type": "forge:mod_loaded",
-		"modid": "brewery"
-	}]
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "brewery"
+		}
+	]
 }

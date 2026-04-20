@@ -7,13 +7,13 @@ import net.minecraft.resources.ResourceLocation;
 import net.satisfy.bakery.core.registry.ObjectRegistry;
 import net.satisfy.farm_and_charm.core.compat.jei.category.CookingPotCategory;
 import net.vvxzv.tfc_farm_charm.TFCFarmCharm;
+import org.jetbrains.annotations.NotNull;
 
 @JeiPlugin
 public class JEIPlugin implements IModPlugin {
     @Override
-    @SuppressWarnings("removal")
-    public ResourceLocation getPluginUid() {
-        return new ResourceLocation(TFCFarmCharm.MODID, "jei_plugin");
+    public @NotNull ResourceLocation getPluginUid() {
+        return ResourceLocation.fromNamespaceAndPath(TFCFarmCharm.MODID, "jei_plugin");
     }
 
     @Override

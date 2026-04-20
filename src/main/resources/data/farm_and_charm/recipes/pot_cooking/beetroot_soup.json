@@ -1,18 +1,34 @@
 {
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "item": "minecraft:beetroot"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bowl"
-    }
-  },
-  "result": {
-    "item": "minecraft:beetroot_soup"
-  },
-  "requiresLearning": false
+	"type": "farm_and_charm:pot_cooking",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/beet"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/beet"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/beet"
+			}
+		}
+	],
+	"result": {
+		"item": "minecraft:beetroot_soup",
+		"count": 1
+	},
+	"container": {
+		"required": true,
+		"item": {
+			"item": "minecraft:bowl",
+			"count": 1
+		}
+	}
 }

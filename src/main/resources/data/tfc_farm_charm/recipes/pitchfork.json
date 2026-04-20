@@ -1,0 +1,29 @@
+{
+	"type": "tfc:advanced_shaped_crafting",
+	"result": {
+		"stack": {
+			"item": "farm_and_charm:pitchfork",
+			"count": 1,
+			"nbt": "{Damage:0}"
+		},
+		"modifiers": [
+			{
+				"type": "tfc:copy_forging_bonus"
+			}
+		]
+	},
+	"pattern": [
+		"a",
+		"b"
+	],
+	"key": {
+		"a": {
+			"item": "tfc_farm_charm:pitchfork_head"
+		},
+		"b": {
+			"tag": "forge:rods/wooden"
+		}
+	},
+	"input_row": 0,
+	"input_column": 0
+}

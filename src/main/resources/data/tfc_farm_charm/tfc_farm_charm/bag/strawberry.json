@@ -1,0 +1,6 @@
+{
+	"ingredient": {
+		"item": "tfc:food/strawberry"
+	},
+	"block": "tfc_farm_charm:strawberry_bag"
+}

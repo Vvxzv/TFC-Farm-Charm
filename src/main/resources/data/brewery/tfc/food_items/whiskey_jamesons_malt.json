@@ -1,0 +1,9 @@
+{
+	"ingredient": {
+		"item": "brewery:whiskey_jamesons_malt"
+	},
+	"decay_modifier": 0,
+	"hunger": 1,
+	"water": 40,
+	"grain": 0.2
+}

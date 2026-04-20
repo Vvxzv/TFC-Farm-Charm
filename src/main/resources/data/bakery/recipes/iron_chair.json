@@ -1,20 +1,7 @@
 {
-	"type": "minecraft:crafting_shaped",
-	"pattern": [
-		"a  ",
-		"aba",
-		"a a"
-	],
-	"key": {
-		"a": {
-			"item": "tfc:metal/rod/wrought_iron"
-		},
-		"b": {
-			"item": "tfc:metal/sheet/wrought_iron"
+	"conditions": [
+		{
+			"type": "forge:false"
 		}
-	},
-	"result": {
-		"item": "bakery:iron_chair",
-		"count": 4
-	}
+	]
 }

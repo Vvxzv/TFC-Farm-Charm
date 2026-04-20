@@ -1,0 +1,12 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:lamb_with_corn"
+	},
+	"decay_modifier": 2,
+	"hunger": 4,
+	"saturation": 2,
+	"grain": 1,
+	"vegetables": 1,
+	"protein": 1.5,
+	"dairy": 1
+}

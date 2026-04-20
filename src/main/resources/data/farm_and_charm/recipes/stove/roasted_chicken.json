@@ -4,7 +4,7 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "farm_and_charm:pasta"
+				"item": "farm_and_charm:raw_pasta"
 			}
 		},
 		{
@@ -24,6 +24,5 @@
 		"item": "farm_and_charm:roasted_chicken",
 		"count": 1
 	},
-	"experience": 0.3,
-	"requiresLearning": false
+	"experience": 0.2
 }

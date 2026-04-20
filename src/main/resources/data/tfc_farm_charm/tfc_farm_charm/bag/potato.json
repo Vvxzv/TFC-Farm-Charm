@@ -1,0 +1,6 @@
+{
+	"ingredient": {
+		"item": "tfc:food/potato"
+	},
+	"block": "tfc_farm_charm:potato_bag"
+}

@@ -1,0 +1,10 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:stuffed_rabbit"
+	},
+	"decay_modifier": 2,
+	"hunger": 4,
+	"saturation": 1,
+	"vegetables": 2,
+	"protein": 0.5
+}

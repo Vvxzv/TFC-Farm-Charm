@@ -1,7 +1,40 @@
 {
+	"type": "farm_and_charm:pot_cooking",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "brewery:mashed_potatoes"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc:foods/vegetables"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc:foods/dough"
+			}
+		}
+	],
+	"result": {
+		"item": "brewery:dumplings",
+		"count": 2
+	},
+	"container": {
+		"required": true,
+		"item": {
+			"item": "minecraft:bowl",
+			"count": 1
+		}
+	},
 	"conditions": [
 		{
-			"type": "forge:false"
+			"type": "forge:mod_loaded",
+			"modid": "brewery"
 		}
 	]
 }

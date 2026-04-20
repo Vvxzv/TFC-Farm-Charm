@@ -16,7 +16,7 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "tfc:foods/vegetables"
+				"item": "tfc:food/cabbage"
 			}
 		}
 	],
@@ -24,6 +24,5 @@
 		"item": "bakery:grilled_salmon_sandwich",
 		"count": 1
 	},
-	"experience": 0.2,
-	"requiresLearning": false
+	"experience": 0.2
 }

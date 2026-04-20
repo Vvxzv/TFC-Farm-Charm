@@ -8,13 +8,10 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.satisfy.farm_and_charm.core.block.PetBowlBlock;
@@ -111,7 +108,7 @@ public class DogEatFromBowlGoal extends Goal {
                 if (!bowl.isEmpty()) {
                     float distSqr = this.targetVec.distanceSquared((float)this.dog.getX(), (float)this.dog.getY(), (float)this.dog.getZ());
                     if (distSqr <= 4.0F && this.dog.isSitting()) {
-                        ++this.eatTicks;
+                        this.eatTicks++;
                         this.dog.getLookControl().setLookAt(this.targetVec.x(), this.targetVec.y(), this.targetVec.z());
                         if (!level.isClientSide && this.eatTicks <= 40) {
                             ParticleOptions particle = this.getParticleFromFood();

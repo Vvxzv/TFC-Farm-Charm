@@ -1,16 +1,19 @@
 {
 	"type": "firmalife:oven",
 	"ingredient": {
-		"type": "tfc:not_rotten",
-		"ingredient": {
-			"item": "tfc_farm_charm:unfinished_apple_pie"
-		}
+		"item": "tfc_farm_charm:unfinished_apple_pie"
 	},
+	"temperature": 200.0,
+	"duration": 1000,
 	"result_item": {
 		"stack": {
-			"item": "tfc_farm_charm:apple_pie"
-		}
-	},
-	"temperature": 200,
-	"duration": 1000
+			"item": "bakery:apple_pie",
+			"count": 1
+		},
+		"modifiers": [
+			{
+				"type": "tfc:copy_food"
+			}
+		]
+	}
 }

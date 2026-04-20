@@ -1,7 +1,39 @@
 {
+	"type": "farm_and_charm:crafting_bowl",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc:foods/vegetables"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/tomato"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/beet"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/baked_potato"
+			}
+		}
+	],
+	"result": {
+		"item": "brewery:potato_salad",
+		"count": 1
+	},
 	"conditions": [
 		{
-			"type": "forge:false"
+			"type": "forge:mod_loaded",
+			"modid": "brewery"
 		}
 	]
 }

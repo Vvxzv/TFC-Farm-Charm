@@ -1,0 +1,17 @@
+{
+	"type": "tfc:anvil",
+	"result": {
+		"item": "tfc_farm_charm:bread_knife_head",
+		"count": 1
+	},
+	"input": {
+		"item": "tfc:metal/ingot/wrought_iron"
+	},
+	"rules": [
+		"hit_last",
+		"draw_second_last",
+		"draw_third_last"
+	],
+	"tier": 3,
+	"apply_forging_bonus": true
+}

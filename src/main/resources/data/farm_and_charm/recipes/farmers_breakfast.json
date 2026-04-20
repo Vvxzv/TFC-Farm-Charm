@@ -1,7 +1,27 @@
 {
-	"conditions": [
+	"type": "minecraft:crafting_shapeless",
+	"result": {
+		"item": "farm_and_charm:farmers_breakfast",
+		"count": 1
+	},
+	"ingredients": [
 		{
-			"type": "forge:false"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:bacon_with_eggs"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:roasted_corn"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc:foods/breads"
+			}
 		}
 	]
 }

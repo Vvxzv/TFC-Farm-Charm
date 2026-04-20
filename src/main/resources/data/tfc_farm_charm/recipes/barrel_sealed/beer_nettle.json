@@ -1,0 +1,23 @@
+{
+	"type": "tfc:barrel_sealed",
+	"duration": 72000,
+	"output_fluid": {
+		"fluid": "tfc_farm_charm:beer_nettle",
+		"amount": 500
+	},
+	"input_item": {
+		"ingredient": {
+			"item": "farm_and_charm:wild_nettle"
+		}
+	},
+	"input_fluid": {
+		"ingredient": "tfc:beer",
+		"amount": 500
+	},
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "brewery"
+		}
+	]
+}

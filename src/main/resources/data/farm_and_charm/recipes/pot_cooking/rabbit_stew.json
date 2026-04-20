@@ -1,27 +1,40 @@
 {
-  "type": "farm_and_charm:pot_cooking",
-  "ingredients": [
-    {
-      "item": "minecraft:potato"
-    },
-    {
-      "item": "minecraft:brown_mushroom"
-    },
-    {
-      "item": "minecraft:carrot"
-    },
-    {
-      "item": "minecraft:rabbit"
-    }
-  ],
-  "container": {
-    "required": true,
-    "item": {
-      "item": "minecraft:bowl"
-    }
-  },
-  "result": {
-    "item": "minecraft:rabbit_stew"
-  },
-  "requiresLearning": false
+	"type": "farm_and_charm:pot_cooking",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/potato"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "minecraft:brown_mushroom"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/carrot"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/rabbit"
+			}
+		}
+	],
+	"result": {
+		"item": "minecraft:rabbit_stew",
+		"count": 1
+	},
+	"container": {
+		"required": true,
+		"item": {
+			"item": "minecraft:bowl",
+			"count": 1
+		}
+	}
 }

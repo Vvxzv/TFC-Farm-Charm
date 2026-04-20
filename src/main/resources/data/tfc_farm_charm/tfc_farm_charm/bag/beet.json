@@ -1,0 +1,6 @@
+{
+	"ingredient": {
+		"item": "tfc:food/beet"
+	},
+	"block": "tfc_farm_charm:beet_bag"
+}

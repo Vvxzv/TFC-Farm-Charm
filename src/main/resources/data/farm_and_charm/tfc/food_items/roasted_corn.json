@@ -1,0 +1,10 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:roasted_corn"
+	},
+	"decay_modifier": 2,
+	"hunger": 4,
+	"saturation": 2,
+	"grain": 2,
+	"dairy": 1
+}

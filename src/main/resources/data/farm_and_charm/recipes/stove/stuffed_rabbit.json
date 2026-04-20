@@ -1,7 +1,28 @@
 {
-	"conditions": [
+	"type": "farm_and_charm:stove",
+	"ingredients": [
 		{
-			"type": "forge:false"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/onion"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/rabbit"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/carrot"
+			}
 		}
-	]
+	],
+	"result": {
+		"item": "farm_and_charm:stuffed_rabbit",
+		"count": 1
+	},
+	"experience": 0.2
 }

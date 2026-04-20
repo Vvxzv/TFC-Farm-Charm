@@ -1,10 +1,14 @@
 {
 	"type": "minecraft:crafting_shapeless",
+	"result": {
+		"item": "tfc_farm_charm:unfinished_bread",
+		"count": 1
+	},
 	"ingredients": [
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"item": "farm_and_charm:dough"
+				"tag": "forge:dough"
 			}
 		},
 		{
@@ -14,14 +18,10 @@
 			"type": "tfc:fluid_item",
 			"fluid_ingredient": {
 				"ingredient": {
-					"fluid": "water"
+					"fluid": "minecraft:water"
 				},
 				"amount": 100
 			}
 		}
-	],
-	"result": {
-		"item": "tfc_farm_charm:unfinished_bread",
-		"count": 1
-	}
+	]
 }

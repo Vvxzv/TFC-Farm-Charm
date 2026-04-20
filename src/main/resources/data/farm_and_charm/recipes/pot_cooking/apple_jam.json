@@ -1,7 +1,25 @@
 {
-	"conditions": [
+	"type": "farm_and_charm:pot_cooking",
+	"ingredients": [
 		{
-			"type": "forge:false"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc:foods/apples"
+			}
+		},
+		{
+			"item": "minecraft:sugar"
 		}
-	]
+	],
+	"result": {
+		"item": "bakery:apple_jam",
+		"count": 1
+	},
+	"container": {
+		"required": true,
+		"item": {
+			"item": "bakery:jar",
+			"count": 1
+		}
+	}
 }

@@ -1,0 +1,7 @@
+{
+	"ingredient": {
+		"item": "bakery:sweetberry_jam"
+	},
+	"decay_modifier": 0.25,
+	"fruit": 1
+}

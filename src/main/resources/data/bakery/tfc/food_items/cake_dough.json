@@ -1,0 +1,7 @@
+{
+	"ingredient": {
+		"item": "bakery:cake_dough"
+	},
+	"decay_modifier": 3,
+	"hunger": 4
+}

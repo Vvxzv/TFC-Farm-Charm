@@ -1,16 +1,16 @@
 {
-  "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "minecraft:netherite_ingot"
-  },
-  "base": {
-    "item": "bakery:bakery_banner"
-  },
-  "result": {
-    "item": "bakery:bakery_banner",
-    "count": 2
-  },
-  "template": {
-    "item": "minecraft:netherite_upgrade_smithing_template"
-  }
+	"type": "minecraft:smithing_transform",
+	"result": {
+		"item": "bakery:bakery_banner",
+		"count": 2
+	},
+	"template": {
+		"item": "tfc:metal/ingot/red_steel"
+	},
+	"base": {
+		"item": "bakery:bakery_banner"
+	},
+	"addition": {
+		"item": "tfc:metal/ingot/blue_steel"
+	}
 }

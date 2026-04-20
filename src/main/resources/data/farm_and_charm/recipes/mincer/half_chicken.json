@@ -1,7 +1,20 @@
 {
+	"type": "farm_and_charm:mincer",
+	"recipe_type": "MEAT",
+	"ingredient": {
+		"type": "tfc:not_rotten",
+		"ingredient": {
+			"item": "tfc:food/cooked_turkey"
+		}
+	},
+	"result": {
+		"item": "brewery:half_chicken",
+		"count": 2
+	},
 	"conditions": [
 		{
-			"type": "forge:false"
+			"type": "forge:mod_loaded",
+			"modid": "brewery"
 		}
 	]
 }

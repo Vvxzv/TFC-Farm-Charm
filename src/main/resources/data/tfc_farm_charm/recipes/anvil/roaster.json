@@ -1,15 +1,15 @@
 {
 	"type": "tfc:anvil",
-	"input": {
-		"tag": "forge:double_sheets/wrought_iron"
-	},
 	"result": {
-		"item": "farm_and_charm:roaster"
+		"item": "farm_and_charm:roaster",
+		"count": 1
 	},
-	"tier": 3,
+	"input": {
+		"item": "tfc:metal/double_sheet/wrought_iron"
+	},
 	"rules": [
-		"upset_last",
-		"bend_not_last",
-		"bend_not_last"
+		"hit_last",
+		"hit_second_last",
+		"bend_third_last"
 	]
 }

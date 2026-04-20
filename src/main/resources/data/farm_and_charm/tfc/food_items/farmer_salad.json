@@ -1,0 +1,11 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:farmer_salad"
+	},
+	"decay_modifier": 2,
+	"hunger": 4,
+	"saturation": 1.5,
+	"water": 5,
+	"fruit": 1,
+	"vegetables": 3
+}

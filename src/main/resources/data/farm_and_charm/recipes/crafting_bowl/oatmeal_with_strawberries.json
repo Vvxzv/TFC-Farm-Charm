@@ -2,12 +2,9 @@
 	"type": "farm_and_charm:crafting_bowl",
 	"ingredients": [
 		{
-			"type": "tfc:fluid_item",
-			"fluid_ingredient": {
-				"ingredient": {
-					"tag": "tfc:milks"
-				},
-				"amount": 100
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/strawberry"
 			}
 		},
 		{
@@ -17,9 +14,12 @@
 			}
 		},
 		{
-			"type": "tfc:not_rotten",
-			"ingredient": {
-				"item": "tfc:food/strawberry"
+			"type": "tfc:fluid_item",
+			"fluid_ingredient": {
+				"ingredient": {
+					"tag": "tfc:milks"
+				},
+				"amount": 100
 			}
 		}
 	],

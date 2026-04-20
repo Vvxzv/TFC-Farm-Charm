@@ -4,13 +4,7 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"item": "tfc:food/carrot"
-			}
-		},
-		{
-			"type": "tfc:not_rotten",
-			"ingredient": {
-				"item": "tfc:food/cabbage"
+				"item": "farm_and_charm:butter"
 			}
 		},
 		{
@@ -22,7 +16,13 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "farm_and_charm:butter"
+				"item": "tfc:food/carrot"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc:foods/vegetables"
 			}
 		}
 	],
@@ -32,6 +32,5 @@
 	"result": {
 		"item": "farm_and_charm:cooked_cod",
 		"count": 1
-	},
-	"requiresLearning": false
+	}
 }

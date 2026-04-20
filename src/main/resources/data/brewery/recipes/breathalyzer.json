@@ -1,22 +1,24 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "#": {
-      "item": "minecraft:iron_nugget"
-    },
-    "B": {
-      "item": "minecraft:redstone"
-    }
-  },
-  "pattern": [
-    "#B"
-  ],
-  "result": {
-    "count": 1,
-    "item": "brewery:breathalyzer"
-  },
-  "conditions": [{
-    "type": "forge:mod_loaded",
-    "modid": "brewery"
-  }]
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"ab"
+	],
+	"key": {
+		"a": {
+			"item": "tfc:metal/ingot/cast_iron"
+		},
+		"b": {
+			"item": "minecraft:redstone"
+		}
+	},
+	"result": {
+		"item": "brewery:breathalyzer",
+		"count": 1
+	},
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "brewery"
+		}
+	]
 }

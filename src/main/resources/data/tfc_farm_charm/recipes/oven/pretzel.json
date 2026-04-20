@@ -1,20 +1,25 @@
 {
 	"type": "firmalife:oven",
 	"ingredient": {
-		"type": "tfc:not_rotten",
-		"ingredient": {
-			"item": "tfc_farm_charm:unfinished_pretzel"
-		}
-	},
-	"result_item": {
-		"stack": {
-			"item": "brewery:pretzel"
-		}
+		"item": "tfc_farm_charm:unfinished_pretzel"
 	},
 	"temperature": 200,
 	"duration": 1000,
-	"conditions": [{
-		"type": "forge:mod_loaded",
-		"modid": "brewery"
-	}]
+	"result_item": {
+		"stack": {
+			"item": "brewery:pretzel",
+			"count": 1
+		},
+		"modifiers": [
+			{
+				"type": "tfc:copy_food"
+			}
+		]
+	},
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "brewery"
+		}
+	]
 }

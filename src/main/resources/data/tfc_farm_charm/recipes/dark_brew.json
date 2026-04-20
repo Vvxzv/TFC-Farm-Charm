@@ -1,0 +1,24 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"result": {
+		"item": "brewery:dark_brew",
+		"count": 1
+	},
+	"ingredients": [
+		{
+			"item": "brewery:whiskey_jojannik"
+		},
+		{
+			"item": "brewery:whiskey_lilitusinglemalt"
+		},
+		{
+			"item": "brewery:whiskey_maggoallan"
+		}
+	],
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "brewery"
+		}
+	]
+}

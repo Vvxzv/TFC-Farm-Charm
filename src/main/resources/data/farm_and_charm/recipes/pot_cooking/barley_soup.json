@@ -8,30 +8,36 @@
 			}
 		},
 		{
-			"type": "tfc:fluid_item",
-			"fluid_ingredient": {
-				"ingredient": {
-					"fluid": "water"
-				},
-				"amount": 100
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/barley_grain"
 			}
 		},
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "forge:eggs"
+				"item": "minecraft:egg"
+			}
+		},
+		{
+			"type": "tfc:fluid_item",
+			"fluid_ingredient": {
+				"ingredient": {
+					"fluid": "minecraft:water"
+				},
+				"amount": 100
 			}
 		}
 	],
-	"container": {
-		"required": true,
-		"item": {
-			"item": "minecraft:bowl"
-		}
-	},
 	"result": {
 		"item": "farm_and_charm:barley_soup",
 		"count": 1
 	},
-	"requiresLearning": false
+	"container": {
+		"required": true,
+		"item": {
+			"item": "minecraft:bowl",
+			"count": 1
+		}
+	}
 }

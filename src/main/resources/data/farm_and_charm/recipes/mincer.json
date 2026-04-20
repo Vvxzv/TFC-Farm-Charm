@@ -1,23 +1,23 @@
 {
 	"type": "minecraft:crafting_shaped",
-	"pattern": [
-		"B",
-		"W",
-		"I"
-	],
-	"key": {
-		"B": {
-			"tag": "minecraft:planks"
-		},
-		"I": {
-			"item": "tfc:metal/sheet/wrought_iron"
-		},
-		"W": {
-			"item": "tfc:metal/knife_blade/wrought_iron"
-		}
-	},
 	"result": {
 		"item": "farm_and_charm:mincer",
 		"count": 1
+	},
+	"pattern": [
+		"aa ",
+		"abc",
+		"aa "
+	],
+	"key": {
+		"a": {
+			"tag": "minecraft:planks"
+		},
+		"b": {
+			"item": "tfc:metal/knife_blade/wrought_iron"
+		},
+		"c": {
+			"tag": "forge:rods"
+		}
 	}
 }

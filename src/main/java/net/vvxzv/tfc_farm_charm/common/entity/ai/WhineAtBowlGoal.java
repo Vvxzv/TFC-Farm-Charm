@@ -31,21 +31,10 @@ public class WhineAtBowlGoal extends Goal {
     private static final int ANGRY_PARTICLE_INTERVAL = 100;
     private static final int WHINE_PARTICLE_COUNT = 6;
     private static final int FINAL_PARTICLE_COUNT = 15;
-    private static final int FADE_OUT_DURATION = 30;
-    private static final double BASE_SPEED = (double)1.0F;
-    private static final double EVENING_SPEED_FACTOR = 0.8;
-    private static final double CLOSE_ENOUGH_DIST = 1.1;
-    private static final float BASE_VOLUME = 0.4F;
-    private static final float BASE_PITCH = 0.4F;
-    private static final int LOOK_YAW = 10;
-    private static final int LOOK_PITCH = 30;
-    private static final int RANGE_XZ = 10;
-    private static final int RANGE_Y = 2;
     private static final long MORNING_START = 5800L;
     private static final long MORNING_END = 6200L;
     private static final long EVENING_START = 11500L;
     private static final long EVENING_END = 12500L;
-    private static final double NAVIGATION_RECALC_THRESHOLD_SQR = (double)0.5F;
     private static final List<SoundEvent> WHINE_SOUNDS = List.of(SoundEvents.WOLF_WHINE, SoundEvents.WOLF_PANT);
 
     public WhineAtBowlGoal(Dog dog){
@@ -62,8 +51,7 @@ public class WhineAtBowlGoal extends Goal {
     public boolean canUse() {
         if (this.dog.isAlive() && this.dog.getOwnerUUID() != null && !this.dog.isSitting()) {
             Level level = this.dog.level();
-            if (level instanceof ServerLevel) {
-                ServerLevel server = (ServerLevel)level;
+            if (level instanceof ServerLevel server) {
                 if (!this.shouldScanForBowl(server.getGameTime())) {
                     return false;
                 } else if (!this.isValidWhineTime(server.getDayTime())) {
@@ -76,8 +64,7 @@ public class WhineAtBowlGoal extends Goal {
                     for(BlockPos pos : BlockPos.betweenClosed(wolfPos.offset(-10, -2, -10), wolfPos.offset(10, 2, 10))) {
                         if (this.dog.level().getBlockState(pos).is(ObjectRegistry.PET_BOWL.get())) {
                             BlockEntity be = this.dog.level().getBlockEntity(pos);
-                            if (be instanceof PetBowlBlockEntity) {
-                                PetBowlBlockEntity bowl = (PetBowlBlockEntity)be;
+                            if (be instanceof PetBowlBlockEntity bowl) {
                                 if (bowl.isEmpty() && bowl.canBeUsedBy(this.dog)) {
                                     double dist = this.dog.position().distanceToSqr(Vec3.atCenterOf(pos));
                                     if (dist < closestDistance) {
@@ -106,27 +93,14 @@ public class WhineAtBowlGoal extends Goal {
 
     public boolean canContinueToUse() {
         if (this.active && this.dog.isAlive() && this.bowlPos != null) {
-            Level var2 = this.dog.level();
-            if (!(var2 instanceof ServerLevel)) {
-                return false;
-            } else {
-                ServerLevel server = (ServerLevel)var2;
+            if (this.dog.level() instanceof ServerLevel server) {
                 BlockEntity be = server.getBlockEntity(this.bowlPos);
-                boolean var10000;
-                if (be instanceof PetBowlBlockEntity) {
-                    PetBowlBlockEntity bowl = (PetBowlBlockEntity)be;
-                    if (bowl.isEmpty() && bowl.canBeUsedBy(this.dog)) {
-                        var10000 = true;
-                        return var10000;
-                    }
+                if (be instanceof PetBowlBlockEntity bowl) {
+                    return bowl.isEmpty() && bowl.canBeUsedBy(this.dog);
                 }
-
-                var10000 = false;
-                return var10000;
             }
-        } else {
-            return false;
         }
+        return false;
     }
 
     public boolean isInterruptable() {
@@ -134,8 +108,7 @@ public class WhineAtBowlGoal extends Goal {
     }
 
     public void start() {
-        Level var2 = this.dog.level();
-        if (var2 instanceof ServerLevel server) {
+        if (this.dog.level() instanceof ServerLevel server) {
             BlockEntity be = server.getBlockEntity(this.bowlPos);
             if (be instanceof PetBowlBlockEntity bowl) {
                 if (bowl.isEmpty() && bowl.canBeUsedBy(this.dog)) {
@@ -154,12 +127,10 @@ public class WhineAtBowlGoal extends Goal {
     }
 
     public void tick() {
-        Level var2 = this.dog.level();
-        if (var2 instanceof ServerLevel server) {
+        if (this.dog.level() instanceof ServerLevel server) {
             if (this.dog.isAlive()) {
                 BlockEntity be = server.getBlockEntity(this.bowlPos);
-                if (be instanceof PetBowlBlockEntity) {
-                    PetBowlBlockEntity bowl = (PetBowlBlockEntity)be;
+                if (be instanceof PetBowlBlockEntity bowl) {
                     if (bowl.isEmpty()) {
                         Vec3 bowlCenter = Vec3.atCenterOf(this.bowlPos);
                         if (this.isNearBowl()) {
@@ -182,28 +153,27 @@ public class WhineAtBowlGoal extends Goal {
                             }
                         }
 
-                        if ((long)this.whineTicks - this.lastWhineSoundTick >= 60L) {
+                        if ((long)this.whineTicks - this.lastWhineSoundTick >= WHINE_INTERVAL) {
                             this.playWhineSound();
                             this.lastWhineSoundTick = this.whineTicks;
                         }
 
-                        if (this.whineTicks % 100 == 0) {
+                        if (this.whineTicks % ANGRY_PARTICLE_INTERVAL == 0) {
                             Vec3 pos = this.dog.position().add(0.0F, 0.5F, 0.0F);
-                            server.sendParticles(ParticleTypes.ANGRY_VILLAGER, pos.x, pos.y, pos.z, 6, 0.3, 0.3, 0.3, 0.01);
+                            server.sendParticles(ParticleTypes.ANGRY_VILLAGER, pos.x, pos.y, pos.z, WHINE_PARTICLE_COUNT, 0.3, 0.3, 0.3, 0.01);
                         }
 
-                        if (++this.whineTicks >= 300) {
+                        if (++this.whineTicks >= MAX_WHINE_TICKS) {
                             if (this.fadeOutTicks < 30) {
                                 ++this.fadeOutTicks;
                                 return;
                             }
 
                             BlockEntity currentBowl = server.getBlockEntity(this.bowlPos);
-                            if (currentBowl instanceof PetBowlBlockEntity) {
-                                PetBowlBlockEntity finalBowl = (PetBowlBlockEntity)currentBowl;
+                            if (currentBowl instanceof PetBowlBlockEntity finalBowl) {
                                 if (finalBowl.isEmpty()) {
                                     Vec3 pos = this.dog.position().add(0.0F, 0.5F, 0.0F);
-                                    server.sendParticles(ParticleTypes.ANGRY_VILLAGER, pos.x, pos.y, pos.z, 15, 0.3, 0.3, 0.3, 0.01);
+                                    server.sendParticles(ParticleTypes.ANGRY_VILLAGER, pos.x, pos.y, pos.z, FINAL_PARTICLE_COUNT, 0.3, 0.3, 0.3, 0.01);
                                 }
                             }
 
@@ -247,7 +217,7 @@ public class WhineAtBowlGoal extends Goal {
     }
 
     private boolean shouldScanForBowl(long currentTick) {
-        if (currentTick - this.lastScanTick < 40L) {
+        if (currentTick - this.lastScanTick < SCAN_INTERVAL_TICKS) {
             return false;
         } else {
             this.lastScanTick = currentTick;

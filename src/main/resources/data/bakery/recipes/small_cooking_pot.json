@@ -1,18 +1,7 @@
 {
-	"type": "minecraft:crafting_shaped",
-	"group": "faucet",
-	"pattern": [
-		"iB"
-	],
-	"key": {
-		"i": {
-			"item": "tfc:metal/sheet/wrought_iron"
-		},
-		"B": {
-			"tag": "minecraft:wooden_slabs"
+	"conditions": [
+		{
+			"type": "forge:false"
 		}
-	},
-	"result": {
-		"item": "bakery:small_cooking_pot"
-	}
+	]
 }

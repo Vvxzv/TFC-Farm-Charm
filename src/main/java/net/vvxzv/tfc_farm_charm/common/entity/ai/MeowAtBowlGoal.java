@@ -24,9 +24,7 @@ public class MeowAtBowlGoal extends Goal {
     private static final int MAX_MEOW_TICKS = 300;
     private static final int MEOW_INTERVAL = 60;
     private static final int ANGRY_PARTICLE_INTERVAL = 100;
-    private static final double NAVIGATION_SPEED = (double)1.0F;
-    private static final double CLOSE_ENOUGH_DIST = 1.1;
-    private static final double LOOK_OFFSET = (double)0.5F;
+    private static final double NAVIGATION_SPEED = 1.0;
     private static final long MORNING_START = 5800L;
     private static final long MORNING_END = 6200L;
     private static final long EVENING_START = 11500L;
@@ -43,10 +41,9 @@ public class MeowAtBowlGoal extends Goal {
     public boolean canUse() {
         if (this.cat.getOwnerUUID() != null && !this.cat.isSitting()) {
             Level level = this.cat.level();
-            if (level instanceof ServerLevel) {
-                ServerLevel server = (ServerLevel)level;
+            if (level instanceof ServerLevel server) {
                 long gameTime = server.getGameTime();
-                if (this.lastCheckTime != -1L && gameTime - this.lastCheckTime < 40L) {
+                if (this.lastCheckTime != -1L && gameTime - this.lastCheckTime < CHECK_INTERVAL_TICKS) {
                     return false;
                 } else {
                     this.lastCheckTime = gameTime;
@@ -59,8 +56,7 @@ public class MeowAtBowlGoal extends Goal {
                         for(BlockPos pos : BlockPos.betweenClosed(catPos.offset(-32, -4, -32), catPos.offset(32, 4, 32))) {
                             if (level.getBlockState(pos).is(ObjectRegistry.PET_BOWL.get()) && level.getBlockState(pos).hasBlockEntity()) {
                                 BlockEntity be = level.getBlockEntity(pos);
-                                if (be instanceof PetBowlBlockEntity) {
-                                    PetBowlBlockEntity bowl = (PetBowlBlockEntity)be;
+                                if (be instanceof PetBowlBlockEntity bowl) {
                                     if (bowl.isEmpty() && bowl.canBeUsedBy(this.cat)) {
                                         double dist = this.cat.position().distanceToSqr(Vec3.atCenterOf(pos));
                                         if (dist < closestDistance) {
@@ -91,28 +87,17 @@ public class MeowAtBowlGoal extends Goal {
     }
 
     public boolean canContinueToUse() {
-        if (this.active && this.meowTicks < 300 && this.bowlPos != null) {
+        if (this.active && this.meowTicks < MAX_MEOW_TICKS && this.bowlPos != null) {
             Level level = this.cat.level();
-            if (!(level instanceof ServerLevel)) {
-                return false;
-            } else {
-                ServerLevel server = (ServerLevel)level;
+            if (level instanceof ServerLevel server) {
                 BlockEntity be = server.getBlockEntity(this.bowlPos);
-                boolean var10000;
-                if (be instanceof PetBowlBlockEntity) {
-                    PetBowlBlockEntity bowl = (PetBowlBlockEntity)be;
-                    if (bowl.isEmpty() && bowl.canBeUsedBy(this.cat)) {
-                        var10000 = true;
-                        return var10000;
-                    }
+                if (be instanceof PetBowlBlockEntity bowl) {
+                    return bowl.isEmpty() && bowl.canBeUsedBy(this.cat);
                 }
 
-                var10000 = false;
-                return var10000;
             }
-        } else {
-            return false;
         }
+        return false;
     }
 
     public boolean isInterruptable() {
@@ -122,7 +107,7 @@ public class MeowAtBowlGoal extends Goal {
     public void start() {
         if (this.bowlPos != null) {
             if (!this.isNearBowl()) {
-                this.cat.getNavigation().moveTo((double)this.bowlPos.getX() + (double)0.5F, this.bowlPos.getY(), (double)this.bowlPos.getZ() + (double)0.5F, 1.0F);
+                this.cat.getNavigation().moveTo((double)this.bowlPos.getX() + (double)0.5F, this.bowlPos.getY(), (double)this.bowlPos.getZ() + (double)0.5F, NAVIGATION_SPEED);
             }
 
             this.meowTicks = 0;
@@ -136,11 +121,9 @@ public class MeowAtBowlGoal extends Goal {
             this.stop();
         } else {
             Level level = this.cat.level();
-            if (level instanceof ServerLevel) {
-                ServerLevel server = (ServerLevel)level;
+            if (level instanceof ServerLevel server) {
                 BlockEntity be = server.getBlockEntity(this.bowlPos);
-                if (be instanceof PetBowlBlockEntity) {
-                    PetBowlBlockEntity bowl = (PetBowlBlockEntity)be;
+                if (be instanceof PetBowlBlockEntity bowl) {
                     if (bowl.isEmpty()) {
                         if (this.isNearBowl()) {
                             if (this.cat.getNavigation().isInProgress()) {
@@ -153,19 +136,19 @@ public class MeowAtBowlGoal extends Goal {
 
                             this.cat.getLookControl().setLookAt((double)this.bowlPos.getX() + (double)0.5F, (double)this.bowlPos.getY() + (double)0.5F, (double)this.bowlPos.getZ() + (double)0.5F);
                         } else if (!this.cat.getNavigation().isInProgress()) {
-                            this.cat.getNavigation().moveTo((double)this.bowlPos.getX() + (double)0.5F, this.bowlPos.getY(), (double)this.bowlPos.getZ() + (double)0.5F, 1.0F);
+                            this.cat.getNavigation().moveTo((double)this.bowlPos.getX() + (double)0.5F, this.bowlPos.getY(), (double)this.bowlPos.getZ() + (double)0.5F, NAVIGATION_SPEED);
                         }
 
-                        if (this.meowTicks % 60 == 0) {
+                        if (this.meowTicks % MEOW_INTERVAL == 0) {
                             this.cat.playSound(SoundEvents.CAT_BEG_FOR_FOOD, 1.0F, 1.0F);
                         }
 
-                        if (this.meowTicks % 100 == 0) {
+                        if (this.meowTicks % ANGRY_PARTICLE_INTERVAL == 0) {
                             Vec3 pos = this.cat.position().add(0.0F, 0.5F, 0.0F);
                             server.sendParticles(ParticleTypes.ANGRY_VILLAGER, pos.x, pos.y, pos.z, 6, 0.3, 0.3, 0.3, 0.01);
                         }
 
-                        if (++this.meowTicks >= 300) {
+                        if (++this.meowTicks >= MAX_MEOW_TICKS) {
                             this.cat.playSound(SoundEvents.CAT_HISS, 1.0F, 1.0F);
                             Vec3 pos = this.cat.position().add(0.0F, 0.5F, 0.0F);
                             server.sendParticles(ParticleTypes.ANGRY_VILLAGER, pos.x, pos.y, pos.z, 15, 0.3, 0.3, 0.3, 0.01);
@@ -175,11 +158,8 @@ public class MeowAtBowlGoal extends Goal {
                         return;
                     }
                 }
-
-                this.stop();
-            } else {
-                this.stop();
             }
+            this.stop();
         }
     }
 

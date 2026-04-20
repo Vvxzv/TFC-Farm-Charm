@@ -1,7 +1,33 @@
 {
-	"conditions": [
+	"type": "farm_and_charm:pot_cooking",
+	"ingredients": [
 		{
-			"type": "forge:false"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "minecraft:egg"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc_farm_charm:fruit_jam"
+			}
+		},
+		{
+			"type": "tfc:fluid_item",
+			"fluid_ingredient": {
+				"ingredient": {
+					"tag": "tfc:milks"
+				},
+				"amount": 100
+			}
 		}
-	]
+	],
+	"result": {
+		"item": "bakery:pudding",
+		"count": 1
+	},
+	"container": {
+		"required": false
+	}
 }

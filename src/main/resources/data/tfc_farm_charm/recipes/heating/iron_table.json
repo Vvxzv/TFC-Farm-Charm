@@ -1,0 +1,11 @@
+{
+	"type": "tfc:heating",
+	"ingredient": {
+		"item": "bakery:iron_table"
+	},
+	"temperature": 1535.0,
+	"result_fluid": {
+		"fluid": "tfc:metal/cast_iron",
+		"amount": 400
+	}
+}

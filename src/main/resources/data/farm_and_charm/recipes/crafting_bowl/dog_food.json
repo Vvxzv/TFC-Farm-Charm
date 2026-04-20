@@ -5,7 +5,10 @@
 			"tag": "tfc:dog_food"
 		},
 		{
-			"tag": "farm_and_charm:bones"
+			"tag": "tfc:dog_food"
+		},
+		{
+			"item": "minecraft:bone"
 		}
 	],
 	"result": {

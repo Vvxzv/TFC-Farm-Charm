@@ -1,7 +1,48 @@
 {
+	"type": "farm_and_charm:roaster",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:chicken_parts"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc_farm_charm:chicken_type"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/tomato"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc:foods/flour"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:butter"
+			}
+		}
+	],
+	"container": {
+		"item": "minecraft:bowl"
+	},
+	"result": {
+		"item": "brewery:fried_chicken",
+		"count": 1
+	},
 	"conditions": [
 		{
-			"type": "forge:false"
+			"type": "forge:mod_loaded",
+			"modid": "brewery"
 		}
 	]
 }

@@ -1,24 +1,30 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "type": "tfc:not_rotten",
-      "ingredient": {
-        "item": "farm_and_charm:dough"
-      }
-    },
-    {
-      "type": "tfc:not_rotten",
-      "ingredient": {
-        "tag": "farm_and_charm:butter"
-      }
-    },
-    {
-      "item": "farm_and_charm:yeast"
-    }
-  ],
-  "result": {
-    "item": "tfc_farm_charm:unfinished_pretzel",
-    "count": 1
-  }
+	"type": "minecraft:crafting_shapeless",
+	"result": {
+		"item": "tfc_farm_charm:unfinished_pretzel",
+		"count": 1
+	},
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "forge:dough"
+			}
+		},
+		{
+			"item": "farm_and_charm:yeast"
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:butter"
+			}
+		}
+	],
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "brewery"
+		}
+	]
 }

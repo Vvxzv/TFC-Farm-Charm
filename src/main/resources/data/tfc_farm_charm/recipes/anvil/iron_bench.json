@@ -1,0 +1,15 @@
+{
+	"type": "tfc:anvil",
+	"result": {
+		"item": "bakery:iron_bench",
+		"count": 1
+	},
+	"input": {
+		"item": "tfc:metal/sheet/cast_iron"
+	},
+	"rules": [
+		"hit_last",
+		"draw_not_last"
+	],
+	"tier": 1
+}

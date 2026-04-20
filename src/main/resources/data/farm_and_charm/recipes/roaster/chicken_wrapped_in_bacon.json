@@ -16,13 +16,13 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "farm_and_charm:pasta"
+				"item": "farm_and_charm:raw_pasta"
 			}
 		},
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "farm_and_charm:butter"
+				"item": "farm_and_charm:butter"
 			}
 		}
 	],
@@ -32,6 +32,5 @@
 	"result": {
 		"item": "farm_and_charm:chicken_wrapped_in_bacon",
 		"count": 1
-	},
-	"requiresLearning": false
+	}
 }

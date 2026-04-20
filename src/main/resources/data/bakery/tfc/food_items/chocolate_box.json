@@ -1,0 +1,9 @@
+{
+	"ingredient": {
+		"item": "bakery:chocolate_box"
+	},
+	"decay_modifier": 2,
+	"hunger": 4,
+	"saturation": 1,
+	"dairy": 0.8
+}

@@ -1,9 +1,0 @@
-{
-  "decay_modifier": 2.75,
-  "hunger": 2,
-  "saturation": 1,
-  "protein": 1.2,
-  "ingredient": {
-    "item": "farm_and_charm:minced_beef"
-  }
-}

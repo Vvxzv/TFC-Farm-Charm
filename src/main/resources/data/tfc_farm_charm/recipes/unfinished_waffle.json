@@ -1,5 +1,9 @@
 {
 	"type": "minecraft:crafting_shapeless",
+	"result": {
+		"item": "tfc_farm_charm:unfinished_waffle",
+		"count": 1
+	},
 	"ingredients": [
 		{
 			"type": "tfc:not_rotten",
@@ -8,17 +12,13 @@
 			}
 		},
 		{
-			"type": "tfc:not_rotten",
-			"ingredient": {
-				"tag": "forge:eggs"
-			}
+			"item": "minecraft:sugar"
 		},
 		{
-			"item": "minecraft:sugar"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "minecraft:egg"
+			}
 		}
-	],
-	"result": {
-		"item": "tfc_farm_charm:unfinished_waffle",
-		"count": 1
-	}
+	]
 }

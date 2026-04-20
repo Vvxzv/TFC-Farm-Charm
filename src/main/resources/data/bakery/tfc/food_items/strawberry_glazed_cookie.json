@@ -1,0 +1,12 @@
+{
+	"ingredient": {
+		"item": "bakery:strawberry_glazed_cookie"
+	},
+	"decay_modifier": 1.5,
+	"hunger": 4,
+	"saturation": 1,
+	"grain": 0.5,
+	"fruit": 0.5,
+	"protein": 0.75,
+	"dairy": 0.6
+}

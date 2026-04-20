@@ -1,5 +1,9 @@
 {
 	"type": "minecraft:crafting_shaped",
+	"result": {
+		"item": "bakery:kitchen_sink",
+		"count": 1
+	},
 	"pattern": [
 		"a a",
 		"bab",
@@ -7,14 +11,10 @@
 	],
 	"key": {
 		"a": {
-			"item": "tfc:metal/ingot/wrought_iron"
+			"item": "tfc:metal/ingot/cast_iron"
 		},
 		"b": {
 			"item": "minecraft:bricks"
 		}
-	},
-	"result": {
-		"item": "bakery:kitchen_sink",
-		"count": 1
 	}
 }

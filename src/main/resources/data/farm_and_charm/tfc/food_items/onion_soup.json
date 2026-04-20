@@ -1,0 +1,11 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:onion_soup"
+	},
+	"decay_modifier": 1,
+	"hunger": 4,
+	"saturation": 2,
+	"water": 40,
+	"grain": 1.3,
+	"vegetables": 2
+}

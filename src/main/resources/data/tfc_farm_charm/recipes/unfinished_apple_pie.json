@@ -1,6 +1,16 @@
 {
 	"type": "minecraft:crafting_shapeless",
+	"result": {
+		"item": "tfc_farm_charm:unfinished_apple_pie",
+		"count": 1
+	},
 	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "bakery:sweet_dough"
+			}
+		},
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
@@ -9,16 +19,6 @@
 		},
 		{
 			"item": "minecraft:sugar"
-		},
-		{
-			"type": "tfc:not_rotten",
-			"ingredient": {
-				"item": "bakery:sweet_dough"
-			}
 		}
-	],
-	"result": {
-		"item": "tfc_farm_charm:unfinished_apple_pie",
-		"count": 1
-	}
+	]
 }

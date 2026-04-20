@@ -1,0 +1,6 @@
+{
+	"ingredient": {
+		"item": "tfc:food/maize"
+	},
+	"block": "tfc_farm_charm:maize_bag"
+}

@@ -1,0 +1,35 @@
+{
+  "type": "tfc_farm_charm:composite",
+  "modifiers": [
+    {
+      "type": "tfc_farm_charm:remove_items",
+      "conditions": [
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "bakery:blocks/chocolate_box"
+        }
+      ],
+      "targets": ["minecraft:chest"]
+    },
+    {
+      "type": "tfc_farm_charm:add_item",
+      "conditions": [
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "bakery:blocks/chocolate_box"
+        },
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:block_state_property",
+            "block": "bakery:chocolate_box",
+            "properties": {
+              "cuts": "0"
+            }
+          }
+        }
+      ],
+      "item": "minecraft:paper"
+    }
+  ]
+}

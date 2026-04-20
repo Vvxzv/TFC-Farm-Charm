@@ -4,7 +4,7 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "tfc_farm_charm:bread"
+				"tag": "tfc:foods/breads"
 			}
 		},
 		{
@@ -23,21 +23,21 @@
 			"type": "tfc:fluid_item",
 			"fluid_ingredient": {
 				"ingredient": {
-					"fluid": "water"
+					"fluid": "minecraft:water"
 				},
 				"amount": 100
 			}
 		}
 	],
-	"container": {
-		"required": true,
-		"item": {
-			"item": "minecraft:bowl"
-		}
-	},
 	"result": {
 		"item": "farm_and_charm:onion_soup",
 		"count": 1
 	},
-	"requiresLearning": false
+	"container": {
+		"required": true,
+		"item": {
+			"item": "minecraft:bowl",
+			"count": 1
+		}
+	}
 }

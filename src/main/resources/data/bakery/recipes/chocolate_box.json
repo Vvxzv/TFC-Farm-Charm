@@ -1,7 +1,48 @@
 {
-	"conditions": [
+	"type": "minecraft:crafting_shapeless",
+	"result": {
+		"item": "bakery:chocolate_box",
+		"count": 1
+	},
+	"ingredients": [
 		{
-			"type": "forge:false"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "bakery:chocolate_truffle"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "bakery:chocolate_truffle"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "bakery:chocolate_truffle"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "bakery:chocolate_truffle"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "bakery:chocolate_truffle"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "bakery:chocolate_truffle"
+			}
+		},
+		{
+			"item": "minecraft:paper"
 		}
 	]
 }

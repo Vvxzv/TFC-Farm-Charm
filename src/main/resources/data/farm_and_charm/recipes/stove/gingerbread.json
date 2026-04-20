@@ -1,26 +1,31 @@
 {
-  "type" : "farm_and_charm:stove",
-  "ingredients" : [
-    {
-      "type" : "tfc:not_rotten",
-      "ingredient" : {
-        "tag" : "tfc:foods/dough"
-      }
-    },
-    {
-      "item" : "farm_and_charm:yeast"
-    },
-    {
-      "type" : "tfc:not_rotten",
-      "ingredient" : {
-        "tag" : "farm_and_charm:butter"
-      }
-    }
-  ],
-  "result" : {
-    "item" : "brewery:gingerbread",
-    "count" : 1
-  },
-  "experience" : 0.5,
-  "requiresLearning" : false
+	"type": "farm_and_charm:stove",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:butter"
+			}
+		},
+		{
+			"item": "farm_and_charm:yeast"
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc:foods/flour"
+			}
+		}
+	],
+	"result": {
+		"item": "brewery:gingerbread",
+		"count": 1
+	},
+	"experience": 0.2,
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "brewery"
+		}
+	]
 }

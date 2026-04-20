@@ -1,0 +1,8 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:chicken_parts"
+	},
+	"decay_modifier": 3,
+	"hunger": 2,
+	"protein": 1
+}

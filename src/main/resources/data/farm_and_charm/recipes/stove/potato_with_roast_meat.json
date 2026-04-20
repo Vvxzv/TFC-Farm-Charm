@@ -1,7 +1,25 @@
 {
-	"conditions": [
+	"type": "farm_and_charm:stove",
+	"ingredients": [
 		{
-			"type": "forge:false"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/potato"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/beef"
+			}
+		},
+		{
+			"item": "firmalife:raw_honey"
 		}
-	]
+	],
+	"result": {
+		"item": "farm_and_charm:potato_with_roast_meat",
+		"count": 1
+	},
+	"experience": 0.2
 }

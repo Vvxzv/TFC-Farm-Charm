@@ -1,0 +1,6 @@
+{
+	"ingredient": {
+		"item": "tfc:food/tomato"
+	},
+	"block": "tfc_farm_charm:tomato_bag"
+}

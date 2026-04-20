@@ -1,7 +1,31 @@
 {
-	"conditions": [
+	"type": "farm_and_charm:pot_cooking",
+	"ingredients": [
 		{
-			"type": "forge:false"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/strawberry"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/strawberry"
+			}
+		},
+		{
+			"item": "minecraft:sugar"
 		}
-	]
+	],
+	"result": {
+		"item": "bakery:strawberry_jam",
+		"count": 1
+	},
+	"container": {
+		"required": true,
+		"item": {
+			"item": "bakery:jar",
+			"count": 1
+		}
+	}
 }

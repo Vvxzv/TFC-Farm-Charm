@@ -1,0 +1,8 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:nettle_tea_cup"
+	},
+	"decay_modifier": 1,
+	"hunger": 2,
+	"water": 40
+}

@@ -1,17 +1,22 @@
 {
-  "type": "tfc:damage_inputs_shapeless_crafting",
-  "recipe": {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-      {
-        "tag": "tfc:lumber"
-      },
-      {
-        "tag": "tfc:knives"
-      }
-    ],
-    "result": {
-      "item": "tfc_farm_charm:cup"
-    }
-  }
+	"type": "tfc:damage_inputs_shaped_crafting",
+	"recipe": {
+		"type": "minecraft:crafting_shaped",
+		"result": {
+			"item": "tfc_farm_charm:cup",
+			"count": 1
+		},
+		"pattern": [
+			"aba",
+			" a "
+		],
+		"key": {
+			"a": {
+				"tag": "tfc:lumber"
+			},
+			"b": {
+				"tag": "tfc:knives"
+			}
+		}
+	}
 }

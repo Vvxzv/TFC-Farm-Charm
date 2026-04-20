@@ -1,7 +1,36 @@
 {
-	"conditions": [
+	"type": "farm_and_charm:roaster",
+	"ingredients": [
 		{
-			"type": "forge:false"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/oat_grain"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "forge:dough"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/strawberry"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:butter"
+			}
 		}
-	]
+	],
+	"container": {
+		"item": "minecraft:bowl"
+	},
+	"result": {
+		"item": "farm_and_charm:oat_pancake",
+		"count": 1
+	}
 }

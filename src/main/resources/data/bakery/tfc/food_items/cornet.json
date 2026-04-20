@@ -1,0 +1,11 @@
+{
+	"ingredient": {
+		"item": "bakery:cornet"
+	},
+	"decay_modifier": 1.5,
+	"hunger": 4,
+	"saturation": 3,
+	"grain": 1,
+	"protein": 1.5,
+	"dairy": 1.3
+}

@@ -1,19 +1,22 @@
 {
 	"type": "minecraft:crafting_shaped",
-	"pattern": [
-		"UUU",
-		"## "
-	],
-	"key": {
-		"#": {
-			"tag": "minecraft:planks"
-		},
-		"U": {
-			"tag": "minecraft:hoes"
-		}
-	},
 	"result": {
 		"item": "farm_and_charm:plow",
 		"count": 1
+	},
+	"pattern": [
+		"aaa",
+		"bbc"
+	],
+	"key": {
+		"a": {
+			"tag": "forge:rods"
+		},
+		"b": {
+			"tag": "minecraft:planks"
+		},
+		"c": {
+			"item": "tfc:metal/hoe_head/wrought_iron"
+		}
 	}
 }

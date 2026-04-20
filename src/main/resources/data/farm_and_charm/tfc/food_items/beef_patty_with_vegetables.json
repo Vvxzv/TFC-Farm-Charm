@@ -1,0 +1,11 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:beef_patty_with_vegetables"
+	},
+	"decay_modifier": 2,
+	"hunger": 4,
+	"saturation": 4,
+	"vegetables": 4,
+	"protein": 2,
+	"dairy": 1
+}

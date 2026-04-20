@@ -1,7 +1,28 @@
 {
-  "conditions": [
-    {
-      "type": "forge:false"
-    }
-  ]
+	"type": "farm_and_charm:stove",
+	"ingredients": [
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "farm_and_charm:butter"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/maize"
+			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/maize"
+			}
+		}
+	],
+	"result": {
+		"item": "farm_and_charm:roasted_corn",
+		"count": 1
+	},
+	"experience": 0.2
 }

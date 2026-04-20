@@ -1,24 +1,24 @@
 {
 	"type": "minecraft:crafting_shapeless",
+	"result": {
+		"item": "tfc_farm_charm:unfinished_grandmothers_strawberry_cake",
+		"count": 1
+	},
 	"ingredients": [
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "farm_and_charm:dough"
+				"tag": "forge:dough"
 			}
-		},
-		{
-			"item": "minecraft:sugar"
 		},
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
 				"item": "tfc:food/strawberry"
 			}
+		},
+		{
+			"item": "minecraft:sugar"
 		}
-	],
-	"result": {
-		"item": "tfc_farm_charm:unfinished_grandmothers_strawberry_cake",
-		"count": 1
-	}
+	]
 }

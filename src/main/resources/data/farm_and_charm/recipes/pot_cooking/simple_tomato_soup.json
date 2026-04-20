@@ -17,15 +17,15 @@
 			"item": "minecraft:sugar"
 		}
 	],
-	"container": {
-		"required": true,
-		"item": {
-			"item": "minecraft:bowl"
-		}
-	},
 	"result": {
 		"item": "farm_and_charm:simple_tomato_soup",
 		"count": 1
 	},
-	"requiresLearning": false
+	"container": {
+		"required": true,
+		"item": {
+			"item": "minecraft:bowl",
+			"count": 1
+		}
+	}
 }

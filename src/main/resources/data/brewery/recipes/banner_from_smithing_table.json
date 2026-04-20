@@ -1,20 +1,22 @@
 {
-  "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "minecraft:netherite_ingot"
-  },
-  "base": {
-    "item": "brewery:brewery_banner"
-  },
-  "result": {
-    "item": "brewery:brewery_banner",
-    "count": 2
-  },
-  "template": {
-    "item": "minecraft:netherite_upgrade_smithing_template"
-  },
-  "conditions": [{
-    "type": "forge:mod_loaded",
-    "modid": "brewery"
-  }]
+	"type": "minecraft:smithing_transform",
+	"addition": {
+		"item": "tfc:metal/ingot/blue_steel"
+	},
+	"base": {
+		"item": "brewery:brewery_banner"
+	},
+	"result": {
+		"item": "brewery:brewery_banner",
+		"count": 2
+	},
+	"template": {
+		"item": "tfc:metal/ingot/red_steel"
+	},
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "brewery"
+		}
+	]
 }

@@ -1,24 +1,24 @@
 {
 	"type": "minecraft:crafting_shapeless",
+	"result": {
+		"item": "tfc_farm_charm:unfinished_chocolate_tart",
+		"count": 1
+	},
 	"ingredients": [
-		{
-			"type": "tfc:not_rotten",
-			"ingredient": {
-				"tag": "bakery:chocolate"
-			}
-		},
-		{
-			"item": "farm_and_charm:yeast"
-		},
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
 				"item": "bakery:sweet_dough"
 			}
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "bakery:chocolate_truffle"
+			}
+		},
+		{
+			"item": "farm_and_charm:yeast"
 		}
-	],
-	"result": {
-		"item": "tfc_farm_charm:unfinished_chocolate_tart",
-		"count": 1
-	}
+	]
 }

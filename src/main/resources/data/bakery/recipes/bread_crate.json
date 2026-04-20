@@ -1,7 +1,41 @@
 {
-	"conditions": [
-		{
-			"type": "forge:false"
+	"type": "minecraft:crafting_shaped",
+	"result": {
+		"item": "bakery:bread_crate",
+		"count": 1
+	},
+	"pattern": [
+		" a ",
+		"bcd",
+		" e "
+	],
+	"key": {
+		"a": {
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"tag": "tfc:foods/breads"
+			}
+		},
+		"b": {
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "bakery:baguette"
+			}
+		},
+		"c": {
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "bakery:bun"
+			}
+		},
+		"d": {
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "bakery:braided_bread"
+			}
+		},
+		"e": {
+			"item": "bakery:tray"
 		}
-	]
+	}
 }

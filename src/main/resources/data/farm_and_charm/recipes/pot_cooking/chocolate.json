@@ -2,15 +2,6 @@
 	"type": "farm_and_charm:pot_cooking",
 	"ingredients": [
 		{
-			"item": "minecraft:sugar"
-		},
-		{
-			"type": "tfc:not_rotten",
-			"ingredient": {
-				"item": "firmalife:food/cocoa_powder"
-			}
-		},
-		{
 			"type": "tfc:fluid_item",
 			"fluid_ingredient": {
 				"ingredient": {
@@ -18,17 +9,22 @@
 				},
 				"amount": 100
 			}
+		},
+		{
+			"item": "minecraft:sugar"
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "firmalife:food/cocoa_powder"
+			}
 		}
 	],
-	"container": {
-		"required": false,
-		"item": {
-			"item": "bakery:jar"
-		}
-	},
 	"result": {
 		"item": "bakery:chocolate_truffle",
-		"count": 1
+		"count": 2
 	},
-	"requiresLearning": false
+	"container": {
+		"required": false
+	}
 }

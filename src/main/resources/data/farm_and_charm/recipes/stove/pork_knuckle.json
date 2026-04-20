@@ -1,7 +1,25 @@
 {
+	"type": "farm_and_charm:stove",
+	"ingredients": [
+		{
+			"tag": "brewery:beer"
+		},
+		{
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/pork"
+			}
+		}
+	],
+	"result": {
+		"item": "brewery:pork_knuckle",
+		"count": 1
+	},
+	"experience": 0.2,
 	"conditions": [
 		{
-			"type": "forge:false"
+			"type": "forge:mod_loaded",
+			"modid": "brewery"
 		}
 	]
 }

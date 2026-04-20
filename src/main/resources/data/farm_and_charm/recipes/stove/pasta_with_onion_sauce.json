@@ -16,7 +16,7 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "farm_and_charm:pasta"
+				"item": "farm_and_charm:raw_pasta"
 			}
 		}
 	],
@@ -24,6 +24,5 @@
 		"item": "farm_and_charm:pasta_with_onion_sauce",
 		"count": 1
 	},
-	"experience": 0.4,
-	"requiresLearning": false
+	"experience": 0.2
 }

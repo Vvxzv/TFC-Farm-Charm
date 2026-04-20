@@ -7,12 +7,12 @@
 				"ingredient": {
 					"tag": "tfc:milks"
 				},
-				"amount": 1000
+				"amount": 100
 			}
 		}
 	],
 	"result": {
 		"item": "farm_and_charm:butter",
-		"count": 4
+		"count": 1
 	}
 }

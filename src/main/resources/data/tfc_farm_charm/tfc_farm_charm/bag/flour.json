@@ -1,0 +1,6 @@
+{
+	"ingredient": {
+		"tag": "tfc:foods/flour"
+	},
+	"block": "tfc_farm_charm:flour_bag"
+}

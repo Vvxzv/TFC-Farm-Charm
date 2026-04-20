@@ -1,0 +1,11 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:farmers_breakfast"
+	},
+	"decay_modifier": 2,
+	"hunger": 4,
+	"saturation": 6,
+	"grain": 3,
+	"protein": 2.5,
+	"dairy": 1.8
+}

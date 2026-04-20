@@ -1,0 +1,12 @@
+{
+	"type": "tfc:heating",
+	"ingredient": {
+		"item": "bakery:bread_knife"
+	},
+	"temperature": 1535.0,
+	"result_fluid": {
+		"fluid": "tfc:metal/cast_iron",
+		"amount": 100
+	},
+	"use_durability": true
+}

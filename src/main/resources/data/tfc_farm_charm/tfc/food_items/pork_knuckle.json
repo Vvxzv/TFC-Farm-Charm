@@ -1,9 +1,0 @@
-{
-  "decay_modifier": 2.2,
-  "hunger": 6,
-  "saturation": 6,
-  "protein": 3.5,
-  "ingredient": {
-    "item": "tfc_farm_charm:pork_knuckle"
-  }
-}

@@ -1,16 +1,19 @@
 {
 	"type": "firmalife:oven",
 	"ingredient": {
-		"type": "tfc:not_rotten",
-		"ingredient": {
-			"item": "tfc_farm_charm:unfinished_croissant"
-		}
+		"item": "tfc_farm_charm:unfinished_croissant"
 	},
+	"temperature": 200.0,
+	"duration": 1000,
 	"result_item": {
 		"stack": {
-			"item": "bakery:croissant"
-		}
-	},
-	"temperature": 200,
-	"duration": 1000
+			"item": "bakery:croissant",
+			"count": 1
+		},
+		"modifiers": [
+			{
+				"type": "tfc:copy_food"
+			}
+		]
+	}
 }

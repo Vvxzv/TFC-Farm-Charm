@@ -1,0 +1,12 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:barley_patties_with_potatoes"
+	},
+	"decay_modifier": 1.5,
+	"hunger": 4,
+	"saturation": 4,
+	"grain": 2,
+	"vegetables": 2,
+	"protein": 1.5,
+	"dairy": 1.3
+}

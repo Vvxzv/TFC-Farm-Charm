@@ -4,30 +4,30 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "tfc:foods/dough"
+				"item": "minecraft:egg"
 			}
-		},
-		{
-			"item": "minecraft:sugar"
 		},
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "forge:eggs"
+				"tag": "tfc:foods/dough"
 			}
 		},
 		{
 			"type": "tfc:fluid_item",
 			"fluid_ingredient": {
 				"ingredient": {
-					"fluid": "water"
+					"fluid": "minecraft:water"
 				},
 				"amount": 100
 			}
+		},
+		{
+			"item": "minecraft:sugar"
 		}
 	],
 	"result": {
 		"item": "bakery:sweet_dough",
-		"count": 2
+		"count": 1
 	}
 }

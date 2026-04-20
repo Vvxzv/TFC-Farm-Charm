@@ -1,21 +1,23 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "#": {
-      "tag": "minecraft:planks"
-    }
-  },
-  "pattern": [
-    "## ",
-    "###",
-    "## "
-  ],
-  "result": {
-    "count": 8,
-    "item": "brewery:beer_mug"
-  },
-  "conditions": [{
-    "type": "forge:mod_loaded",
-    "modid": "brewery"
-  }]
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"aa ",
+		"aaa",
+		"aa "
+	],
+	"key": {
+		"a": {
+			"tag": "tfc:lumber"
+		}
+	},
+	"result": {
+		"item": "brewery:beer_mug",
+		"count": 3
+	},
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "brewery"
+		}
+	]
 }

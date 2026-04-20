@@ -1,0 +1,9 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:lettuce"
+	},
+	"decay_modifier": 1.2,
+	"hunger": 4,
+	"saturation": 0.4,
+	"vegetables": 1
+}

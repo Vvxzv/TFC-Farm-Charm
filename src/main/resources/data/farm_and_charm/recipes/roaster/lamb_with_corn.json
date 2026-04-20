@@ -8,7 +8,10 @@
 			}
 		},
 		{
-			"tag": "farm_and_charm:corn"
+			"type": "tfc:not_rotten",
+			"ingredient": {
+				"item": "tfc:food/maize_grain"
+			}
 		},
 		{
 			"type": "tfc:not_rotten",
@@ -19,7 +22,7 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "farm_and_charm:butter"
+				"item": "farm_and_charm:butter"
 			}
 		}
 	],
@@ -29,6 +32,5 @@
 	"result": {
 		"item": "farm_and_charm:lamb_with_corn",
 		"count": 1
-	},
-	"requiresLearning": false
+	}
 }

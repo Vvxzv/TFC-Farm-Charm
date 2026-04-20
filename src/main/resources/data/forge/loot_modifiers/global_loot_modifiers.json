@@ -1,0 +1,8 @@
+{
+  "replace" : false,
+  "entries" : [
+    "tfc_farm_charm:bread_crate",
+    "tfc_farm_charm:chocolate_box",
+    "tfc_farm_charm:jams"
+  ]
+}

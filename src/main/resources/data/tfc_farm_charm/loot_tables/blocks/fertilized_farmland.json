@@ -14,7 +14,8 @@
           "name": "farm_and_charm:fertilized_soil"
         }
       ],
-      "rolls": 1
+      "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "tfc_farm_charm:blocks/fertilized_farmland"
 }

@@ -1,0 +1,10 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:strawberry"
+	},
+	"decay_modifier": 5.5,
+	"hunger": 4,
+	"saturation": 0.4,
+	"water": 10,
+	"fruit": 0.5
+}

@@ -1,0 +1,6 @@
+{
+	"ingredient": {
+		"item": "tfc:food/cabbage"
+	},
+	"block": "tfc_farm_charm:cabbage_bag"
+}

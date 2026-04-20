@@ -16,25 +16,25 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"item": "tfc:food/cabbage"
-			}
-		},
-		{
-			"type": "tfc:not_rotten",
-			"ingredient": {
-				"tag": "farm_and_charm:butter"
+				"tag": "tfc:foods/vegetables"
 			}
 		}
 	],
-	"container": {
-		"required": true,
-		"item": {
-			"item": "minecraft:bowl"
-		}
-	},
 	"result": {
 		"item": "brewery:sausage",
 		"count": 1
 	},
-	"requiresLearning": false
+	"container": {
+		"required": true,
+		"item": {
+			"item": "minecraft:bowl",
+			"count": 1
+		}
+	},
+	"conditions": [
+		{
+			"type": "forge:mod_loaded",
+			"modid": "brewery"
+		}
+	]
 }

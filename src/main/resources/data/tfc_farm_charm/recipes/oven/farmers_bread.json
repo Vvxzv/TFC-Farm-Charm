@@ -1,16 +1,19 @@
 {
 	"type": "firmalife:oven",
 	"ingredient": {
-		"type": "tfc:not_rotten",
-		"ingredient": {
-			"item": "tfc_farm_charm:unfinished_farmers_bread"
-		}
+		"item": "tfc_farm_charm:unfinished_farmers_bread"
 	},
+	"temperature": 200.0,
+	"duration": 1000,
 	"result_item": {
 		"stack": {
-			"item": "tfc_farm_charm:farmers_bread"
-		}
-	},
-	"temperature": 200,
-	"duration": 1000
+			"item": "farm_and_charm:farmers_bread",
+			"count": 1
+		},
+		"modifiers": [
+			{
+				"type": "tfc:copy_food"
+			}
+		]
+	}
 }

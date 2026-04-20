@@ -4,7 +4,7 @@
 		{
 			"type": "tfc:not_rotten",
 			"ingredient": {
-				"tag": "tfc_farm_charm:jams"
+				"tag": "tfc_farm_charm:fruit_jam"
 			}
 		},
 		{
@@ -21,6 +21,5 @@
 		"item": "bakery:jam_roll",
 		"count": 1
 	},
-	"experience": 0.2,
-	"requiresLearning": false
+	"experience": 0.2
 }

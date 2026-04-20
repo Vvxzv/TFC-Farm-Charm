@@ -1,18 +1,27 @@
 {
-	"type": "crafting_shapeless",
-	"ingredients": [
-		{
-			"tag": "tfc:foods/grains"
-		},
-		{
-			"tag": "tfc:chicken_food"
-		},
-		{
-			"tag": "forge:seeds"
-		}
-	],
+	"type": "minecraft:crafting_shapeless",
 	"result": {
 		"item": "farm_and_charm:chicken_feed",
 		"count": 1
-	}
+	},
+	"ingredients": [
+		{
+			"tag": "tfc:quail_food"
+		},
+		{
+			"tag": "tfc:quail_food"
+		},
+		{
+			"tag": "tfc:quail_food"
+		},
+		{
+			"tag": "tfc:quail_food"
+		},
+		{
+			"tag": "tfc:quail_food"
+		},
+		{
+			"tag": "tfc:quail_food"
+		}
+	]
 }

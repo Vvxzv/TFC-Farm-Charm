@@ -1,0 +1,17 @@
+{
+	"type": "tfc:anvil",
+	"result": {
+		"item": "bakery:small_cooking_pot",
+		"count": 1,
+		"nbt": "{Damage:0}"
+	},
+	"input": {
+		"item": "tfc:metal/double_sheet/wrought_iron"
+	},
+	"rules": [
+		"hit_last",
+		"bend_second_last",
+		"bend_third_last"
+	],
+	"tier": 3
+}

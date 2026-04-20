@@ -1,19 +1,19 @@
 {
 	"type": "minecraft:crafting_shaped",
+	"result": {
+		"item": "bakery:wall_cabinet",
+		"count": 1
+	},
 	"pattern": [
 		"ab",
 		"ba"
 	],
 	"key": {
 		"a": {
-			"tag": "minecraft:planks"
+			"tag": "minecraft:wooden_slabs"
 		},
 		"b": {
 			"tag": "forge:chests/wooden"
 		}
-	},
-	"result": {
-		"item": "bakery:wall_cabinet",
-		"count": 2
 	}
 }

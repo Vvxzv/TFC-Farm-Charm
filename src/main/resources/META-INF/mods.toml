@@ -65,27 +65,27 @@ side = "BOTH"
 [[dependencies."${mod_id}"]]
 modId="firmalife"
 mandatory=true
-versionRange="[2.1,)"
+versionRange="[2.1.27,)"
 ordering="AFTER"
 side="BOTH"
 
 [[dependencies."${mod_id}"]]
 modId="brewery"
 mandatory=false
-versionRange="[2.0,)"
+versionRange="[2.0.6,)"
 ordering="AFTER"
 side="BOTH"
 
 [[dependencies."${mod_id}"]]
 modId="bakery"
 mandatory=true
-versionRange="[2.0,)"
+versionRange="[2.0.6,)"
 ordering="AFTER"
 side="BOTH"
 
 [[dependencies."${mod_id}"]]
-modId="oneenoughitem"
-mandatory=true
-versionRange="[1.,)"
-ordering="AFTER"
-side="BOTH"
+modId = "kubejs"
+mandatory = false
+versionRange = "[2001.6.5,)"
+ordering = "AFTER"
+side = "BOTH"

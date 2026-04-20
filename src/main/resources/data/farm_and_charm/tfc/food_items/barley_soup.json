@@ -1,0 +1,12 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:barley_soup"
+	},
+	"decay_modifier": 2.5,
+	"hunger": 4,
+	"saturation": 2,
+	"water": 40,
+	"grain": 2,
+	"protein": 1.5,
+	"dairy": 0.3
+}

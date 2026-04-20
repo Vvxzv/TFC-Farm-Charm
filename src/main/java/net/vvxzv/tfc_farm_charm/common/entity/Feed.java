@@ -9,7 +9,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -49,16 +48,14 @@ public class Feed {
                 if (!player.getAbilities().instabuild) {
                     stack.shrink(1);
                 }
-            }
-            else {
-                Level world = cat.getCommandSenderWorld();
-                world.addParticle(ParticleTypes.HEART, cat.getX(), cat.getY() + 1.0F, cat.getZ(), 0.0F, 0.0F, 0.0F);
-                world.playSound(null, cat.getX(), cat.getY(), cat.getZ(), SoundEvents.FOX_EAT, cat.getSoundSource(), 1.0F, 1.0F);
+            } else {
+                Level level = cat.getCommandSenderWorld();
+                level.addParticle(ParticleTypes.HEART, cat.getX(), cat.getY() + 1.0F, cat.getZ(), 0.0F, 0.0F, 0.0F);
+                level.playSound(null, cat.getX(), cat.getY(), cat.getZ(), SoundEvents.CAT_EAT, cat.getSoundSource(), 1.0F, 1.0F);
             }
             event.setCancellationResult(InteractionResult.SUCCESS);
             event.setCanceled(true);
-        }
-        else if(stack.getItem() instanceof DogFoodItem && target instanceof Dog dog){
+        } else if(stack.getItem() instanceof DogFoodItem && target instanceof Dog dog){
             if (!dog.level().isClientSide) {
                 if(dog.getOwnerUUID() == null) {
                     dog.tame(player);
@@ -76,8 +73,7 @@ public class Feed {
             }
             event.setCancellationResult(InteractionResult.SUCCESS);
             event.setCanceled(true);
-        }
-        else if(stack.getItem() instanceof HorseFodderItem && target instanceof TFCHorse horse){
+        } else if(stack.getItem() instanceof HorseFodderItem && target instanceof TFCHorse horse){
             if (!horse.level().isClientSide) {
                 horse.addEffect(new MobEffectInstance(MobEffectRegistry.HORSE_FODDER.get(), 6000, 0));
                 horse.heal(10.0F);
@@ -92,8 +88,7 @@ public class Feed {
             }
             event.setCancellationResult(InteractionResult.SUCCESS);
             event.setCanceled(true);
-        }
-        else if(stack.getItem() instanceof ChickenFeedItem && target instanceof OviparousAnimal animal){
+        } else if(stack.getItem() instanceof ChickenFeedItem && target instanceof OviparousAnimal animal){
             animal.addEffect(new MobEffectInstance(MobEffectRegistry.CLUCK.get(), 1200));
             player.level().playSound(null, animal.getX(), animal.getY(), animal.getZ(), SoundEvents.CHICKEN_AMBIENT, SoundSource.NEUTRAL, 1.0F, 1.0F);
             animal.level().addParticle(ParticleTypes.HEART, animal.getX(), animal.getY() + 0.5F, animal.getZ(), 0.0F, 0.0F, 0.0F);

@@ -1,0 +1,12 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:oatmeal_with_strawberries"
+	},
+	"decay_modifier": 2,
+	"hunger": 4,
+	"saturation": 1.5,
+	"water": 20,
+	"grain": 1,
+	"fruit": 1,
+	"dairy": 1
+}

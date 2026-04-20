@@ -1,0 +1,9 @@
+{
+	"ingredient": {
+		"item": "bakery:bread"
+	},
+	"decay_modifier": 1,
+	"hunger": 4,
+	"saturation": 3,
+	"grain": 1.3
+}

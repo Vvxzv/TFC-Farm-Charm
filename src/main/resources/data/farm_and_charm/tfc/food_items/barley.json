@@ -1,0 +1,7 @@
+{
+	"ingredient": {
+		"item": "farm_and_charm:barley"
+	},
+	"decay_modifier": 2,
+	"hunger": 4
+}

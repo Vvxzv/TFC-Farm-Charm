@@ -1,5 +1,9 @@
 {
 	"type": "minecraft:crafting_shaped",
+	"result": {
+		"item": "bakery:cabinet",
+		"count": 1
+	},
 	"pattern": [
 		"ab",
 		"ba"
@@ -11,9 +15,5 @@
 		"b": {
 			"tag": "forge:chests/wooden"
 		}
-	},
-	"result": {
-		"item": "bakery:cabinet",
-		"count": 2
 	}
 }

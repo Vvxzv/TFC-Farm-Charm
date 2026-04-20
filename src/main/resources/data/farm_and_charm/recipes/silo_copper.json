@@ -1,20 +1,20 @@
 {
 	"type": "minecraft:crafting_shaped",
-	"key": {
-		"#": {
-			"item": "tfc:metal/sheet/copper"
-		},
-		"U": {
-			"item": "farm_and_charm:silo_wood"
-		}
+	"result": {
+		"item": "farm_and_charm:silo_copper",
+		"count": 1
 	},
 	"pattern": [
-		"###",
-		"#U#",
-		"###"
+		"aaa",
+		"aba",
+		"aaa"
 	],
-	"result": {
-		"count": 1,
-		"item": "farm_and_charm:silo_copper"
+	"key": {
+		"a": {
+			"item": "tfc:metal/ingot/copper"
+		},
+		"b": {
+			"item": "farm_and_charm:silo_wood"
+		}
 	}
 }
