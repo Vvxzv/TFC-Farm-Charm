@@ -27,7 +27,7 @@ import net.satisfy.farm_and_charm.core.registry.ObjectRegistry;
 import net.vvxzv.tfc_farm_charm.common.block.entity.DecayingFoodBlockEntity;
 import net.vvxzv.tfc_farm_charm.common.data.Bag;
 import net.vvxzv.tfc_farm_charm.common.utils.FoodTraits;
-import net.vvxzv.tfc_farm_charm.common.utils.IStoveLitAccess;
+import net.vvxzv.tfc_farm_charm.common.utils.IStove;
 
 import java.util.Set;
 
@@ -109,8 +109,8 @@ public class ForgeEventHandler {
         Block block = state.getBlock();
         if(block == ObjectRegistry.STOVE.get()) {
             BlockEntity entity = level.getBlockEntity(pos);
-            if(entity instanceof StoveBlockEntity stove) {
-                if(((IStoveLitAccess) stove).setLit(true)) {
+            if(entity instanceof IStove stove) {
+                if(stove.setLit()) {
                     event.setCanceled(true);
                 }
             }

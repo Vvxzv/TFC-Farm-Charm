@@ -2,6 +2,7 @@
   "tfc_farm_charm.tab.name": "[Let's Do] TFC Farm Charm",
   "config.jade.plugin_tfc_farm_charm.decaying" : "Decaying Block",
   "config.jade.plugin_tfc_farm_charm.crate" : "Crate Block",
+  "config.jade.plugin_tfc_farm_charm.stove" : "Stove",
   "tfc_farm_charm.eat.rotten_block": "Ew~ It looks rotten. It's so gross. I'd not eat it",
   "item.tfc_farm_charm.cup": "Cup",
   "item.tfc_farm_charm.cup.filled": "Cup",

@@ -7,45 +7,39 @@ import net.dries007.tfc.common.capabilities.food.FoodTrait;
 import net.dries007.tfc.common.capabilities.food.IFood;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraftforge.common.util.MutableHashedLinkedMap;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.vvxzv.tfc_farm_charm.common.block.entity.DecayingFoodBlockEntity;
-import net.vvxzv.tfc_farm_charm.common.registry.BlockTags;
 import org.jetbrains.annotations.Nullable;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class Utils {
-    public static void receiveNutrients(IFarmland farmland, float cap, float nitrogen, float phosphorous, float potassium) {
-        float n = farmland.getNutrient(FarmlandBlockEntity.NutrientType.NITROGEN);
-        if (n < cap) {
-            farmland.setNutrient(FarmlandBlockEntity.NutrientType.NITROGEN, Math.min(n + nitrogen, cap));
-        }
+    public static void farmlandReceiveNutrients(IFarmland farmland, float nitrogen, float phosphorous, float potassium) {
+        addFarmlandNutrient(farmland, FarmlandBlockEntity.NutrientType.NITROGEN, 1, nitrogen);
+        addFarmlandNutrient(farmland, FarmlandBlockEntity.NutrientType.PHOSPHOROUS, 1, phosphorous);
+        addFarmlandNutrient(farmland, FarmlandBlockEntity.NutrientType.POTASSIUM, 1, potassium);
+    }
 
-        float p = farmland.getNutrient(FarmlandBlockEntity.NutrientType.PHOSPHOROUS);
-        if (p < cap) {
-            farmland.setNutrient(FarmlandBlockEntity.NutrientType.PHOSPHOROUS, Math.min(p + phosphorous, cap));
-        }
-
-        float k = farmland.getNutrient(FarmlandBlockEntity.NutrientType.POTASSIUM);
-        if (k < cap) {
-            farmland.setNutrient(FarmlandBlockEntity.NutrientType.POTASSIUM, Math.min(k + potassium, cap));
+    public static void addFarmlandNutrient(IFarmland farmland, FarmlandBlockEntity.NutrientType type, float cap, float amount) {
+        float current = farmland.getNutrient(type);
+        if (current < cap) {
+            if (current + amount > cap) {
+                farmland.setNutrient(type, cap);
+            } else {
+                farmland.addNutrient(type, amount);
+            }
         }
     }
 
     public static boolean isBeingBurned(Level level, BlockPos pos) {
         BlockState belowState = level.getBlockState(pos.below());
-        if (belowState.is(BlockTags.HEAT_SOURCE)) {
+        if (belowState.is(AllTags.Blocks.HEAT_SOURCE)) {
             return true;
         }
 

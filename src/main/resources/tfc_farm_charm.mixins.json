@@ -7,12 +7,14 @@
   "mixins" : [
     "CatFoodItemMixin",
     "FertilizerItemMixin",
+    "StoveGuiHandlerMixin",
     "block.BlankCakeBlockMixin",
     "block.FertilizedSoilBlockMixin",
     "block.PetBowlBlockMixin",
     "block.StoveBlockMixin",
     "block.entity.CookingPotBlockEntityMixin",
     "block.entity.CraftingBowlBlockEntityMixin",
+    "block.entity.FLBeehiveBlockEntityMixin",
     "block.entity.RoasterBlockEntityMixin",
     "block.entity.SmallCookingPotBlockEntityMixin",
     "block.entity.StoveBlockEntityMixin",
@@ -22,7 +24,6 @@
     "block.food.PieBlockMixin",
     "block.food.StackableBlockMixin",
     "block.food.StackableEatableBlockMixin",
-    "StoveGuiHandlerMixin",
     "entity.DogMixin",
     "entity.PlowCartEntityMixin",
     "entity.TFCCatMixin"

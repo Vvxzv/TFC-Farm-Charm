@@ -14,13 +14,20 @@ public class FertilizedFarmlandBlockEntity extends FarmlandBlockEntity{
         super(BlockEntities.FARMLAND.get(), pos, state);
     }
 
-    private static float getFertilizerTimesValue() {
+    private float getFertilizerTimesValue() {
         return (float) Config.fertilizerOnFertilizedFarmland;
     }
 
     @Override
-    public void addNutrients(@NotNull Fertilizer fertilizer, float multiplier) {
-        float richMultiplier = multiplier * getFertilizerTimesValue();
-        super.addNutrients(fertilizer, richMultiplier);
+    public void addNutrient(FarmlandBlockEntity.@NotNull NutrientType type, float value) {
+        this.setNutrient(type, this.getNutrient(type) + value * this.getFertilizerTimesValue());
+    }
+
+    @Override
+    public void addNutrients(Fertilizer fertilizer, float multiplier) {
+        this.addNutrient(NutrientType.NITROGEN, fertilizer.getNitrogen() * multiplier);
+        this.addNutrient(NutrientType.PHOSPHOROUS, fertilizer.getPhosphorus() * multiplier);
+        this.addNutrient(NutrientType.POTASSIUM, fertilizer.getPotassium() * multiplier);
+        this.markForSync();
     }
 }

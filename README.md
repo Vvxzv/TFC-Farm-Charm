@@ -42,7 +42,7 @@ ServerEvents.highPriorityData(event => {
 ### Mod Trait
 1. Foods have TFC nutrients.
 2. Using TFC world items to crafting Let's Do series foods.
-3. Modify the food block to decaying block.
+3. Modified the food block to decaying block.
 4. DogFood, CatFood, HorseFodder, ChickenFeed can be used on corresponding mobs.
 5. Can use PetBowl to feed dogs and cats.
 6. Compost can fertilize within a range of 3 * 3 * 3.

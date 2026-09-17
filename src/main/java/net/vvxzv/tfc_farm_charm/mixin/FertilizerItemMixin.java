@@ -34,22 +34,23 @@ public class FertilizerItemMixin {
         Player player = context.getPlayer();
         ItemStack stack = context.getItemInHand();
         boolean applied = false;
-        if (!level.isClientSide && level instanceof ServerLevel serverLevel) {
+        if (level instanceof ServerLevel serverLevel) {
             BlockPos min = pos.offset(-3, -3, -3);
             BlockPos max = pos.offset(3, 3, 3);
             if (serverLevel.hasChunksAt(min, max)) {
                 for(BlockPos blockPos : BlockPos.betweenClosed(min, max)) {
                     BlockEntity be = serverLevel.getBlockEntity(blockPos);
                     if (be instanceof IFarmland farmland) {
-                        int which = serverLevel.random.nextInt(3);
-                        float nut = serverLevel.random.nextFloat() * 0.5F;
-                        Utils.receiveNutrients(farmland, 1.0F, which == 0 ? nut : 0.0F, which == 1 ? nut : 0.0F, which == 2 ? nut : 0.0F);
+                        Utils.farmlandReceiveNutrients(farmland, serverLevel.random.nextFloat() * 0.5f, serverLevel.random.nextFloat() * 0.5F, serverLevel.random.nextFloat() * 0.5F);
                         applied = true;
                     }
                 }
             }
+
             if (applied) {
-                stack.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(context.getHand()));
+                if (player != null) {
+                    stack.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(context.getHand()));
+                }
                 cir.setReturnValue(InteractionResult.sidedSuccess(level.isClientSide()));
             }
         }

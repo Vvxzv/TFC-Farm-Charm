@@ -23,9 +23,7 @@ public abstract class FertilizedSoilBlockMixin {
             for(BlockPos blockPos : BlockPos.betweenClosed(min, max)) {
                 BlockEntity be = level.getBlockEntity(blockPos);
                 if (be instanceof IFarmland farmland) {
-                    int which = level.random.nextInt(3);
-                    float nut = level.random.nextFloat() * 0.8F;
-                    Utils.receiveNutrients(farmland, 1.0F, which == 0 ? nut : 0.0F, which == 1 ? nut : 0.0F, which == 2 ? nut : 0.0F);
+                    Utils.farmlandReceiveNutrients(farmland, level.random.nextFloat() * 0.8F, level.random.nextFloat() * 0.8F, level.random.nextFloat() * 0.8F);
                 }
             }
         }
